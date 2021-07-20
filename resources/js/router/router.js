@@ -93,27 +93,96 @@ const routes = [
                 },
             ],
         },
-        // children: [
-        //     {
-        //         path: "/dashboard",
-        //         name: "Home",
-        //         component: () => import("../components/home/index"),
-        //         meta: {
-        //             title: "Tanda | Home",
-        //             metaTags: [
-        //                 {
-        //                     name: "description",
-        //                     content: "The Dashboard of Tanda Africa card issuing dashboard.",
-        //                 },
-        //                 {
-        //                     property: "og:description",
-        //                     content: "The Dashboard of Tanda Africa card issuing dashboard.",
-        //                 },
-        //             ],
-        //         },
-        //
-        //     },
-        // ],
+    },
+    {
+        path: "/videos",
+        name: "videos",
+        component: () => import("../components/media/videos"),
+        meta: {
+            title: "Superior Homes Kenya | Videos",
+            metaTags: [
+                {
+                    name: "description",
+                    content: "The Videos page of superior homes website.",
+                },
+                {
+                    property: "og:description",
+                    content: "The Videos page of superior homes website.",
+                },
+            ],
+        },
+    },
+    {
+        path: "/faqs",
+        name: "faqs",
+        component: () => import("../components/media/faqs"),
+        meta: {
+            title: "Superior Homes Kenya | FAQs",
+            metaTags: [
+                {
+                    name: "description",
+                    content: "The FAQs page of superior homes website.",
+                },
+                {
+                    property: "og:description",
+                    content: "The FAQs page of superior homes website.",
+                },
+            ],
+        },
+    },
+    {
+        path: "/green-park",
+        name: "Green Park",
+        component: () => import("../components/properties/greenpark"),
+        meta: {
+            title: "Superior Homes Kenya | GreenPark Estate",
+            metaTags: [
+                {
+                    name: "description",
+                    content: "The GreenPark Estate page of superior homes website.",
+                },
+                {
+                    property: "og:description",
+                    content: "The GreenPark Estate page of superior homes website.",
+                },
+            ],
+        },
+    },
+    {
+        path: "/fadhili",
+        name: "Fadhili",
+        component: () => import("../components/properties/fadhili"),
+        meta: {
+            title: "Superior Homes Kenya | Fadhili",
+            metaTags: [
+                {
+                    name: "description",
+                    content: "The Fadhili page of superior homes website.",
+                },
+                {
+                    property: "og:description",
+                    content: "The Fadhili page of superior homes website.",
+                },
+            ],
+        },
+    },
+    {
+        path: "/pazuri-at-vipingo",
+        name: "Pazuri at Vipingo",
+        component: () => import("../components/properties/pazuri"),
+        meta: {
+            title: "Superior Homes Kenya | Pazuri at Vipingo",
+            metaTags: [
+                {
+                    name: "description",
+                    content: "The Pazuri at Vipingo page of superior homes website.",
+                },
+                {
+                    property: "og:description",
+                    content: "The Pazuri at Vipingo page of superior homes website.",
+                },
+            ],
+        },
     },
 ];
 

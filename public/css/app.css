@@ -10033,7 +10033,7 @@ h3 {
   background: rgba(255, 255, 255, 0.5);
   position: fixed;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
   top: 24px;
 }
 
@@ -10434,6 +10434,20 @@ h3 {
   justify-content: center;
 }
 
+.faqs {
+  padding: 100px 0;
+}
+.faqs .title {
+  margin-bottom: 30px;
+}
+
+.videos {
+  padding: 100px 0;
+}
+.videos .title {
+  margin-bottom: 30px;
+}
+
 .gallery-section {
   padding: 100px 0;
 }
@@ -10445,9 +10459,53 @@ h3 {
   border-radius: 5px;
 }
 
+.dropdown-items a {
+  text-decoration: none;
+  color: #01426A;
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
+}
+.dropdown-items a:hover {
+  background-color: #e3e6eb;
+  color: #F68D2E;
+}
+
+.p-accordion .p-accordion-content {
+  border: none !important;
+  background: #e3e6eb !important;
+  padding: 0 20px !important;
+}
+
+.p-accordion .p-accordion-header .p-accordion-header-link {
+  margin-left: 0 !important;
+  background: #F68D2E !important;
+  font-weight: 600 !important;
+  font-size: 16px;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.p-accordion .p-accordion-header:not(.p-disabled) .p-accordion-header-link:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.p-accordion .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon {
+  margin-right: 1rem !important;
+  float: right !important;
+}
+
 @media only screen and (max-width: 576px) {
   .gallery-section {
     padding: 10px 0;
+  }
+
+  .faqs {
+    padding: 10px;
+  }
+  .faqs .title {
+    margin-bottom: 10px;
   }
 
   .careers-page {
@@ -10548,5 +10606,191 @@ h3 {
   }
   .second-nav .right-items .item {
     display: none;
+  }
+}
+.prop-landing-details {
+  padding-top: 100px;
+}
+.prop-landing-details span {
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.prop-landing-details p {
+  font-size: 60px;
+  font-weight: 600;
+  padding: 0 !important;
+}
+
+.prop-btn {
+  height: 35px;
+  padding: 0 10px;
+  width: 120px;
+  border-radius: 25px;
+  background-color: #F68D2E;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prop-top {
+  padding-top: 50px;
+}
+.prop-top .prop-desc h4 {
+  font-weight: 600;
+  font-size: 30px;
+}
+.prop-top .prop-desc span {
+  font-weight: normal;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.shk_property_type {
+  border-radius: 10px;
+  cursor: pointer;
+}
+.shk_property_type .tag {
+  font-weight: 600;
+  padding-top: 15px;
+}
+.shk_property_type .tag .title {
+  font-size: 25px;
+}
+.shk_property_type .tag .price {
+  color: #F68D2E;
+  font-size: 20px;
+}
+.shk_property_type .desc {
+  min-height: 170px;
+  margin-bottom: 10px;
+}
+.shk_property_type .image-wrap {
+  position: relative;
+  height: 320px;
+}
+.shk_property_type .image-wrap img {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.5s ease;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-radius: 10px;
+}
+.shk_property_type .image-wrap:hover img {
+  opacity: 0.3;
+}
+.shk_property_type .btn-sec {
+  padding: 10px;
+}
+.shk_property_type .icons {
+  display: flex;
+  align-items: center;
+}
+.shk_property_type .icons .item {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  font-weight: 600;
+  font-size: 17px;
+}
+.shk_property_type .icons .item img {
+  height: 25px;
+  width: 25px;
+}
+
+.about-page {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+.about-page .mission {
+  margin-bottom: 25px;
+}
+.about-page .mission p {
+  font-weight: bold;
+}
+.about-page .team-statement p {
+  font-size: 22px;
+}
+.about-page .team-statement span {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.team-wrap {
+  padding: 10px;
+}
+.team-wrap .team-card {
+  position: relative;
+  height: 400px;
+  width: 300px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.team-wrap .team-card .pic {
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  box-shadow: 0 0.4px 10px -1px rgba(0, 0, 0, 0.29), 0 1.1px 21.9px -1px rgba(0, 0, 0, 0), 0 2.1px 36.6px -1px rgba(0, 0, 0, 0), 0 3.4px 55.9px -1px rgba(0, 0, 0, 0), 0 5.3px 82.7px -1px rgba(0, 0, 0, 0), 0 7.9px 118.8px -1px rgba(0, 0, 0, 0), 0 11.7px 158.4px -1px rgba(0, 0, 0, 0), 0 17.4px 194.5px -1px rgba(0, 0, 0, 0), 0 26.3px 226px -1px rgba(0, 0, 0, 0), 0 40px 254px -1px rgba(0, 0, 0, 0);
+  background-color: white;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+.team-wrap .team-card .desc {
+  position: absolute;
+  width: 100%;
+  top: 65px;
+  padding: 85px 10px 0 10px;
+  box-shadow: 0 0.4px 10px -1px rgba(0, 0, 0, 0.29), 0 1.1px 21.9px -1px rgba(0, 0, 0, 0), 0 2.1px 36.6px -1px rgba(0, 0, 0, 0), 0 3.4px 55.9px -1px rgba(0, 0, 0, 0), 0 5.3px 82.7px -1px rgba(0, 0, 0, 0), 0 7.9px 118.8px -1px rgba(0, 0, 0, 0), 0 11.7px 158.4px -1px rgba(0, 0, 0, 0), 0 17.4px 194.5px -1px rgba(0, 0, 0, 0), 0 26.3px 226px -1px rgba(0, 0, 0, 0), 0 40px 254px -1px rgba(0, 0, 0, 0);
+  background-color: white;
+  border-radius: 8px;
+  color: #01426A;
+  height: 300px;
+  text-align: center;
+}
+.team-wrap .team-card .desc .title {
+  font-weight: 600;
+  font-size: 20px;
+}
+.team-wrap .team-card .desc .title:hover {
+  color: #F68D2E;
+}
+
+.p-carousel .p-carousel-indicators .p-carousel-indicator .p-highlight button {
+  background-color: #F68D2E !important;
+}
+
+@media only screen and (max-width: 576px) {
+  .about-page {
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+  .about-page .mission h3 {
+    text-align: center;
+  }
+  .about-page .team-statement {
+    text-align: center;
+  }
+
+  .team-wrap {
+    padding: 10px 5px;
+  }
+  .team-wrap .team-card {
+    min-height: 420px;
+    width: 100%;
+  }
+  .team-wrap .team-card .desc {
+    min-height: 320px;
+    text-align: center;
   }
 }

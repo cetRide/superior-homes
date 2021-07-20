@@ -2,7 +2,7 @@
     <div>
         <div class="parallax parallax-home">
             <div class="container">
-                <div data-aos="fade-up" data-aos-duration="2000" class="top-landing-details">
+                <div data-aos="fade-up" data-aos-duration="1000" class="top-landing-details">
                     <h2>Superior Homes Kenya</h2>
                     <h4>East Africa's Leading Master-planned Real Estate Developer</h4>
                     <p>Superior Homes Kenya is East Africa’s first master-planned real estate developer</p>
@@ -15,7 +15,7 @@
         <div class="container">
             <div class="p-grid properties-cont">
                 <div class="p-col-12 p-2 p-md-6 p-lg-4">
-                    <div data-aos="fade-up" data-aos-duration="1000" class="shk_property">
+                    <div  class="shk_property">
                         <div class="image-wrap">
                             <img :src="green_park" alt="Green Park Estate">
                         </div>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="p-col-12 p-2 p-md-6 p-lg-4">
-                    <div data-aos="fade-up" data-aos-duration="1000" class="shk_property">
+                    <div  class="shk_property">
                         <div class="image-wrap">
                             <img :src="vipingo" alt="Pazuri at Vipingo">
                         </div>
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="p-col-12 p-2 p-md-6 p-lg-4">
-                    <div  data-aos="fade-up" data-aos-duration="1000" class="shk_property">
+                    <div   class="shk_property">
                         <div class="image-wrap">
                             <img :src="fadhili" alt="Green Park Estate">
                         </div>
@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <div class="p-col-12 p-2 p-md-6 p-lg-4">
-                    <div data-aos="fade-up" data-aos-duration="1000" class="shk_property">
+                    <div  class="shk_property">
                         <div class="image-wrap">
                             <img :src="lake" alt="Lake Elementaita Mountain Lodges">
                         </div>
@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="p-col-12 p-2 p-md-6 p-lg-4">
-                    <div data-aos="fade-up" data-aos-duration="1000" class="shk_property">
+                    <div  class="shk_property">
                         <div class="image-wrap">
                             <img :src="sundowner" alt="Greenpark Sundowner Hotel">
                         </div>

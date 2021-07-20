@@ -71,14 +71,27 @@
         </div>
     </div>
     <!--    properties-->
-    <OverlayPanel :dismissable="false" ref="properties" :breakpoints="{'960px': '75vw', '640px': '100vw'}"
-                  :style="{width: '250px'}">
-        Properties
+    <OverlayPanel ref="properties" :style="{width: '300px'}">
+        <div class="dropdown-items">
+
+            <router-link to="/green-park">Greenpark Estate</router-link>
+            <router-link to="/fadhili">Fadhili Care</router-link>
+            <router-link to="/pazuri-at-vipingo">Pazuri at Vipingo</router-link>
+            <a href="https://leml.co.ke/" target="_blank"
+               rel="noopener noreferrer">Lake Elementaita Mountain Lodge</a>
+            <a href="https://greenparksundowner.co.ke/" target="_blank"
+               rel="noopener noreferrer">Greenpark Sundowner</a>
+        </div>
     </OverlayPanel>
     <!--media-->
-    <OverlayPanel :dismissable="false" ref="media" :breakpoints="{'960px': '75vw', '640px': '100vw'}"
-                  :style="{width: '250px'}">
-        media
+    <OverlayPanel ref="media" :style="{width: '300px'}">
+        <div class="dropdown-items">
+
+            <router-link :to="{ name: 'about' }">Articles</router-link>
+            <router-link :to="{ name: 'videos' }">Videos</router-link>
+            <router-link :to="{ name: 'faqs' }">FAQs</router-link>
+            <router-link :to="{ name: 'about' }">News</router-link>
+        </div>
     </OverlayPanel>
     <div>
         <router-view></router-view>
@@ -94,7 +107,7 @@
                 <div class="input-btn" style="margin-top: 20px">
                     <input type="email" required placeholder="Email Address">
                     <div class="btn">
-                       Send
+                        Send
                     </div>
                 </div>
             </div>
@@ -109,7 +122,8 @@
                 <div class="product-item">
                     <div class="product-item-content">
                         <div class="p-mb-2">
-                            <img :src="'/images/shk_brands/' + slotProps.data.path"  class="product-image"  :alt="slotProps.data.path"/>
+                            <img :src="'/images/shk_brands/' + slotProps.data.path" class="product-image"
+                                 :alt="slotProps.data.path"/>
                         </div>
                     </div>
                 </div>
@@ -198,11 +212,11 @@
                     <h2>Our Properties</h2>
                     <div class="chunk">
                         <p>
-                            <router-link :to="{ name: 'about' }">Greenpark Estate</router-link>
+                            <router-link to="/green-park">Greenpark Estate</router-link>
                             <br>
-                            <router-link :to="{ name: 'about' }">Fadhili Care</router-link>
+                            <router-link to="/fadhili">Fadhili Care</router-link>
                             <br>
-                            <router-link :to="{ name: 'about' }">Pazuri at Vipingo</router-link>
+                            <router-link to="/pazuri-at-vipingo">Pazuri at Vipingo</router-link>
                             <br>
                             <a href="https://leml.co.ke/" target="_blank"
                                rel="noopener noreferrer">Lake Elementaita Mountain Lodge</a>
@@ -240,7 +254,7 @@ import Carousel from 'primevue/carousel';
 export default {
     name: "app",
     components: {
-        OverlayPanel,Carousel
+        OverlayPanel, Carousel
     },
     data() {
         return {
@@ -288,7 +302,7 @@ export default {
     },
     methods: {
         handleScroll() {
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 document.getElementById("navbar").style.background = "white";
                 document.getElementById("navbar").style.top = "0";
                 document.getElementById("navbar").style.boxShadow = "0 0.4px 10px -1px rgba(0, 0, 0, 0.29), 0 1.1px 21.9px -1px rgba(0, 0, 0, -0.039), 0 2.1px 36.6px -1px rgba(0, 0, 0, -0.076), 0 3.4px 55.9px -1px rgba(0, 0, 0, -0.081), 0 5.3px 82.7px -1px rgba(0, 0, 0, -0.074), 0 7.9px 118.8px -1px rgba(0, 0, 0, -0.062), 0 11.7px 158.4px -1px rgba(0, 0, 0, -0.049), 0 17.4px 194.5px -1px rgba(0, 0, 0, -0.035), 0 26.3px 226px -1px rgba(0, 0, 0, -0.022), 0 40px 254px -1px rgba(0, 0, 0, -0.01)";
@@ -322,6 +336,7 @@ export default {
 
     .spinner-icon
         border: none !important
+
 .product-item
     .product-item-content
         border: 1px solid var(--surface-d)
@@ -329,6 +344,7 @@ export default {
         margin: .3rem
         text-align: center
         padding: 0.5rem 0
+
     .product-image
         cursor: pointer
         width: 70%

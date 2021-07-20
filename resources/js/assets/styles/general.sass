@@ -21,7 +21,7 @@
     background: rgba(255, 255, 255, 0.5)
     position: fixed
     width: 100%
-    z-index: 2
+    z-index: 3
     top: 24px
 .second-nav
     display: flex
@@ -321,6 +321,14 @@
                 font-size: 18px
             .logo
                 @include center-hor-ver
+.faqs
+    padding: 100px 0
+    .title
+        margin-bottom: 30px
+.videos
+    padding: 100px 0
+    .title
+        margin-bottom: 30px
 .gallery-section
     padding: 100px 0
 .tab-section
@@ -328,9 +336,46 @@
     @include shadow-shk
     padding: 5px
     border-radius: 5px
+.dropdown-items
+    a
+        text-decoration: none
+        color: $secondary-color
+        padding: 5px
+        border-radius: 5px
+        display: block
+        &:hover
+            background-color: $hover-color
+            color: $primary-color
+.p-accordion .p-accordion-content
+    border: none !important
+    background: $hover-color !important
+    padding: 0 20px !important
+
+.p-accordion .p-accordion-header .p-accordion-header-link
+    //padding: 5px !important
+    margin-left: 0 !important
+    background: $primary-color !important
+    font-weight: 600 !important
+    font-size: 16px
+    color: white !important
+    text-decoration: none !important
+
+
+.p-accordion .p-accordion-header:not(.p-disabled) .p-accordion-header-link:focus
+    box-shadow: none !important
+    outline: none !important
+
+.p-accordion .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon
+    margin-right: 1rem !important
+    float: right !important
+
 @media only screen and (max-width: 576px)
     .gallery-section
         padding: 10px 0
+    .faqs
+        padding: 10px
+        .title
+            margin-bottom: 10px
     .careers-page
         padding: 10px
         .title
