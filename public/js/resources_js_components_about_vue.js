@@ -84,13 +84,9 @@ var _hoisted_6 = {
 var _hoisted_7 = {
   "class": "team-card"
 };
-
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_8 = {
   "class": "pic"
-}, null, -1
-/* HOISTED */
-);
-
+};
 var _hoisted_9 = {
   "class": "desc"
 };
@@ -112,13 +108,9 @@ var _hoisted_12 = {
 var _hoisted_13 = {
   "class": "team-card"
 };
-
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_14 = {
   "class": "pic"
-}, null, -1
-/* HOISTED */
-);
-
+};
 var _hoisted_15 = {
   "class": "desc"
 };
@@ -141,7 +133,12 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     autoplayInterval: 3000
   }, {
     item: _withId(function (slotProps) {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(slotProps.data.name), 1
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+        src: slotProps.data.img,
+        alt: slotProps.data.name
+      }, null, 8
+      /* PROPS */
+      , ["src", "alt"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(slotProps.data.name), 1
       /* TEXT */
       ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h6", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(slotProps.data.position), 1
       /* TEXT */
@@ -164,7 +161,12 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     autoplayInterval: 3000
   }, {
     item: _withId(function (slotProps) {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(slotProps.data.name), 1
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+        src: slotProps.data.img,
+        alt: slotProps.data.name
+      }, null, 8
+      /* PROPS */
+      , ["src", "alt"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(slotProps.data.name), 1
       /* TEXT */
       ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h6", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(slotProps.data.position), 1
       /* TEXT */
@@ -194,27 +196,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var board = [{
-  img: '',
+  img: '/images/users/board/eric.jpeg',
   name: 'Eric Latiff',
   position: 'Non - Executive Director',
   desc: 'Eric Latiff is an accomplished broadcaster and communications specialist with over 20 years of experience working in Kenyan media.'
 }, {
-  img: '',
+  img: '/images/users/board/shiv.jpeg',
   name: 'Shiv Arora',
   position: 'Chief Executive Officer',
   desc: 'Shiv Arora serves as the Chief Executive Officer.'
 }, {
-  img: '',
+  img: '/images/users/board/edwin.jpeg',
   name: 'Edwin H. Dande',
   position: 'Board Member',
   desc: 'Edwin H. Dande serves as a board member.'
 }, {
-  img: '',
+  img: '/images/users/board/ian.jpeg',
   name: 'Ian Henderson',
   position: 'Managing Director',
   desc: 'Ian founded Superior Homes in 2006 after supervising construction sites in various African countries during the past 20 years.'
 }, {
-  img: '',
+  img: '/images/users/board/enid.jpeg',
   name: 'Enid Muriuki',
   position: 'Company Secretary',
   desc: 'Enid is a certified Corporate Secretary and Certified Governance Auditor.'
@@ -235,37 +237,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var team = [{
-  img: '',
+  img: '/images/users/team/wanjiru.jpg',
   name: 'Louisa Wanjiru',
   position: 'Brand and Marketing Coordinator',
   desc: 'Louisa Wanjiru holds a Bachelors Degree in International Business Administration from the United States International University.'
 }, {
-  img: '',
+  img: '/images/users/team/yvonne.jpg',
   name: 'Yvonne Ondego',
   position: 'Project and Site Manager',
   desc: 'Yvonne Ondego holds a Bachelors Degree in Architectural studies from the University of Nairobi. '
 }, {
-  img: '',
+  img: '/images/users/team/shiv.jpg',
   name: 'Shiv Arora',
   position: 'Chief Executive Officer',
   desc: 'Shiv Arora holds a BSc. Hons in Economics from the University of Warwick and serves as the Chief Executive Officer'
 }, {
-  img: '',
+  img: '/images/users/team/kungu.jpg',
   name: 'Daniel Kungu',
   position: 'Finance Manager',
   desc: 'Daniel Kungu joined Superior Homes in 2011. Daniel is a Bachelors of Commerce graduate from Kenyatta University and a CPA Finalist.'
 }, {
-  img: '',
+  img: '/images/users/team/clive.jpg',
   name: 'Clive Ndege',
   position: 'Head of Sales',
   desc: 'Clive Ndege holds a Masters Degree in Finance & Investments from University of Nairobi.   '
 }, {
-  img: '',
+  img: '/images/users/team/silvano.jpg',
   name: 'Silvano Inyangala',
   position: 'In-house Architect',
   desc: 'Silvano Inyangala holds a Bachelor of Arts in Urban and Regional Planning (with IT) from Maseno University. He serves as the In-House Architect.'
 }, {
-  img: '',
+  img: '/images/users/team/rodgers.jpg',
   name: 'Rodgers Opere',
   position: 'Human Resource and Business Administration Manager',
   desc: 'Rodgers Opere holds a degree in Business Information Technology from Multimedia University'

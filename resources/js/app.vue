@@ -87,10 +87,10 @@
     <OverlayPanel ref="media" :style="{width: '300px'}">
         <div class="dropdown-items">
 
-            <router-link :to="{ name: 'about' }">Articles</router-link>
+            <router-link :to="{ name: 'Articles' }">Articles</router-link>
             <router-link :to="{ name: 'videos' }">Videos</router-link>
             <router-link :to="{ name: 'faqs' }">FAQs</router-link>
-            <router-link :to="{ name: 'about' }">News</router-link>
+            <!--            <router-link :to="{ name: 'about' }">News</router-link>-->
         </div>
     </OverlayPanel>
     <div>
@@ -105,11 +105,22 @@
                 <h2>Book a Site Tour</h2>
                 <h4>Site visits available from 8:00 AM - 5:00 PM</h4>
                 <div class="input-btn" style="margin-top: 20px">
-                    <input type="email" required placeholder="Email Address">
-                    <div class="btn">
-                        Send
-                    </div>
+                    <input type="email" v-model="email" required placeholder="Email Address">
+                    <Button
+                        :loading="loadTour"
+                        @click="booktour"
+                        style="
+                          background-color: #F68D2E !important;
+                          border-radius: 0 5px 5px 0 !important;
+                          margin-left: 0 !important;
+                          border: none !important;
+                          box-shadow: none !important;
+                            height: 37px !important;"
+                        label="Send"
+                    />
                 </div>
+                <small v-if="emailValids !== ''" class="p-error"
+                >{{ emailValids }}.</small>
             </div>
         </div>
     </div>
@@ -178,11 +189,22 @@
                         Be the first one to hear about our updates
                     </div>
                     <div class="input-btn" style="width: 350px; margin-top: 20px">
-                        <input type="email" required placeholder="Email Address">
-                        <div class="btn">
-                            Subscribe
-                        </div>
+                        <input type="email" v-model="sub_email" required placeholder="Email Address">
+                        <Button
+                            :loading="loadSub"
+                            @click="subscribe"
+                            style="
+                          background-color: #F68D2E !important;
+                          border-radius: 0 5px 5px 0 !important;
+                          margin-left: 0 !important;
+                          border: none !important;
+                          box-shadow: none !important; min-width: 100px !important;
+                            height: 37px !important;"
+                            label="Subscribe"
+                        />
                     </div>
+                    <small v-if="emailValid !== ''" class="p-error"
+                    >{{ emailValid }}.</small>
                 </div>
             </div>
             <div>
@@ -230,13 +252,13 @@
                     <h2>Quick Links</h2>
                     <div class="chunk">
                         <p>
-                            <router-link :to="{ name: 'about' }">FAQ's</router-link>
+                            <router-link :to="{ name: 'faqs' }">FAQ's</router-link>
                             <br>
-                            <router-link :to="{ name: 'about' }">Blogs</router-link>
+                            <router-link :to="{ name: 'Articles' }">Blogs</router-link>
                             <br>
-                            <router-link :to="{ name: 'about' }">Testimonials</router-link>
+                            <router-link :to="{ name: 'videos' }">Testimonials</router-link>
                             <br>
-                            <router-link :to="{ name: 'about' }">Contact Us</router-link>
+                            <router-link :to="{ name: 'contact' }">Contact Us</router-link>
                         </p>
                     </div>
                 </div>
@@ -250,11 +272,38 @@
 <script>
 import OverlayPanel from 'primevue/overlaypanel';
 import Carousel from 'primevue/carousel';
+import Button from "primevue/button";
+import {createToast} from "mosha-vue-toastify";
 
 export default {
     name: "app",
     components: {
-        OverlayPanel, Carousel
+        OverlayPanel, Carousel, Button
+    },
+    setup() {
+        const successToast = (message) => {
+            createToast(message, {
+                hideProgressBar: "true",
+                showIcon: "true",
+                position: "top-right",
+                type: "success",
+                transition: "zoom",
+                timeout: 1500,
+                toastBackgroundColor: "#6cb2eb",
+            });
+        };
+        const errorToast = (message) => {
+            createToast(message, {
+                hideProgressBar: "true",
+                showIcon: "true",
+                position: "top-right",
+                type: "success",
+                transition: "zoom",
+                timeout: 1500,
+                toastBackgroundColor: "#E46464",
+            });
+        };
+        return {successToast, errorToast};
     },
     data() {
         return {
@@ -289,7 +338,16 @@ export default {
                     numVisible: 1,
                     numScroll: 1
                 }
-            ]
+            ],
+            emailSend: false,
+            property: 'General  Estate',
+            email: '',
+            sub_email: '',
+            emailValid: '',
+            emailValids: '',
+            loadSub: false,
+            loadTour: false,
+            the_property: '',
         };
     },
     computed: {
@@ -299,8 +357,79 @@ export default {
     },
     created() {
         window.addEventListener('scroll', this.handleScroll);
+        let route = this.$route.name;
+        if (route === 'Green Park') {
+            this.property = 'Green Park Estate'
+        }
+        if (route === 'Fadhili') {
+            this.property = 'Fadhili Care'
+        }
+        if (route === 'Pazuri at Vipingo') {
+            this.property = 'Pazuri at Vipingo'
+        }
     },
     methods: {
+        validForm(data) {
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data)) {
+                this.emailValids = "Email is invalid";
+            }
+            if (data === "") {
+                this.emailValids = "Email Adrress is required";
+            }
+        },
+        validFormSub(data) {
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data)) {
+                this.emailValid = "Email is invalid";
+            }
+            if (data === "") {
+                this.emailValid = "Email Adrress is required";
+            }
+        },
+        booktour() {
+            this.emailValids = '';
+            this.validForm(this.email)
+            if (this.emailValids === '') {
+                this.loadTour = true
+                axios.post('/api/book_tour', {
+                    email: this.email,
+                    property: this.property
+                })
+                    .then(res => {
+                        if (res.data.success) {
+                            this.loadTour = false
+                            this.successToast("Booked successfully")
+                            this.email = ''
+                        } else {
+                            this.errorToast("An error occurred. Try again!");
+                        }
+                    }).catch(err => {
+                    this.errorToast("An error occurred. Try again!");
+                    this.loadTour = false
+                })
+            }
+        },
+        subscribe() {
+            this.emailValid = '';
+            this.validFormSub(this.sub_email)
+            if (this.emailValid === '') {
+                this.loadSub = true
+                axios.post('/api/subscribe', {
+                    email: this.sub_email
+                })
+                    .then(res => {
+                        if (res.data.success) {
+                            this.loadSub = false
+                            this.successToast("Sucribed successfully")
+                            this.sub_email = ''
+                        } else {
+                            this.errorToast("An error occurred. Try again!");
+                        }
+                    }).catch(err => {
+                    this.loadSub = false
+                    this.errorToast("An error occurred. Try again!");
+                })
+            }
+        },
         handleScroll() {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 document.getElementById("navbar").style.background = "white";
@@ -323,6 +452,9 @@ export default {
 }
 </script>
 <style lang="sass">
+a
+    text-decoration: none !important
+
 #app
     font-family: 'Montserrat', sans-serif
     -webkit-font-smoothing: antialiased

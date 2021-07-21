@@ -41,31 +41,50 @@
                         <div class="p-grid properties-cont">
                             <div class="p-col-12 p-2 p-md-6 p-lg-6">
                                 <div>
-                                    <input type="text" required placeholder="First Name">
+                                    <input type="text" v-model="firstname" required placeholder="First Name">
                                 </div>
+                                <small v-if="firstnameValid !== ''" class="p-error"
+                                >{{ firstnameValid }}.</small>
                             </div>
                             <div class="p-col-12 p-2 p-md-6 p-lg-6">
                                 <div>
-                                    <input type="text" required placeholder="Last Name">
+                                    <input type="text" v-model="lastname" required placeholder="Last Name">
                                 </div>
+                                <small v-if="lastnameValid !== ''" class="p-error"
+                                >{{ lastnameValid }}.</small>
                             </div>
                             <div class="p-col-12 p-2 p-md-6 p-lg-6">
                                 <div>
-                                    <input type="text" required placeholder="Email Address">
+                                    <input type="email" v-model="form.email" required placeholder="Email Address">
                                 </div>
+                                <small v-if="emailValid !== ''" class="p-error"
+                                >{{ emailValid }}.</small>
                             </div>
                             <div class="p-col-12 p-2 p-md-6 p-lg-6">
                                 <div>
-                                    <input type="text" required placeholder="Phone number">
+                                    <input type="number" v-model="form.phone" required placeholder="Phone number">
                                 </div>
+                                <small v-if="phoneValid !== ''" class="p-error"
+                                >{{ phoneValid }}.</small>
                             </div>
                         </div>
                         <div>
-                            <textarea name="message" id="" cols="100"></textarea>
+                            <textarea name="message" v-model="form.message" rows="8" cols="100"></textarea>
+                            <small v-if="messageValid !== ''" class="p-error"
+                            >{{ messageValid }}.</small>
                         </div>
-                        <button style="margin-top: 20px" class="shk-btns">
-                            Send Message
-                        </button>
+
+                        <Button
+                            :loading="emailSend"
+                         @click="sendEmail()"
+                         style="margin-top: 20px;
+                          background-color: #F68D2E !important;
+                          border-radius: 20px!important;
+                          border: none !important;
+                          box-shadow: none !important;
+                           height: 40px !important;"
+                         label="Send Message"
+                        />
                     </div>
                 </div>
             </div>
@@ -75,17 +94,90 @@
 </template>
 
 <script>
+import {mapGetters} from "vuex";
+import Button from "primevue/button";
 export default {
     name: "contact",
+    components: {
+        Button
+    },
     data() {
         return {
             logo: '/images/logos/logo_1.png',
+            form: {
+                phone: '',
+                message: '',
+                email: '',
+            },
+            firstname: '',
+            lastname: '',
+            firstnameValid: "",
+            lastnameValid: "",
+            emailValid: "",
+            phoneValid: "",
+            messageValid: "",
         };
+    },
+    computed: {
+        ...mapGetters([
+            'emailSend'
+        ])
     },
     mounted() {
         this.initMap()
     },
     methods: {
+        canSendRequest() {
+            return (
+                this.firstnameValid === "" &&
+                this.lastnameValid === "" &&
+                this.emailValid === "" &&
+                this.phoneValid === "" &&
+                this.messageValid === ""
+            );
+        },
+        clearFormErrors() {
+            this.firstnameValid = "";
+            this.lastnameValid = "";
+            this.emailValid = "";
+            this.phoneValid = "";
+            this.messageValid = "";
+        },
+        validateForm(data) {
+            this.clearFormErrors();
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+                this.emailValid = "Email is invalid";
+            }
+            if (this.firstname === "") {
+                this.firstnameValid = "First Name is required";
+            }
+            if (this.lastname === "") {
+                this.lastnameValid = "Last Name is required";
+            }
+            if (data.phone === "") {
+                this.phoneValid = "Phone is required";
+            }
+            if (data.phone.length > 12) {
+                this.phoneValid = "Phone number cannot be more than 12 digits";
+            }
+            if (/\D/.test(data.phone)) {
+                this.phoneValid = "Phone number should contain only digits";
+            }
+            if (data.message === "") {
+                this.messageValid = "Message is required";
+            }
+            if (data.email === "") {
+                this.emailValid = "Email is required";
+            }
+        },
+        sendEmail() {
+            this.validateForm(this.form);
+            this.form.page = 'Contact Us'
+            this.form.name = this.firstname + '  ' + this.lastname;
+            if (this.canSendRequest()) {
+                this.$store.dispatch('sendEmail', this.form)
+            }
+        },
         initMap() {
             const uluru = {lat: -1.462344, lng: 37.012593};
             const map = new google.maps.Map(document.getElementById("map"), {
@@ -97,7 +189,7 @@ export default {
                 map: map,
             });
 
-        }
+        },
     }
 }
 </script>
@@ -107,6 +199,7 @@ export default {
     height: 400px;
     width: 100%;
 }
+
 .parallax-home {
     background-image: url('/images/shk_general/Greenpark_SHK_Drone_3.jpg');
     height: 70vh;

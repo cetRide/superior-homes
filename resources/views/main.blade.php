@@ -103,6 +103,7 @@
 </div>
 <script src="{{ mix('js/app.js') }}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2yy50Uw-pS7o17DrS7J3txklCtOiL9AI&amp;sensor=false"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 
 </html>

@@ -124,15 +124,10 @@
         padding: 10px
         &:focus
             border: 1px solid black
-    .btn
-        border-radius: 0 5px 5px 0
-        background-color: $primary-color
-        @include center-hor-ver
-        height: 37px
-        border: none
-        outline: none
-        color: white
-        font-size: 14px
+    //.btn
+    //    display: flex
+    //    align-items: center
+    //    margin-right: 0
 
 .instagram-logo
     path
@@ -218,6 +213,21 @@
     .image-wrap
         height: 320px
         position: relative
+        .item-desc
+            position: absolute
+            top: 240px
+            .title
+                background-color: white !important
+                z-index: 2
+                padding: 0 10px
+                border-radius: 6px
+                @include center-hor-ver
+                margin: 10px
+            .name
+                &:hover
+                    background-color: $primary-color !important
+                    color: white
+
         img
             opacity: 1
             display: block

@@ -26,3 +26,6 @@ Route::get('videos', [VideosController::class, 'getAllVideos']);
 Route::get('faqs', [FaqsController::class, 'getAllFaqs']);
 Route::get('gr_intro', [GreenParkIntroController::class, 'getGrIntro']);
 Route::get('gr_prop', [GreenParkPropController::class, 'getGrProp']);
+Route::post('mail', [\App\Http\Controllers\SendEmailsController::class, 'sendEmail']);
+Route::post('subscribe', [\App\Http\Controllers\SendEmailsController::class, 'subScribeToMailingList']);
+Route::post('book_tour', [\App\Http\Controllers\SendEmailsController::class, 'bookTour']);

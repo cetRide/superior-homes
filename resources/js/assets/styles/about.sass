@@ -38,6 +38,15 @@
             position: absolute
             top: 0
             z-index: 2
+            img
+                opacity: 1
+                display: block
+                width: 100%
+                height: 100%
+                object-fit: cover
+                transition: .5s ease
+                backface-visibility: hidden
+                border-radius: 50%
 
         .desc
             position: absolute
@@ -51,11 +60,15 @@
             height: 300px
             text-align: center
 
+
             .title
                 font-weight: 600
                 font-size: 20px
                 &:hover
                     color: $primary-color
+.twitter-frame
+    overflow-y: auto
+    height: 400px
 .p-carousel .p-carousel-indicators .p-carousel-indicator .p-highlight button
     background-color: $primary-color !important
 @media only screen and (max-width: 576px)

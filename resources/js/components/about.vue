@@ -45,7 +45,7 @@
                             <div class="team-wrap">
                                 <div class="team-card">
                                     <div class="pic">
-
+                                        <img :src="slotProps.data.img" :alt="slotProps.data.name">
                                     </div>
                                     <div class="desc">
                                         <p class="title">{{ slotProps.data.name }}</p>
@@ -75,7 +75,7 @@
                             <div class="team-wrap">
                                 <div class="team-card">
                                     <div class="pic">
-
+                                        <img :src="slotProps.data.img" :alt="slotProps.data.name">
                                     </div>
                                     <div class="desc">
                                         <p class="title">{{ slotProps.data.name }}</p>

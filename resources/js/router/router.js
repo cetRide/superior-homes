@@ -184,6 +184,24 @@ const routes = [
             ],
         },
     },
+    {
+        path: "/articles",
+        name: "Articles",
+        component: () => import("../components/media/articles"),
+        meta: {
+            title: "Superior Homes Kenya | Pazuri at Vipingo",
+            metaTags: [
+                {
+                    name: "description",
+                    content: "The Articles page of superior homes website.",
+                },
+                {
+                    property: "og:description",
+                    content: "The Articles page of superior homes website.",
+                },
+            ],
+        },
+    },
 ];
 
 const router = createRouter({

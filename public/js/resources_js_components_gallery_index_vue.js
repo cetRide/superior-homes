@@ -69,6 +69,14 @@ __webpack_require__.r(__webpack_exports__);
         this.path = '/images/shk_properties/fadhili/';
       }
 
+      if (type === 'leml') {
+        this.path = '/images/shk_properties/leml/';
+      }
+
+      if (type === 'sundowner') {
+        this.path = '/images/shk_properties/sundowner/';
+      }
+
       this.activeIndex = index;
       this.displayCustom = true;
     }
@@ -138,6 +146,14 @@ var _hoisted_8 = {
   key: 0,
   "class": "p-grid"
 };
+var _hoisted_9 = {
+  key: 0,
+  "class": "p-grid"
+};
+var _hoisted_10 = {
+  key: 0,
+  "class": "p-grid"
+};
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)();
 
@@ -153,7 +169,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
   }, {
     "default": _withId(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TabPanel, {
-        header: "GreenPark"
+        header: "GreenPark Estate"
       }, {
         "default": _withId(function () {
           return [$data.images ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_6, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.images, function (image, index) {
@@ -180,7 +196,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
         /* STABLE */
 
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TabPanel, {
-        header: "Fadhili"
+        header: "Fadhili Care"
       }, {
         "default": _withId(function () {
           return [$data.images ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_7, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.images, function (image, index) {
@@ -207,7 +223,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
         /* STABLE */
 
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TabPanel, {
-        header: "Pazuri"
+        header: "Pazuri At Vipingo"
       }, {
         "default": _withId(function () {
           return [$data.images ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_8, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.images, function (image, index) {
@@ -222,6 +238,60 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
               },
               onClick: function onClick($event) {
                 return $options.imageClick(index, 'pazuri');
+              }
+            }, null, 8
+            /* PROPS */
+            , ["src", "onClick"])]);
+          }), 128
+          /* KEYED_FRAGMENT */
+          ))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
+        }),
+        _: 1
+        /* STABLE */
+
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TabPanel, {
+        header: "Greenpark Sundowner"
+      }, {
+        "default": _withId(function () {
+          return [$data.images ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_9, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.images, function (image, index) {
+            return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
+              "class": "p-col-12 p-md-6 p-lg-4 image-cont",
+              key: index
+            }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+              src: '/images/shk_properties/sundowner/' + image.src,
+              alt: "Greenpark Sundowner",
+              style: {
+                "cursor": "pointer"
+              },
+              onClick: function onClick($event) {
+                return $options.imageClick(index, 'sundowner');
+              }
+            }, null, 8
+            /* PROPS */
+            , ["src", "onClick"])]);
+          }), 128
+          /* KEYED_FRAGMENT */
+          ))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
+        }),
+        _: 1
+        /* STABLE */
+
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TabPanel, {
+        header: "Lake Elementaita Mountain Lodge"
+      }, {
+        "default": _withId(function () {
+          return [$data.images ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_10, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.images, function (image, index) {
+            return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
+              "class": "p-col-12 p-md-6 p-lg-4 image-cont",
+              key: index
+            }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+              src: '/images/shk_properties/leml/' + image.src,
+              alt: "Lake Elementaita Mountain Lodge",
+              style: {
+                "cursor": "pointer"
+              },
+              onClick: function onClick($event) {
+                return $options.imageClick(index, 'leml');
               }
             }, null, 8
             /* PROPS */

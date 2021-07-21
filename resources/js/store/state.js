@@ -1,6 +1,8 @@
 let state = {
     videos: [],
-    faqs:[]
+    faqs:[],
+    emailSend: false,
+    toast: false
 }
 
 export default state
