@@ -22,16 +22,12 @@
     }
 </style>
 <body>
-<div class="upper-bar">
-    <img src="{{ asset('images/logos/logo.png') }}" height="40px" class="logo" alt="My logo">
-</div>
 <div class="container">
     <p>Greetings,</p>
     <p>This is an inquiry message from a site visitor on {{ $details['page'] }} page.</p><br>
     <h4>{{ $details['name'] }}</h4>
     <p><strong>Email:</strong> {{ $details['email'] }}</p>
     <p><strong>Phone Number:</strong> {{ $details['phone'] }}</p>
-    <p><strong>Email:</strong> {{ $details['email'] }}</p><br>
     <p>{{ $details['message'] }}</p><br>
     <p>Thank you</p>
 </div>

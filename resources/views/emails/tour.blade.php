@@ -22,11 +22,7 @@
     }
 </style>
 <body>
-<div class="upper-bar">
-    <img src="{{ asset('images/logos/logo.png') }}" height="40px" class="logo" alt="My logo">
-</div>
 <div class="container">
-    <p>Greetings,</p>
    <p>{{ $details['msg'] }}</p>
     <p>Thank you</p>
 </div>

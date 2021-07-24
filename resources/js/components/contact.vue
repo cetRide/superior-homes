@@ -10,9 +10,9 @@
         <div class="">
             <div class="cont-one container">
                 <div class="details">
-                    <h3>CONTACT DETAILS</h3>
+                    <h3 style="margin-top: 20px">CONTACT DETAILS</h3>
                     <div class="chunk">
-                        <p>Greenpark Estate, Athiriver <br>
+                        <p>Greenpark Estate, Athi River <br>
                             P.O Box 12345-00100, Nairobi, Kenya</p>
                     </div>
                     <div class="chunk">
@@ -76,14 +76,14 @@
 
                         <Button
                             :loading="emailSend"
-                         @click="sendEmail()"
-                         style="margin-top: 20px;
+                            @click="sendEmail()"
+                            style="margin-top: 20px;
                           background-color: #F68D2E !important;
                           border-radius: 20px!important;
                           border: none !important;
                           box-shadow: none !important;
                            height: 40px !important;"
-                         label="Send Message"
+                            label="Send Message"
                         />
                     </div>
                 </div>
@@ -96,10 +96,37 @@
 <script>
 import {mapGetters} from "vuex";
 import Button from "primevue/button";
+import {createToast} from "mosha-vue-toastify";
+
 export default {
     name: "contact",
     components: {
         Button
+    },
+    setup() {
+        const successToast = (message) => {
+            createToast(message, {
+                hideProgressBar: "true",
+                showIcon: "true",
+                position: "top-right",
+                type: "success",
+                transition: "zoom",
+                timeout: 1500,
+                toastBackgroundColor: "#6cb2eb",
+            });
+        };
+        const errorToast = (message) => {
+            createToast(message, {
+                hideProgressBar: "true",
+                showIcon: "true",
+                position: "top-right",
+                type: "success",
+                transition: "zoom",
+                timeout: 1500,
+                toastBackgroundColor: "#E46464",
+            });
+        };
+        return {successToast, errorToast};
     },
     data() {
         return {
@@ -120,8 +147,21 @@ export default {
     },
     computed: {
         ...mapGetters([
-            'emailSend'
+            'emailSend',
+            'toast', 'toast_err'
         ])
+    },
+    watch: {
+        toast_err: function () {
+            if (this.toast_err) {
+                this.errorToast("An error occurred. Try again!");
+                this.$store.commit('TOAST_ERR', false)
+            }
+        },
+        toast: function () {
+            this.successToast("Inquiry send successfully.")
+            this.$store.commit('TOAST', false)
+        }
     },
     mounted() {
         this.initMap()
@@ -177,6 +217,7 @@ export default {
             if (this.canSendRequest()) {
                 this.$store.dispatch('sendEmail', this.form)
             }
+
         },
         initMap() {
             const uluru = {lat: -1.462344, lng: 37.012593};

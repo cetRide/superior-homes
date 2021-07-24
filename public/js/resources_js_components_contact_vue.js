@@ -11,8 +11,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
 /* harmony import */ var primevue_button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! primevue/button */ "./node_modules/primevue/button/button.esm.js");
+/* harmony import */ var mosha_vue_toastify__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mosha-vue-toastify */ "./node_modules/mosha-vue-toastify/dist/mosha-vue-toastify.es.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -21,10 +22,41 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "contact",
   components: {
     Button: primevue_button__WEBPACK_IMPORTED_MODULE_0__.default
+  },
+  setup: function setup() {
+    var successToast = function successToast(message) {
+      (0,mosha_vue_toastify__WEBPACK_IMPORTED_MODULE_1__.createToast)(message, {
+        hideProgressBar: "true",
+        showIcon: "true",
+        position: "top-right",
+        type: "success",
+        transition: "zoom",
+        timeout: 1500,
+        toastBackgroundColor: "#6cb2eb"
+      });
+    };
+
+    var errorToast = function errorToast(message) {
+      (0,mosha_vue_toastify__WEBPACK_IMPORTED_MODULE_1__.createToast)(message, {
+        hideProgressBar: "true",
+        showIcon: "true",
+        position: "top-right",
+        type: "success",
+        transition: "zoom",
+        timeout: 1500,
+        toastBackgroundColor: "#E46464"
+      });
+    };
+
+    return {
+      successToast: successToast,
+      errorToast: errorToast
+    };
   },
   data: function data() {
     return {
@@ -43,7 +75,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       messageValid: ""
     };
   },
-  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)(['emailSend'])),
+  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_2__.mapGetters)(['emailSend', 'toast', 'toast_err'])),
+  watch: {
+    toast_err: function toast_err() {
+      if (this.toast_err) {
+        this.errorToast("An error occurred. Try again!");
+        this.$store.commit('TOAST_ERR', false);
+      }
+    },
+    toast: function toast() {
+      this.successToast("Inquiry send successfully.");
+      this.$store.commit('TOAST', false);
+    }
+  },
   mounted: function mounted() {
     this.initMap();
   },
@@ -156,7 +200,7 @@ var _hoisted_3 = {
   "class": "cont-one container"
 };
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"details\" data-v-768395a5><h3 data-v-768395a5>CONTACT DETAILS</h3><div class=\"chunk\" data-v-768395a5><p data-v-768395a5>Greenpark Estate, Athiriver <br data-v-768395a5> P.O Box 12345-00100, Nairobi, Kenya</p></div><div class=\"chunk\" data-v-768395a5><p data-v-768395a5><span class=\"title\" data-v-768395a5>Sales</span><br data-v-768395a5><a href=\"mailto:sales@superiorhomes.co.ke\" data-v-768395a5>Email: sales@superiorhomes.co.ke</a><br data-v-768395a5><a href=\"tel: +254 713 888 333\" data-v-768395a5>Mobile: +254 713 888 333</a><br data-v-768395a5><a href=\"tel: +254 713 888 333\" data-v-768395a5>Whatsapp: +254 713 888 333</a><br data-v-768395a5></p></div><div class=\"chunk\" data-v-768395a5><p data-v-768395a5><span class=\"title\" data-v-768395a5>General Inquiries</span><br data-v-768395a5><a href=\"mailto:info@superiorhomes.co.ke\" data-v-768395a5>Email: info@superiorhomes.co.ke</a><br data-v-768395a5><a href=\"tel: +254 724 253 258\" data-v-768395a5>Mobile: +254 724 253 258</a><br data-v-768395a5><a href=\"tel: +254 724 253 258\" data-v-768395a5>Whatsapp: +254 724 253 258</a><br data-v-768395a5></p></div></div>", 1);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"details\" data-v-768395a5><h3 style=\"margin-top:20px;\" data-v-768395a5>CONTACT DETAILS</h3><div class=\"chunk\" data-v-768395a5><p data-v-768395a5>Greenpark Estate, Athi River <br data-v-768395a5> P.O Box 12345-00100, Nairobi, Kenya</p></div><div class=\"chunk\" data-v-768395a5><p data-v-768395a5><span class=\"title\" data-v-768395a5>Sales</span><br data-v-768395a5><a href=\"mailto:sales@superiorhomes.co.ke\" data-v-768395a5>Email: sales@superiorhomes.co.ke</a><br data-v-768395a5><a href=\"tel: +254 713 888 333\" data-v-768395a5>Mobile: +254 713 888 333</a><br data-v-768395a5><a href=\"tel: +254 713 888 333\" data-v-768395a5>Whatsapp: +254 713 888 333</a><br data-v-768395a5></p></div><div class=\"chunk\" data-v-768395a5><p data-v-768395a5><span class=\"title\" data-v-768395a5>General Inquiries</span><br data-v-768395a5><a href=\"mailto:info@superiorhomes.co.ke\" data-v-768395a5>Email: info@superiorhomes.co.ke</a><br data-v-768395a5><a href=\"tel: +254 724 253 258\" data-v-768395a5>Mobile: +254 724 253 258</a><br data-v-768395a5><a href=\"tel: +254 724 253 258\" data-v-768395a5>Whatsapp: +254 724 253 258</a><br data-v-768395a5></p></div></div>", 1);
 
 var _hoisted_5 = {
   "class": "cont-form-wrapper"

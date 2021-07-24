@@ -6,7 +6,7 @@
             <div class="about-page">
                 <div class="mission">
                     <div class="p-grid">
-                        <div class="p-col-12 p-md-6 p-lg-6">
+                        <div class="p-col-12 p-md-6 p-lg-6" style="text-align: justify">
                             <h3>Our Mission</h3>
                             <p>To Innovate, Improve & Inspire</p>
                             <p>

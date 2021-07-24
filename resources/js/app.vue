@@ -43,11 +43,26 @@
                     >About
                     </router-link>
                 </div>
-                <div class="item" @click="toggleProperties">
+                <div class="item">
                     <span> Properties <span style="font-size: 8px">&#9660;</span></span>
+                    <div class="dropdown-content" style="width: 300px">
+                        <p><router-link to="/greenpark-estate">Greenpark Estate</router-link></p>
+                        <p><router-link to="/fadhili">Fadhili Care</router-link></p>
+                        <p><router-link to="/pazuri-at-vipingo">Pazuri at Vipingo</router-link></p>
+                        <p><a href="https://leml.co.ke/" target="_blank"
+                           rel="noopener noreferrer">Lake Elementaita Mountain Lodge</a></p>
+                        <p><a href="https://greenparksundowner.co.ke/" target="_blank"
+                           rel="noopener noreferrer">Greenpark Sundowner</a></p>
+                    </div>
                 </div>
-                <div class="item" @click="toggleMedia">
+                <div class="item">
                     <span>Media <span style="font-size: 8px">&#9660;</span></span>
+                    <div class="dropdown-content" style="width: 160px">
+                        <p><router-link :to="{ name: 'Articles' }">Articles</router-link></p>
+                        <p><router-link :to="{ name: 'videos' }">Videos</router-link></p>
+                        <p><router-link :to="{ name: 'faqs' }">FAQs</router-link></p>
+                        <!--            <p><router-link :to="{ name: 'about' }">News</router-link></p>-->
+                    </div>
                 </div>
                 <div class="item">
                     <router-link :to="{ name: 'gallery' }"
@@ -64,35 +79,12 @@
                     > Contact
                     </router-link>
                 </div>
-                <div class="toggle-text">
+                <div class="toggle-text" @click="visible = true" >
                     <i class="pi pi-bars"></i>
                 </div>
             </div>
         </div>
     </div>
-    <!--    properties-->
-    <OverlayPanel ref="properties" :style="{width: '300px'}">
-        <div class="dropdown-items">
-
-            <router-link to="/green-park">Greenpark Estate</router-link>
-            <router-link to="/fadhili">Fadhili Care</router-link>
-            <router-link to="/pazuri-at-vipingo">Pazuri at Vipingo</router-link>
-            <a href="https://leml.co.ke/" target="_blank"
-               rel="noopener noreferrer">Lake Elementaita Mountain Lodge</a>
-            <a href="https://greenparksundowner.co.ke/" target="_blank"
-               rel="noopener noreferrer">Greenpark Sundowner</a>
-        </div>
-    </OverlayPanel>
-    <!--media-->
-    <OverlayPanel ref="media" :style="{width: '300px'}">
-        <div class="dropdown-items">
-
-            <router-link :to="{ name: 'Articles' }">Articles</router-link>
-            <router-link :to="{ name: 'videos' }">Videos</router-link>
-            <router-link :to="{ name: 'faqs' }">FAQs</router-link>
-            <!--            <router-link :to="{ name: 'about' }">News</router-link>-->
-        </div>
-    </OverlayPanel>
     <div>
         <router-view></router-view>
     </div>
@@ -214,7 +206,7 @@
                 <div>
                     <h2>Contact Us</h2>
                     <div class="chunk">
-                        <p>Greenpark Estate, Athiriver <br>
+                        <p>Greenpark Estate, Athi River <br>
                             P.O Box 12345-00100, Nairobi, Kenya</p>
                     </div>
                     <div class="chunk">
@@ -234,7 +226,7 @@
                     <h2>Our Properties</h2>
                     <div class="chunk">
                         <p>
-                            <router-link to="/green-park">Greenpark Estate</router-link>
+                            <router-link to="/greenpark-estate">Greenpark Estate</router-link>
                             <br>
                             <router-link to="/fadhili">Fadhili Care</router-link>
                             <br>
@@ -267,6 +259,64 @@
                 Copyright &#169; {{ year }} Superior Homes Kenya Plc.
             </div>
         </div>
+        <Sidebar v-model:visible="visible" position="full">
+           <div class="mobile-nav-side">
+               <div class="item">
+                   <router-link :to="{ name: 'home' }"
+                   >Home
+                   </router-link>
+               </div>
+               <div class="item">
+                   <router-link :to="{ name: 'about' }"
+                   >About
+                   </router-link>
+               </div>
+               <div class="item">
+                   <div class="drop-down">
+                      <div>
+                          <div class="title">Properties <span style="font-size: 8px">&#9660;</span></div>
+                          <div class="dropdown-content">
+                              <p><router-link to="/greenpark-estate">Greenpark Estate</router-link></p>
+                              <p><router-link to="/fadhili">Fadhili Care</router-link></p>
+                              <p><router-link to="/pazuri-at-vipingo">Pazuri at Vipingo</router-link></p>
+                              <p><a href="https://leml.co.ke/" target="_blank"
+                                    rel="noopener noreferrer">Lake Elementaita Mountain Lodge</a></p>
+                              <p><a href="https://greenparksundowner.co.ke/" target="_blank"
+                                    rel="noopener noreferrer">Greenpark Sundowner</a></p>
+                          </div>
+                      </div>
+                   </div>
+               </div>
+               <div class="item">
+                   <div class="drop-down">
+                  <div>
+                      <div class="title">Media <span style="font-size: 8px">&#9660;</span></div>
+                      <div class="dropdown-content">
+                          <p><router-link :to="{ name: 'Articles' }">Articles</router-link></p>
+                          <p><router-link :to="{ name: 'videos' }">Videos</router-link></p>
+                          <p><router-link :to="{ name: 'faqs' }">FAQs</router-link></p>
+                          <!--            <p><router-link :to="{ name: 'about' }">News</router-link></p>-->
+                      </div>
+                  </div>
+                   </div>
+               </div>
+               <div class="item">
+                   <router-link :to="{ name: 'gallery' }"
+                   > Gallery
+                   </router-link>
+               </div>
+               <div class="item">
+                   <router-link :to="{ name: 'careers' }"
+                   > Careers
+                   </router-link>
+               </div>
+               <div class="item">
+                   <router-link :to="{ name: 'contact' }"
+                   > Contact
+                   </router-link>
+               </div>
+           </div>
+        </Sidebar>
     </div>
 </template>
 <script>
@@ -274,11 +324,12 @@ import OverlayPanel from 'primevue/overlaypanel';
 import Carousel from 'primevue/carousel';
 import Button from "primevue/button";
 import {createToast} from "mosha-vue-toastify";
+import Sidebar from 'primevue/sidebar';
 
 export default {
     name: "app",
     components: {
-        OverlayPanel, Carousel, Button
+        OverlayPanel, Carousel, Button,Sidebar
     },
     setup() {
         const successToast = (message) => {
@@ -310,6 +361,7 @@ export default {
             image_src: '/images/logos/logo.png',
             footer_banner: '/images/shk_general/Greenpark_SHK_Drone_3.jpg',
             year: new Date().getFullYear(),
+            visible: false,
             brands: [
                 {path: 'fdh.jpg'},
                 {path: 'GREENPARK.jpg'},
@@ -353,6 +405,11 @@ export default {
     computed: {
         theRoute() {
             return this.$route.name;
+        }
+    },
+    watch: {
+        '$route' () {
+           this.visible = false
         }
     },
     created() {
@@ -456,10 +513,10 @@ a
     text-decoration: none !important
 
 #app
-    font-family: 'Montserrat', sans-serif
+    font-family: 'Nunito Sans', Arial, sans-serif
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
-    color: #2c3e50
+    color: #000000
 
 #nprogress
     .bar
@@ -471,7 +528,6 @@ a
 
 .product-item
     .product-item-content
-        border: 1px solid var(--surface-d)
         border-radius: 3px
         margin: .3rem
         text-align: center
@@ -479,7 +535,7 @@ a
 
     .product-image
         cursor: pointer
-        width: 70%
+        width: 75%
         height: 150px
         object-fit: contain
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)

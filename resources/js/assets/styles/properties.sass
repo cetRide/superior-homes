@@ -2,15 +2,22 @@
 @import "variables"
 .prop-landing-details
     padding-top: 100px
-    span
-        margin-bottom: 40px
-        font-size: 24px
-        font-weight: bold
-        margin-top: 20px
-    p
+    .prop-title
         font-size: 60px
         font-weight: 600
         padding: 0 !important
+        color: black !important
+        display: flex
+        justify-content: left
+        align-items: center
+    .prop-sub
+        margin-bottom: 40px
+        font-size: 24px
+        font-weight: bold
+        display: flex
+        justify-content: left
+        align-items: center
+
 .prop-btn
     height: 35px
     padding: 0 10px
@@ -23,6 +30,7 @@
 .prop-top
     padding-top: 50px
     .prop-desc
+        text-align: justify
         h4
             font-weight: 600
             font-size: 30px
@@ -43,8 +51,8 @@
             font-size: 20px
 
     .desc
-        min-height: 170px
-        margin-bottom: 10px
+        margin-bottom: 9px
+        text-align: justify
     .image-wrap
         position: relative
         height: 320px
@@ -57,7 +65,22 @@
             transition: .5s ease
             backface-visibility: hidden
             border-radius: 10px
-        &:hover img
+        .content-overlay
+            background: rgba(0,0,0,0.5)
+            height: 100%
+            position: absolute
+            width: 100%
+            left: 0
+            top: 0
+            bottom: 0
+            right: 0
+            opacity: 0
+            -webkit-transition: all 0.4s ease-in-out 0s
+            -moz-transition: all 0.4s ease-in-out 0s
+            transition: all 0.4s ease-in-out 0s
+            cursor: pointer
+            border-radius: 10px
+        &:hover .content-overlay
             opacity: 0.3
     .btn-sec
         padding: 10px
@@ -73,3 +96,75 @@
                 width: 25px
             font-weight: 600
             font-size: 17px
+.banner
+    height: 300px
+    img
+        opacity: 1
+        display: block
+        width: 100%
+        height: 100%
+        object-fit: cover
+        transition: .5s ease
+        backface-visibility: hidden
+        border-radius: 10px
+        &:hover img
+            opacity: 0.3
+    p
+        margin-top: 10px
+
+.article-list
+    max-height: 809px
+    overflow-y: auto
+    padding: 10px
+.article-window
+    cursor: pointer
+    margin-bottom: 15px
+    border-radius: 8px
+    .article-image-wrap
+        position: relative
+        height: 250px
+        img
+            opacity: 1
+            display: block
+            width: 100%
+            height: 100%
+            object-fit: cover
+            transition: .5s ease
+            backface-visibility: hidden
+            border-radius: 10px
+        .date-desc
+            position: absolute
+            top: 110px
+            width: 150px
+            height: 140px
+            background-color: $info-color
+            .day
+                text-transform: capitalize
+                font-size: 30px
+                font-weight: bolder
+                height: 50px
+                @include center-hor-ver
+                &:hover
+                    color: $primary-color
+            .month
+                text-transform: capitalize
+                font-size: 30px
+                font-weight: lighter
+                height: 50px
+                @include center-hor-ver
+                &:hover
+                    color: $primary-color
+            .read-more
+                height: 40px
+                color: white
+                background-color: black
+                @include center-hor-ver
+                &:hover
+                    background-color: $primary-color
+    .contents
+        padding: 10px
+        .title
+            font-size: 20px !important
+            font-weight: bold !important
+            @include center-hor-ver
+            color: black !important

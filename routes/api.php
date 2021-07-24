@@ -29,3 +29,6 @@ Route::get('gr_prop', [GreenParkPropController::class, 'getGrProp']);
 Route::post('mail', [\App\Http\Controllers\SendEmailsController::class, 'sendEmail']);
 Route::post('subscribe', [\App\Http\Controllers\SendEmailsController::class, 'subScribeToMailingList']);
 Route::post('book_tour', [\App\Http\Controllers\SendEmailsController::class, 'bookTour']);
+Route::get('articles', [\App\Http\Controllers\ArticlesController::class, 'getAllArticles']);
+Route::get('article/{id}', [\App\Http\Controllers\ArticlesController::class, 'fetchArticle']);
+Route::get('recent-article', [\App\Http\Controllers\ArticlesController::class, 'fetchRecentArticle']);

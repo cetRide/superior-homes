@@ -3,8 +3,8 @@
         <div class="parallax parallax-home">
             <div class="container">
                 <div data-aos="fade-up" data-aos-duration="2000" class="prop-landing-details">
-                    <p>{{ pazuriData.title }}</p>
-                    <span>{{ pazuriData.sub }}</span>
+                    <div class="prop-title">{{ pazuriData.title }}</div>
+                    <div class="prop-sub">{{ pazuriData.sub }}</div>
                     <a href="#reserve">
                         <div class="prop-btn" @click="reserve(pazuriData.title)">
                             Reserve Now
@@ -31,6 +31,7 @@
                 <div v-for="data in pazuriData.type" class="p-col-12 p-md-6 p-lg-4">
                     <div class="shk_property_type">
                         <div class="image-wrap">
+                            <div class="content-overlay"></div>
                             <img :src="data.img" :alt="data.name">
                         </div>
                         <div class="tag">
@@ -148,10 +149,36 @@
 import pazuri from "../../data/pazuri";
 import {mapGetters} from "vuex";
 import Button from "primevue/button";
+import {createToast} from "mosha-vue-toastify";
 export default {
     name: "Pazuri",
     components: {
         Button
+    },
+    setup() {
+        const successToast = (message) => {
+            createToast(message, {
+                hideProgressBar: "true",
+                showIcon: "true",
+                position: "top-right",
+                type: "success",
+                transition: "zoom",
+                timeout: 1500,
+                toastBackgroundColor: "#6cb2eb",
+            });
+        };
+        const errorToast = (message) => {
+            createToast(message, {
+                hideProgressBar: "true",
+                showIcon: "true",
+                position: "top-right",
+                type: "success",
+                transition: "zoom",
+                timeout: 1500,
+                toastBackgroundColor: "#E46464",
+            });
+        };
+        return {successToast, errorToast};
     },
     data() {
         return {
@@ -177,8 +204,21 @@ export default {
     },
     computed: {
         ...mapGetters([
-            'emailSend'
+            'emailSend',
+            'toast', 'toast_err'
         ])
+    },
+    watch: {
+        toast_err: function () {
+            if (this.toast_err) {
+                this.errorToast("An error occurred. Try again!");
+                this.$store.commit('TOAST_ERR', false)
+            }
+        },
+        toast: function () {
+            this.successToast("Inquiry send successfully.")
+            this.$store.commit('TOAST', false)
+        }
     },
     methods: {
         canSendRequest() {

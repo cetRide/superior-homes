@@ -10,6 +10,18 @@ let mutations = {
     },
    TOAST(state, res) {
         return state.toast = res
+    },
+    TOAST_ERR(state, res) {
+        return state.toast_err = res
+    },
+    FETCH_ARTICLES(state, res) {
+        return state.articles = res
+    },
+    FETCH_RECENT_ARTICLES(state, res) {
+        return state.recentArticle = res
+    },
+    FETCH_ARTICLE(state, res) {
+        return state.article = res
     }
 }
 export default mutations

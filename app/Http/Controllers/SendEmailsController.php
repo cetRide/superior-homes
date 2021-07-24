@@ -6,7 +6,6 @@ namespace App\Http\Controllers;
 use App\Mail\BookTour;
 use App\Mail\InquiryNotification;
 use App\Models\ShkSubs;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 
@@ -28,9 +27,8 @@ class SendEmailsController extends Controller
             'page' => $input['page']
         ];
 
-        Mail::to('elvis.onchwari@superiorhomes.co.ke')
-            ->bcc('emmanuelmuema52@gmail.com')
-            ->send(new InquiryNotification($details));
+        Mail::to('sales@superiorhomes.co.ke')->send(new InquiryNotification($details));
+
     }
 
     public function subScribeToMailingList(Request $request): \Illuminate\Http\JsonResponse
@@ -54,8 +52,7 @@ class SendEmailsController extends Controller
              Thank you in advance!"
         ];
         try {
-            Mail::to('elvis.onchwari@superiorhomes.co.ke')
-                ->bcc('emmanuelmuema52@gmail.com')->send(new BookTour($details));
+            Mail::to('sales@superiorhomes.co.ke')->send(new BookTour($details));
             return response()->json(['success' => true]);
         } catch (\Exception $e){
             return response()->json(['success' => false]);

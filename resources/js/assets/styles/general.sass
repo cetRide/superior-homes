@@ -46,10 +46,11 @@
             display: none
             font-weight: 500
             color: gray
-            font-size: 17px
+
 
         .item
             cursor: pointer
+            position: relative
 
             a
                 text-decoration: none
@@ -63,9 +64,25 @@
             color: $secondary-color
             font-weight: 600
             @include center-hor-ver
-
+            .dropdown-content
+                display: none
+                position: absolute
+                background-color: white
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+                font-size: 17px
+                top: 35px
+                padding: 5px 10px
+                border-radius: 8px
+                p
+                    padding: 0 !important
+                    margin: 3px 0 !important
+                    font-weight: lighter
+                &:hover
+                    color: $primary-color
             &:hover
                 color: $primary-color
+                .dropdown-content
+                    display: block
 
 .slim-nav
     display: flex
@@ -188,18 +205,20 @@
 .top-landing-details
     padding-top: 130px
     h2
-        font-weight: 800
-        font-size: 30px
+        font-weight: bolder
+        font-size: 32px
+        color: #000000
     h4
         font-weight: 700
-        font-size: 25px
+        font-size: 20px
+        margin-top: 20px
     p
-        font-weight: 600
-        font-size: 18px
+        font-size: 16px
     .landing-btn
         height: 35px
-        width: 100px
+        width: 130px
         border-radius: 25px
+        padding: 0 10px
         background-color: $primary-color
         color: white
         cursor: pointer
@@ -207,7 +226,6 @@
 .properties-cont
     padding: 20px 0
 .shk_property
-    @include shadow-shk
     border-radius: 10px
     cursor: pointer
     .image-wrap
@@ -221,13 +239,28 @@
                 z-index: 2
                 padding: 0 10px
                 border-radius: 6px
-                @include center-hor-ver
+                display: flex
+                align-items: center
                 margin: 10px
             .name
                 &:hover
                     background-color: $primary-color !important
                     color: white
-
+        .content-overlay
+            background: rgba(0,0,0,0.5)
+            position: absolute
+            height: 100%
+            width: 100%
+            left: 0
+            top: 0
+            bottom: 0
+            right: 0
+            opacity: 0
+            -webkit-transition: all 0.4s ease-in-out 0s
+            -moz-transition: all 0.4s ease-in-out 0s
+            transition: all 0.4s ease-in-out 0s
+            border-radius: 10px
+            cursor: pointer
         img
             opacity: 1
             display: block
@@ -237,15 +270,16 @@
             transition: .5s ease
             backface-visibility: hidden
             border-radius: 10px
-        &:hover img
-            opacity: 0.3
+        &:hover .content-overlay
+            opacity: 1
     .desc
-        padding: 10px
+        padding: 0 10px
+        color: black
+        text-align: left
     .btn-sec
         padding: 10px
 .cont-one
     display: flex
-    align-items: center
     padding: 100px 0 100px 0
     .details
         h3
@@ -378,8 +412,28 @@
 .p-accordion .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon
     margin-right: 1rem !important
     float: right !important
-
-@media only screen and (max-width: 576px)
+.mobile-nav-side
+    .item
+        width: 100%
+        @include center-hor-ver
+        color: $secondary-color
+        font-size: 19px
+        margin-bottom: 20px
+        a
+            color: $secondary-color
+            &:hover
+                color: $primary-color
+        .drop-down
+            @include center-hor-ver
+            .title
+                @include center-hor-ver
+            .dropdown-content
+                display: none
+                font-size: 14px
+            &:hover
+                .dropdown-content
+                    display: block
+@media only screen and (max-width: 768px)
     .gallery-section
         padding: 10px 0
     .faqs
@@ -399,7 +453,7 @@
         width: 100%
     .cont-one
         display: block
-        padding: 30px 10px
+        //padding: 30px 10px
         .details
             text-align: center
             width: 100%

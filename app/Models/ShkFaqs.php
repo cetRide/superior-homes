@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class ShkFaqs extends Model
 {
     use HasFactory;
+    protected $table = 'shk_faqs';
 }

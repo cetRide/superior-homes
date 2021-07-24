@@ -131,7 +131,7 @@ const routes = [
         },
     },
     {
-        path: "/green-park",
+        path: "/greenpark-estate",
         name: "Green Park",
         component: () => import("../components/properties/greenpark"),
         meta: {
@@ -202,10 +202,29 @@ const routes = [
             ],
         },
     },
+    {
+        path: "/read-article/:id/:title",
+        name: "Read Article",
+        component: () => import("../components/media/read-article"),
+        meta: {
+            title: "Superior Homes Kenya | Read Article",
+            metaTags: [
+                {
+                    name: "description",
+                    content: "The Read article of superior homes website.",
+                },
+                {
+                    property: "og:description",
+                    content: "The Read article of superior homes website.",
+                },
+            ],
+        },
+    },
 ];
 
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
+    mode: history,
     routes,
 });
 

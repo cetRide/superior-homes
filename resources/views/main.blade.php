@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="preload" as="font" href="{{ asset('fonts/Montserrat/Montserrat-Regular.ttf') }}"
+    <link rel="preload" as="font" href="{{ asset('fonts/Nunito-sans.ttf') }}"
           crossorigin="anonymous">
 </head>
 
@@ -33,7 +33,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: #01426A;
+        color: black;
         font-size: 30px;
         font-weight: lighter;
         display: flex;
@@ -46,7 +46,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: 'Montserrat', sans-serif
+        font-family: 'Nunito Sans', Arial, sans-serif
     }
 
     #spinner {
@@ -74,7 +74,7 @@
         position: absolute;
         padding: 10px;
         font-weight: bold;
-        font-family: 'Montserrat', sans-serif
+        font-family: nunito sans, Arial, sans-serif
     }
 </style>
 
