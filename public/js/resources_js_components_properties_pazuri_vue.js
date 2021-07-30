@@ -93,6 +93,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     toast: function toast() {
       this.successToast("Inquiry send successfully.");
       this.$store.commit('TOAST', false);
+      this.form = {};
+      this.firstname = '';
+      this.lastname = '';
     }
   },
   methods: {
@@ -190,9 +193,8 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-573cb244");
 
-var _hoisted_1 = {
-  "class": "parallax parallax-home"
-};
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"parallax\" style=\"height:100vh;\" data-v-573cb244><ul class=\"slideshow\" data-v-573cb244><li data-v-573cb244><span style=\"background-image:url(&#39;/images/banner/p1.jpg&#39;);\" data-v-573cb244></span></li><li data-v-573cb244><span style=\"background-image:url(&#39;/images/banner/home_3.jpg&#39;);\" data-v-573cb244></span></li><li data-v-573cb244><span style=\"background-image:url(&#39;/images/shk_properties/home_5.jpg&#39;);\" data-v-573cb244></span></li><li data-v-573cb244><span style=\"background-image:url(&#39;/images/shk_properties/pazuri/4.jpg&#39;);\" data-v-573cb244></span></li><li data-v-573cb244><span style=\"background-image:url(&#39;/images/shk_properties/pazuri/5.jpg&#39;);\" data-v-573cb244></span></li></ul></div>", 1);
+
 var _hoisted_2 = {
   "class": "container"
 };
@@ -232,7 +234,7 @@ var _hoisted_11 = {
   "class": "p-grid"
 };
 var _hoisted_12 = {
-  "class": "p-col-12 p-md-6 p-lg-4"
+  "class": "p-col-12 p-md-6 p-lg-6"
 };
 var _hoisted_13 = {
   "class": "shk_property_type"
@@ -260,80 +262,58 @@ var _hoisted_19 = {
   "class": "desc"
 };
 var _hoisted_20 = {
-  "class": "icons"
-};
-
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-  src: "/images/icons/bed.svg",
-  alt: "bed-icon"
-})], -1
-/* HOISTED */
-);
-
-var _hoisted_22 = {
-  "class": "item"
-};
-var _hoisted_23 = {
-  "class": "icons"
-};
-
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-  src: "/images/icons/bath.svg",
-  alt: "bathtub-icon"
-})], -1
-/* HOISTED */
-);
-
-var _hoisted_25 = {
-  "class": "item"
-};
-
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "icons"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-  src: "/images/icons/parking.svg",
-  alt: "parking-icon"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "item"
-}, " Private Parking ")], -1
-/* HOISTED */
-);
-
-var _hoisted_27 = {
   "class": "btn-sec"
 };
-var _hoisted_28 = {
+var _hoisted_21 = {
   href: "#reserve"
 };
-var _hoisted_29 = {
+var _hoisted_22 = {
   id: "reserve"
 };
-var _hoisted_30 = {
+var _hoisted_23 = {
   "class": "cont-form-wrapper",
   style: {
     "margin": "30px 0 10px 0",
     "width": "100% !important"
   }
 };
-var _hoisted_31 = {
+var _hoisted_24 = {
+  "class": "wrap"
+};
+var _hoisted_25 = {
   "class": "form-title"
 };
 
-var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", null, "Send us an Inquiry")], -1
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", null, "TALK TO US")], -1
 /* HOISTED */
 );
 
-var _hoisted_33 = {
+var _hoisted_27 = {
   "class": "form-container"
 };
-var _hoisted_34 = {
+var _hoisted_28 = {
   "class": "p-grid properties-cont"
+};
+var _hoisted_29 = {
+  "class": "p-col-12 p-2 p-md-6 p-lg-6"
+};
+var _hoisted_30 = {
+  key: 0,
+  "class": "p-error"
+};
+var _hoisted_31 = {
+  "class": "p-col-12 p-2 p-md-6 p-lg-6"
+};
+var _hoisted_32 = {
+  key: 0,
+  "class": "p-error"
+};
+var _hoisted_33 = {
+  "class": "p-col-12 p-2 p-md-6 p-lg-6"
+};
+var _hoisted_34 = {
+  key: 0,
+  "class": "p-error"
 };
 var _hoisted_35 = {
   "class": "p-col-12 p-2 p-md-6 p-lg-6"
@@ -343,27 +323,6 @@ var _hoisted_36 = {
   "class": "p-error"
 };
 var _hoisted_37 = {
-  "class": "p-col-12 p-2 p-md-6 p-lg-6"
-};
-var _hoisted_38 = {
-  key: 0,
-  "class": "p-error"
-};
-var _hoisted_39 = {
-  "class": "p-col-12 p-2 p-md-6 p-lg-6"
-};
-var _hoisted_40 = {
-  key: 0,
-  "class": "p-error"
-};
-var _hoisted_41 = {
-  "class": "p-col-12 p-2 p-md-6 p-lg-6"
-};
-var _hoisted_42 = {
-  key: 0,
-  "class": "p-error"
-};
-var _hoisted_43 = {
   key: 0,
   "class": "p-error"
 };
@@ -373,7 +332,7 @@ var _hoisted_43 = {
 var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.pazuriData.title), 1
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.pazuriData.title), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.pazuriData.sub), 1
   /* TEXT */
@@ -382,7 +341,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $options.reserve($data.pazuriData.title);
     })
-  }, " Reserve Now ")])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.pazuriData.title), 1
+  }, " Reserve Now ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.pazuriData.title), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h5", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.pazuriData.sub), 1
   /* TEXT */
@@ -400,11 +359,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     /* TEXT */
     )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(data.abt), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_20, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(data.beds) + " Bedrooms ", 1
-    /* TEXT */
-    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_23, [_hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(data.baths) + " Bathrooms ", 1
-    /* TEXT */
-    )]), _hoisted_26]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
       "class": "properties-btn",
       onClick: function onClick($event) {
         return $options.reserve(data.name);
@@ -414,12 +369,12 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     , ["onClick"])])])])]);
   }), 256
   /* UNKEYED_FRAGMENT */
-  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
     src: $data.logo,
     alt: "Superior homes logo"
   }, null, 8
   /* PROPS */
-  , ["src"])]), _hoisted_32]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_34, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  , ["src"])]), _hoisted_26])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "text",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $data.firstname = $event;
@@ -428,9 +383,9 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     placeholder: "First Name"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.firstname]])]), $data.firstnameValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.firstnameValid) + ".", 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.firstname]])]), $data.firstnameValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.firstnameValid) + ".", 1
   /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "text",
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
       return $data.lastname = $event;
@@ -439,9 +394,9 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     placeholder: "Last Name"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.lastname]])]), $data.lastnameValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_38, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.lastnameValid) + ".", 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.lastname]])]), $data.lastnameValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.lastnameValid) + ".", 1
   /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "email",
     "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
       return $data.form.email = $event;
@@ -450,9 +405,9 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     placeholder: "Email Address"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.email]])]), $data.emailValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.emailValid) + ".", 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.email]])]), $data.emailValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.emailValid) + ".", 1
   /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_41, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "number",
     "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
       return $data.form.phone = $event;
@@ -461,7 +416,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     placeholder: "Phone number"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.phone]])]), $data.phoneValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_42, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.phoneValid) + ".", 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.phone]])]), $data.phoneValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.phoneValid) + ".", 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("textarea", {
     name: "message",
@@ -472,7 +427,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     cols: "100"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.message]]), $data.messageValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_43, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.messageValid) + ".", 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.message]]), $data.messageValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.messageValid) + ".", 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
     loading: _ctx.emailSend,
@@ -509,42 +464,47 @@ __webpack_require__.r(__webpack_exports__);
 var pazuri = {
   title: 'Pazuri at Vipingo',
   sub: 'Luxury Within Reach',
-  abt: 'Pazuri at Vipingo is a master-planned residential and holiday home estate located in Vipingo, adjacent to the luxurious Vipingo Ridge. The estate consists of 372 affordable and luxurious units with a choice of two, three, and four-bedroom villas, each on a quarter-acre with scenic and unparalleled views of the Indian Ocean. All villas have large and private gardens, a roof terrace for entertainment, spacious open-plan kitchens, and luxurious lounge areas. Additionally, all bedrooms are master en-suite. The houses are all designed with the coastal climate in mind, with high ceilings and large windows. In addition, a total of 45 quarter acre self-build serviced plots are also available at an elevated prime location within the Pazuri Vipingo site for those who wish to purchase and self-build their homes. All plots have stunning views of the Indian Ocean and are fully serviced with provisions for water and electricity already in place, as well as an easy access road.',
+  abt: 'Pazuri at Vipingo is a master-planned residential and holiday home estate located in Vipingo, adjacent to the luxurious Vipingo Ridge. The estate consists of 372 affordable and luxurious units with a choice of two, three, and four-bedroom maisonettes and villas, each occupying a quarter-acre with scenic and unparalleled views of the Indian Ocean. In addition, a total of 45 quarter acre self-build serviced plots are also available at an elevated prime location within the Pazuri Vipingo site for those who wish to purchase and self-build their homes. All plots have stunning views of the Indian Ocean and are fully serviced with provisions for water and electricity already in place, as well as an easy access road.',
   type: [{
-    name: '2 Bedroom Villa',
+    name: '2 Bedroom Bungalow',
     price: 'Ksh 12.98M',
     beds: '2',
-    baths: '3',
-    abt: 'This 2 bedroom is 132 square metres, occupies a 1/4 acre parcel of land, has 2 master bedrooms ensuite, an open plan kitchen, dining & lounge area, Roof terrace, Laundry area, and a private Car parking',
-    img: '/images/shk_properties/pazuri/type/4.jpg'
+    baths: '2',
+    abt: 'A stand-alone 1-level unit built on approximately ¼ acre, with 2 all ensuite bedrooms, an open plan kitchen, dining, lounge area, spacious garden, and  a rooftop terrace.The collective plinth area is 133 SQM.',
+    img: '/images/shk_properties/pazuri/type/1.jpg'
   }, {
-    name: '3 Bedroom Villa',
+    name: '3 Bedroom Bungalow',
     price: 'Ksh 16.98M',
     beds: '3',
-    baths: '4',
-    abt: 'This 3 bedroom is 192 square metres, occupies a 1/4 acre parcel of land, has 3 master bedrooms ensuite, an open plan kitchen, dining & lounge area, Roof terrace, Laundry area, and a private car parking',
-    img: '/images/shk_properties/pazuri/type/2.jpg'
+    baths: '3',
+    abt: 'A stand-alone 1-level unit built on approximately ¼ acre, with 3 all ensuite bedrooms, an open plan kitchen, dining, lounge area, spacious garden, and  a rooftop terrace.The collective plinth area is 192 SQM.',
+    img: '/images/shk_properties/pazuri/type/2.png'
   }, {
     name: '4 Bedroom Villa',
     price: 'Ksh 20.98M',
     beds: '4',
     baths: '5',
-    abt: 'This 4 bedroom villa is 226 square metres, occupies a 1/4 acre parcel of land, has 4 master bedrooms ensuite, an open plan kitchen, dining & lounge area, Roof terrace, Laundry area, and a private car parking',
+    abt: 'A stand-alone 3-level unit built on approximately ¼ acre, with 4 all ensuite bedrooms, an open plan kitchen, dining, lounge area, spacious garden, and  a rooftop terrace.The collective plinth area is 226 SQM.',
     img: '/images/shk_properties/pazuri/type/3.jpg'
   }, {
-    name: '3 Bedroom Maisonette',
+    name: '3 Bedroom Maisonette (Type 1)',
     price: 'Ksh 17.98 M',
     beds: '3',
-    baths: '4',
-    abt: 'This 3 bedroom is 192 square metres, occupies a 1/4 acre parcel of land, has 3 master bedrooms ensuite, an open plan kitchen, dining & lounge area, Roof terrace, Laundry area, and a private car parking',
+    baths: '3',
+    abt: 'A stand-alone 2-level unit built on approximately ¼ acre, with 3 all ensuite bedrooms, an open plan kitchen, dining, lounge area, spacious garden, and  a rooftop terrace.The collective plinth area is 202 SQM.',
     img: '/images/shk_properties/pazuri/type/4.jpg'
   }, {
-    name: '3 Bedroom Maisonette 2',
+    name: '3 Bedroom Maisonette (Type 2)',
     price: 'Ksh 17.98 M',
     beds: '3',
-    baths: '4',
-    abt: 'This 3 bedroom occupies a 1/4 acre parcel of land, has 3 master bedrooms ensuite, an open plan kitchen, dining & lounge area, Roof terrace, Laundry area, and a private car parking',
+    baths: '3',
+    abt: 'A stand-alone 2-level unit built on approximately ¼ acre, with 3 all ensuite bedrooms, an open plan kitchen, dining, lounge area, spacious garden, and  a rooftop terrace.The collective plinth area is 202 SQM.',
     img: '/images/shk_properties/pazuri/type/5.jpg'
+  }, {
+    name: '1/4-acre Self-build Plots',
+    price: 'Ksh 5 M',
+    abt: 'A total of 45 quarter acre fully serviced self build plots have been selected from an elevated prime location within the Pazuri Vipingo site and and all plots have fabulous unimpeded views of the Indian ocean.',
+    img: '/images/shk_properties/pazuri/type/6.jpg'
   }]
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pazuri);

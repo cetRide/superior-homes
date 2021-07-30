@@ -1,13 +1,17 @@
 import {createRouter, createWebHistory} from "vue-router";
-import Home from "../components/home";
+import Main from "../components/main";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 
 const routes = [
     {
+     path: '/',
+     redirect: '/home'
+    },
+    {
         path: "/",
-        name: "home",
-        component: Home,
+        name: "main",
+        component: Main,
         meta: {
             title: "Superior Homes Kenya | Home",
             metaTags: [
@@ -21,205 +25,225 @@ const routes = [
                 },
             ],
         },
-    },
-    {
-        path: "/contact-us",
-        name: "contact",
-        component: () => import("../components/contact"),
-        meta: {
-            title: "Superior Homes Kenya | Contact Us",
-            metaTags: [
-                {
-                    name: "description",
-                    content: "The Contact us page of superior homes website.",
+        children: [
+            {
+                path: "/home",
+                name: "home",
+                component: () => import("../components/home"),
+                meta: {
+                    title: "Superior Homes Kenya | Home",
+                    metaTags: [
+                        {
+                            name: "description",
+                            content: "The Home page of superior homes website.",
+                        },
+                        {
+                            property: "og:description",
+                            content: "The Home page of superior homes website.",
+                        },
+                    ],
                 },
-                {
-                    property: "og:description",
-                    content: "The Contact us page of superior homes website.",
+            },
+            {
+                path: "/contact-us",
+                name: "contact",
+                component: () => import("../components/contact"),
+                meta: {
+                    title: "Superior Homes Kenya | Contact Us",
+                    metaTags: [
+                        {
+                            name: "description",
+                            content: "The Contact us page of superior homes website.",
+                        },
+                        {
+                            property: "og:description",
+                            content: "The Contact us page of superior homes website.",
+                        },
+                    ],
                 },
-            ],
-        },
-    },
-    {
-        path: "/careers",
-        name: "careers",
-        component: () => import("../components/careers"),
-        meta: {
-            title: "Superior Homes Kenya | Careers",
-            metaTags: [
-                {
-                    name: "description",
-                    content: "The Careers page of superior homes website.",
+            },
+            {
+                path: "/careers",
+                name: "careers",
+                component: () => import("../components/careers"),
+                meta: {
+                    title: "Superior Homes Kenya | Careers",
+                    metaTags: [
+                        {
+                            name: "description",
+                            content: "The Careers page of superior homes website.",
+                        },
+                        {
+                            property: "og:description",
+                            content: "The Careers page of superior homes website.",
+                        },
+                    ],
                 },
-                {
-                    property: "og:description",
-                    content: "The Careers page of superior homes website.",
+            },
+            {
+                path: "/about-us",
+                name: "about",
+                component: () => import("../components/about"),
+                meta: {
+                    title: "Superior Homes Kenya | About us",
+                    metaTags: [
+                        {
+                            name: "description",
+                            content: "The Home page of superior homes website.",
+                        },
+                        {
+                            property: "og:description",
+                            content: "The Home page of superior homes website.",
+                        },
+                    ],
                 },
-            ],
-        },
-    },
-    {
-        path: "/about",
-        name: "about",
-        component: () => import("../components/about"),
-        meta: {
-            title: "Superior Homes Kenya | About us",
-            metaTags: [
-                {
-                    name: "description",
-                    content: "The Home page of superior homes website.",
+            },
+            {
+                path: "/gallery",
+                name: "gallery",
+                component: () => import("../components/gallery/index"),
+                meta: {
+                    title: "Superior Homes Kenya | Gallery",
+                    metaTags: [
+                        {
+                            name: "description",
+                            content: "The Gallery page of superior homes website.",
+                        },
+                        {
+                            property: "og:description",
+                            content: "The Gallery page of superior homes website.",
+                        },
+                    ],
                 },
-                {
-                    property: "og:description",
-                    content: "The Home page of superior homes website.",
+            },
+            {
+                path: "/videos",
+                name: "videos",
+                component: () => import("../components/media/videos"),
+                meta: {
+                    title: "Superior Homes Kenya | Videos",
+                    metaTags: [
+                        {
+                            name: "description",
+                            content: "The Videos page of superior homes website.",
+                        },
+                        {
+                            property: "og:description",
+                            content: "The Videos page of superior homes website.",
+                        },
+                    ],
                 },
-            ],
-        },
-    },
-    {
-        path: "/gallery",
-        name: "gallery",
-        component: () => import("../components/gallery/index"),
-        meta: {
-            title: "Superior Homes Kenya | Gallery",
-            metaTags: [
-                {
-                    name: "description",
-                    content: "The Gallery page of superior homes website.",
+            },
+            {
+                path: "/faqs",
+                name: "faqs",
+                component: () => import("../components/media/faqs"),
+                meta: {
+                    title: "Superior Homes Kenya | FAQs",
+                    metaTags: [
+                        {
+                            name: "description",
+                            content: "The FAQs page of superior homes website.",
+                        },
+                        {
+                            property: "og:description",
+                            content: "The FAQs page of superior homes website.",
+                        },
+                    ],
                 },
-                {
-                    property: "og:description",
-                    content: "The Gallery page of superior homes website.",
+            },
+            {
+                path: "/greenpark-estate",
+                name: "Green Park",
+                component: () => import("../components/properties/greenpark"),
+                meta: {
+                    title: "Superior Homes Kenya | GreenPark Estate",
+                    metaTags: [
+                        {
+                            name: "description",
+                            content: "The GreenPark Estate page of superior homes website.",
+                        },
+                        {
+                            property: "og:description",
+                            content: "The GreenPark Estate page of superior homes website.",
+                        },
+                    ],
                 },
-            ],
-        },
-    },
-    {
-        path: "/videos",
-        name: "videos",
-        component: () => import("../components/media/videos"),
-        meta: {
-            title: "Superior Homes Kenya | Videos",
-            metaTags: [
-                {
-                    name: "description",
-                    content: "The Videos page of superior homes website.",
+            },
+            {
+                path: "/fadhili",
+                name: "Fadhili",
+                component: () => import("../components/properties/fadhili"),
+                meta: {
+                    title: "Superior Homes Kenya | Fadhili",
+                    metaTags: [
+                        {
+                            name: "description",
+                            content: "The Fadhili page of superior homes website.",
+                        },
+                        {
+                            property: "og:description",
+                            content: "The Fadhili page of superior homes website.",
+                        },
+                    ],
                 },
-                {
-                    property: "og:description",
-                    content: "The Videos page of superior homes website.",
+            },
+            {
+                path: "/pazuri-at-vipingo",
+                name: "Pazuri at Vipingo",
+                component: () => import("../components/properties/pazuri"),
+                meta: {
+                    title: "Superior Homes Kenya | Pazuri at Vipingo",
+                    metaTags: [
+                        {
+                            name: "description",
+                            content: "The Pazuri at Vipingo page of superior homes website.",
+                        },
+                        {
+                            property: "og:description",
+                            content: "The Pazuri at Vipingo page of superior homes website.",
+                        },
+                    ],
                 },
-            ],
-        },
-    },
-    {
-        path: "/faqs",
-        name: "faqs",
-        component: () => import("../components/media/faqs"),
-        meta: {
-            title: "Superior Homes Kenya | FAQs",
-            metaTags: [
-                {
-                    name: "description",
-                    content: "The FAQs page of superior homes website.",
+            },
+            {
+                path: "/articles",
+                name: "Articles",
+                component: () => import("../components/media/articles"),
+                meta: {
+                    title: "Superior Homes Kenya | Articles",
+                    metaTags: [
+                        {
+                            name: "description",
+                            content: "The Articles page of superior homes website.",
+                        },
+                        {
+                            property: "og:description",
+                            content: "The Articles page of superior homes website.",
+                        },
+                    ],
                 },
-                {
-                    property: "og:description",
-                    content: "The FAQs page of superior homes website.",
+            },
+            {
+                path: "/read-article/:id/:title",
+                name: "Read Article",
+                component: () => import("../components/media/read-article"),
+                meta: {
+                    title: "Superior Homes Kenya | Read Article",
+                    metaTags: [
+                        {
+                            name: "description",
+                            content: "The Read article of superior homes website.",
+                        },
+                        {
+                            property: "og:description",
+                            content: "The Read article of superior homes website.",
+                        },
+                    ],
                 },
-            ],
-        },
-    },
-    {
-        path: "/greenpark-estate",
-        name: "Green Park",
-        component: () => import("../components/properties/greenpark"),
-        meta: {
-            title: "Superior Homes Kenya | GreenPark Estate",
-            metaTags: [
-                {
-                    name: "description",
-                    content: "The GreenPark Estate page of superior homes website.",
-                },
-                {
-                    property: "og:description",
-                    content: "The GreenPark Estate page of superior homes website.",
-                },
-            ],
-        },
-    },
-    {
-        path: "/fadhili",
-        name: "Fadhili",
-        component: () => import("../components/properties/fadhili"),
-        meta: {
-            title: "Superior Homes Kenya | Fadhili",
-            metaTags: [
-                {
-                    name: "description",
-                    content: "The Fadhili page of superior homes website.",
-                },
-                {
-                    property: "og:description",
-                    content: "The Fadhili page of superior homes website.",
-                },
-            ],
-        },
-    },
-    {
-        path: "/pazuri-at-vipingo",
-        name: "Pazuri at Vipingo",
-        component: () => import("../components/properties/pazuri"),
-        meta: {
-            title: "Superior Homes Kenya | Pazuri at Vipingo",
-            metaTags: [
-                {
-                    name: "description",
-                    content: "The Pazuri at Vipingo page of superior homes website.",
-                },
-                {
-                    property: "og:description",
-                    content: "The Pazuri at Vipingo page of superior homes website.",
-                },
-            ],
-        },
-    },
-    {
-        path: "/articles",
-        name: "Articles",
-        component: () => import("../components/media/articles"),
-        meta: {
-            title: "Superior Homes Kenya | Pazuri at Vipingo",
-            metaTags: [
-                {
-                    name: "description",
-                    content: "The Articles page of superior homes website.",
-                },
-                {
-                    property: "og:description",
-                    content: "The Articles page of superior homes website.",
-                },
-            ],
-        },
-    },
-    {
-        path: "/read-article/:id/:title",
-        name: "Read Article",
-        component: () => import("../components/media/read-article"),
-        meta: {
-            title: "Superior Homes Kenya | Read Article",
-            metaTags: [
-                {
-                    name: "description",
-                    content: "The Read article of superior homes website.",
-                },
-                {
-                    property: "og:description",
-                    content: "The Read article of superior homes website.",
-                },
-            ],
-        },
-    },
+            },
+        ]
+    }
 ];
 
 const router = createRouter({

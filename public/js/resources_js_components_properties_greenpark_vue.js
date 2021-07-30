@@ -93,6 +93,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     toast: function toast() {
       this.successToast("Inquiry send successfully.");
       this.$store.commit('TOAST', false);
+      this.form = {};
+      this.firstname = '';
+      this.lastname = '';
     }
   },
   methods: {
@@ -190,9 +193,8 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-e4be7848");
 
-var _hoisted_1 = {
-  "class": "parallax parallax-home"
-};
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"parallax\" style=\"height:100vh;\" data-v-e4be7848><ul class=\"slideshow\" data-v-e4be7848><li data-v-e4be7848><span style=\"background-image:url(&#39;/images/banner/ge.jpg&#39;);\" data-v-e4be7848></span></li><li data-v-e4be7848><span style=\"background-image:url(&#39;/images/shk_properties/greenpark/4.jpg&#39;);\" data-v-e4be7848></span></li><li data-v-e4be7848><span style=\"background-image:url(&#39;/images/shk_properties/greenpark/6.jpg&#39;);\" data-v-e4be7848></span></li><li data-v-e4be7848><span style=\"background-image:url(&#39;/images/shk_properties/greenpark/2.jpg&#39;);\" data-v-e4be7848></span></li><li data-v-e4be7848><span style=\"background-image:url(&#39;/images/shk_properties/greenpark/3.jpg&#39;);\" data-v-e4be7848></span></li></ul></div>", 1);
+
 var _hoisted_2 = {
   "class": "container"
 };
@@ -232,7 +234,7 @@ var _hoisted_11 = {
   "class": "p-grid"
 };
 var _hoisted_12 = {
-  "class": "p-col-12 p-md-6 p-lg-4"
+  "class": "p-col-12 p-md-6 p-lg-6"
 };
 var _hoisted_13 = {
   "class": "shk_property_type"
@@ -260,80 +262,58 @@ var _hoisted_19 = {
   "class": "desc"
 };
 var _hoisted_20 = {
-  "class": "icons"
-};
-
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-  src: "/images/icons/bed.svg",
-  alt: "bed-icon"
-})], -1
-/* HOISTED */
-);
-
-var _hoisted_22 = {
-  "class": "item"
-};
-var _hoisted_23 = {
-  "class": "icons"
-};
-
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-  src: "/images/icons/bath.svg",
-  alt: "bathtub-icon"
-})], -1
-/* HOISTED */
-);
-
-var _hoisted_25 = {
-  "class": "item"
-};
-
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "icons"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-  src: "/images/icons/parking.svg",
-  alt: "parking-icon"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "item"
-}, " Private Parking ")], -1
-/* HOISTED */
-);
-
-var _hoisted_27 = {
   "class": "btn-sec"
 };
-var _hoisted_28 = {
+var _hoisted_21 = {
   href: "#reserve"
 };
-var _hoisted_29 = {
+var _hoisted_22 = {
   id: "reserve"
 };
-var _hoisted_30 = {
+var _hoisted_23 = {
   "class": "cont-form-wrapper",
   style: {
     "margin": "30px 0 10px 0",
     "width": "100% !important"
   }
 };
-var _hoisted_31 = {
+var _hoisted_24 = {
+  "class": "wrap"
+};
+var _hoisted_25 = {
   "class": "form-title"
 };
 
-var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", null, "Send us an Inquiry")], -1
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", null, "TALK TO US")], -1
 /* HOISTED */
 );
 
-var _hoisted_33 = {
+var _hoisted_27 = {
   "class": "form-container"
 };
-var _hoisted_34 = {
+var _hoisted_28 = {
   "class": "p-grid properties-cont"
+};
+var _hoisted_29 = {
+  "class": "p-col-12 p-2 p-md-6 p-lg-6"
+};
+var _hoisted_30 = {
+  key: 0,
+  "class": "p-error"
+};
+var _hoisted_31 = {
+  "class": "p-col-12 p-2 p-md-6 p-lg-6"
+};
+var _hoisted_32 = {
+  key: 0,
+  "class": "p-error"
+};
+var _hoisted_33 = {
+  "class": "p-col-12 p-2 p-md-6 p-lg-6"
+};
+var _hoisted_34 = {
+  key: 0,
+  "class": "p-error"
 };
 var _hoisted_35 = {
   "class": "p-col-12 p-2 p-md-6 p-lg-6"
@@ -343,27 +323,6 @@ var _hoisted_36 = {
   "class": "p-error"
 };
 var _hoisted_37 = {
-  "class": "p-col-12 p-2 p-md-6 p-lg-6"
-};
-var _hoisted_38 = {
-  key: 0,
-  "class": "p-error"
-};
-var _hoisted_39 = {
-  "class": "p-col-12 p-2 p-md-6 p-lg-6"
-};
-var _hoisted_40 = {
-  key: 0,
-  "class": "p-error"
-};
-var _hoisted_41 = {
-  "class": "p-col-12 p-2 p-md-6 p-lg-6"
-};
-var _hoisted_42 = {
-  key: 0,
-  "class": "p-error"
-};
-var _hoisted_43 = {
   key: 0,
   "class": "p-error"
 };
@@ -373,7 +332,7 @@ var _hoisted_43 = {
 var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.greenParkData.title), 1
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.greenParkData.title), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.greenParkData.sub), 1
   /* TEXT */
@@ -382,11 +341,11 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $options.reserve($data.greenParkData.title);
     })
-  }, " Reserve Now ")])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.greenParkData.title), 1
+  }, " Reserve Now ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.greenParkData.title), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h5", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.greenParkData.sub), 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h5", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.greenParkData.sub), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.greenParkData.abt), 1
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.greenParkData.abt), 1
   /* TEXT */
   )]), _hoisted_10]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_11, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.greenParkData.type, function (data) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
@@ -396,15 +355,11 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     /* PROPS */
     , ["src", "alt"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(data.name), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(data.price), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_18, "Ksh. " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(data.price.replace('Ksh', '')), 1
     /* TEXT */
     )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(data.abt), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_20, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(data.beds) + " Bedrooms ", 1
-    /* TEXT */
-    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_23, [_hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(data.baths) + " Bathrooms ", 1
-    /* TEXT */
-    )]), _hoisted_26]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
       "class": "properties-btn",
       onClick: function onClick($event) {
         return $options.reserve(data.name);
@@ -414,12 +369,12 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     , ["onClick"])])])])]);
   }), 256
   /* UNKEYED_FRAGMENT */
-  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
     src: $data.logo,
     alt: "Superior homes logo"
   }, null, 8
   /* PROPS */
-  , ["src"])]), _hoisted_32]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_34, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  , ["src"])]), _hoisted_26])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "text",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $data.firstname = $event;
@@ -428,9 +383,9 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     placeholder: "First Name"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.firstname]])]), $data.firstnameValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.firstnameValid) + ".", 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.firstname]])]), $data.firstnameValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.firstnameValid) + ".", 1
   /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "text",
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
       return $data.lastname = $event;
@@ -439,9 +394,9 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     placeholder: "Last Name"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.lastname]])]), $data.lastnameValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_38, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.lastnameValid) + ".", 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.lastname]])]), $data.lastnameValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.lastnameValid) + ".", 1
   /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "email",
     "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
       return $data.form.email = $event;
@@ -450,9 +405,9 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     placeholder: "Email Address"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.email]])]), $data.emailValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.emailValid) + ".", 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.email]])]), $data.emailValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.emailValid) + ".", 1
   /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_41, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "number",
     "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
       return $data.form.phone = $event;
@@ -461,7 +416,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     placeholder: "Phone number"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.phone]])]), $data.phoneValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_42, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.phoneValid) + ".", 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.phone]])]), $data.phoneValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.phoneValid) + ".", 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("textarea", {
     name: "message",
@@ -472,7 +427,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     cols: "100"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.message]]), $data.messageValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_43, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.messageValid) + ".", 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.message]]), $data.messageValid !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("small", _hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.messageValid) + ".", 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
     loading: _ctx.emailSend,
@@ -509,34 +464,34 @@ __webpack_require__.r(__webpack_exports__);
 var greenPark = {
   title: 'Greenpark Estate',
   sub: 'Where Dreams Come Home',
-  abt: 'The award-winning Greenpark Estate on Mombasa Road was the first project to be rolled out and there are now more than 550 houses completed and occupied within the 163-acre site as well as a wide range of amenities. Scheduled for completion in 2023, Greenpark will eventually consist of more than 700 houses and will become the most sought-after residential development in Kenya. Greenpark Estate offers a comprehensive lifestyle for convenient living. Available within the estate is a mini-market for light shopping, two (2) schools, and a Clubhouse with a gym, Swimming Pool, restaurant, and accommodation at the Greenpark Sundowner.',
+  abt: 'Greenpark is a master-planned gated community with over 500 completed and occupied homes in Athi River, 30 km from the Nairobi CBD. The estate has two schools, a hotel with conference facilities, a retail strip mall, a restaurant and bar, a swimming pool, a gym, wedding grounds, a football turf, and a retirement village. Greenpark Estate is now the best gated community in East Africa.',
   type: [{
-    name: 'Semi - Detached Masionette',
+    name: '3 – Bedroom Maisonette',
     price: 'Ksh 13.95M',
     beds: '3',
     baths: '3',
-    abt: 'This three-bedroom semi-detached house offers family-sized space, a large garden area, and detached servants’ quarters. Each house has two car parking slots, a front and back garden, and a balcony on the master ensuite bedroom.',
+    abt: 'This unit has two (2) adjoined units built on approximately ¼ acre, each enjoying a private garden. Each unit has a kitchen, lounge, dining area, separate dining, 3 bedrooms (master en-suite), a detached DSQ and parking for 2. The collective plinth area is 157 SQM.',
     img: '/images/shk_properties/greenpark/type/sd.jpg'
   }, {
-    name: 'Bungalow',
+    name: '4 - Bedroom Standard Bungalow',
     price: 'Ksh 19.28M',
     beds: '4',
     baths: '3',
-    abt: 'The four-bedroom bungalow delivers on space and style, providing ample living space on one level and a large garden. Each house has two car parking slots, a front, and back garden, and a sliding door to provide garden access from the dining area.',
+    abt: 'A stand-alone 1-level unit built on approximately ¼ acre, with 4 bedrooms, 2 bedrooms all ensuite, a lounge, dining, a spacious garden, a home office and kitchen. The collective plinth area is 146 SQM.',
     img: '/images/shk_properties/greenpark/type/bu.jpg'
   }, {
-    name: 'Super Bungalow',
+    name: '4 – Bedroom Super Bungalow',
     price: '23.59M',
     beds: '4',
-    baths: '4',
-    abt: 'The all en-suite four-bedroom super bungalow provides a huge living area all on one level and a large garden. Each house has two car parking slots, a front and back garden, and a sliding door to provide garden access from the dining area.',
+    baths: '3',
+    abt: 'A spacious, all en-suite 4 bedroom stand-alone unit, built on approximately ¼ acre. Other spaces include a lounge, dining, open plan kitchen, laundry area, a spacious garden and a home office. The collective plinth area is 184 SQM.',
     img: '/images/shk_properties/greenpark/type/sp.jpg'
   }, {
-    name: 'Villa',
+    name: '4 – Bedroom Villa',
     price: 'Ksh 37.67M',
     beds: '4',
-    baths: '5',
-    abt: 'The four-bedroom Villa is one of our top-of-the-range houses. It occupies approximately 1/4 of an acre and has a 320 square meters built-up area, with all bedrooms en-suite, a family room, double servants quarters, covered garage parking, and a generous garden.',
+    baths: '4',
+    abt: 'A 2-level all en-suite 4 bedroom unit built on approximately ¼ acre, with a spacious family room, detached DSQ, fitted kitchen, spacious garden, laundry area and dining room. The collective plinth area is 320 SQM.',
     img: '/images/shk_properties/greenpark/type/villa.jpg'
   }]
 };

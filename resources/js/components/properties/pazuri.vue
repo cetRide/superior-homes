@@ -1,6 +1,14 @@
 <template>
     <div>
-        <div class="parallax parallax-home">
+        <div class="parallax" style="height: 100vh">
+            <ul class="slideshow">
+                <li><span style="background-image: url('/images/banner/p1.jpg')"></span></li>
+                <li><span style="background-image: url('/images/banner/home_3.jpg')"></span></li>
+                <li><span style="background-image: url('/images/shk_properties/home_5.jpg')"></span></li>
+                <li><span style="background-image: url('/images/shk_properties/pazuri/4.jpg')"></span></li>
+                <li><span style="background-image: url('/images/shk_properties/pazuri/5.jpg')"></span></li>
+            </ul>
+        </div>
             <div class="container">
                 <div data-aos="fade-up" data-aos-duration="2000" class="prop-landing-details">
                     <div class="prop-title">{{ pazuriData.title }}</div>
@@ -12,7 +20,6 @@
                     </a>
                 </div>
             </div>
-        </div>
         <div class="container">
             <div class="p-grid prop-top">
                 <div class="p-col-12 p-md-12 p-lg-6 prop-desc">
@@ -28,7 +35,7 @@
             </div>
 
             <div class="p-grid">
-                <div v-for="data in pazuriData.type" class="p-col-12 p-md-6 p-lg-4">
+                <div v-for="data in pazuriData.type" class="p-col-12 p-md-6 p-lg-6">
                     <div class="shk_property_type">
                         <div class="image-wrap">
                             <div class="content-overlay"></div>
@@ -43,32 +50,6 @@
                             {{ data.abt }}
 
                         </div>
-                        <div>
-                            <div class="icons">
-                                <div class="item">
-                                    <img src="/images/icons/bed.svg" alt="bed-icon">
-                                </div>
-                                <div class="item">
-                                    {{ data.beds }} Bedrooms
-                                </div>
-                            </div>
-                            <div class="icons">
-                                <div class="item">
-                                    <img src="/images/icons/bath.svg" alt="bathtub-icon">
-                                </div>
-                                <div class="item">
-                                    {{ data.baths }} Bathrooms
-                                </div>
-                            </div>
-                            <div class="icons">
-                                <div class="item">
-                                    <img src="/images/icons/parking.svg" alt="parking-icon">
-                                </div>
-                                <div class="item">
-                                    Private Parking
-                                </div>
-                            </div>
-                        </div>
                         <div class="btn-sec">
                             <a href="#reserve">
                                 <div class="properties-btn" @click="reserve(data.name)">
@@ -82,12 +63,14 @@
 
             <div id="reserve">
                 <div class="cont-form-wrapper" style="margin: 30px 0 10px 0; width: 100% !important;">
-                    <div class="form-title">
-                        <div>
-                            <img :src="logo" alt="Superior homes logo">
-                        </div>
-                        <div>
-                            <h2>Send us an Inquiry</h2>
+                    <div class="wrap">
+                        <div class="form-title">
+                            <div>
+                                <img :src="logo" alt="Superior homes logo">
+                            </div>
+                            <div>
+                                <h3>TALK TO US</h3>
+                            </div>
                         </div>
                     </div>
                     <div class="form-container">
@@ -150,6 +133,7 @@ import pazuri from "../../data/pazuri";
 import {mapGetters} from "vuex";
 import Button from "primevue/button";
 import {createToast} from "mosha-vue-toastify";
+
 export default {
     name: "Pazuri",
     components: {
@@ -218,6 +202,9 @@ export default {
         toast: function () {
             this.successToast("Inquiry send successfully.")
             this.$store.commit('TOAST', false)
+            this.form = {}
+            this.firstname = ''
+            this.lastname = ''
         }
     },
     methods: {
@@ -276,7 +263,7 @@ export default {
             console.log(type)
         },
         initMap() {
-            const uluru = { lat: -3.785953, lng: 39.803321 };
+            const uluru = {lat: -3.785953, lng: 39.803321};
             const map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 15,
                 center: uluru,

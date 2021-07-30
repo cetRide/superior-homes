@@ -1,6 +1,13 @@
 <template>
     <div>
-        <div class="parallax parallax-home">
+        <div class="parallax" style="height: 100vh">
+            <ul class="slideshow">
+                <li><span style="background-image: url('/images/banner/t4.jpg')"></span></li>
+                <li><span style="background-image: url('/images/banner/t1.jpg')"></span></li>
+                <li><span style="background-image: url('/images/banner/t2.jpg')"></span></li>
+                <li><span style="background-image: url('/images/banner/t3.jpg')"></span></li>
+                <li><span style="background-image: url('/images/banner/t5.jpg')"></span></li>
+            </ul>
         </div>
         <div class="container">
             <div class="about-page">
@@ -8,7 +15,7 @@
                     <div class="p-grid">
                         <div class="p-col-12 p-md-6 p-lg-6" style="text-align: justify">
                             <h3>Our Mission</h3>
-                            <p>To Innovate, Improve & Inspire</p>
+                            <p class="p-text-bold">To Innovate, Improve & Inspire.</p>
                             <p>
                                 Superior Homes Kenya PLC is a family-owned real estate development company that was
                                 registered in 2004. The company takes pride in being the pioneers of the open-plan gated
@@ -19,8 +26,8 @@
                             </p>
                         </div>
                         <div class="p-col-12 p-md-6 p-lg-6">
-                            <h3>Our vision</h3>
-                            <p>To become the Largest and Most Trusted Provider of New Houses in East Africa</p>
+                            <h3>Our Vision</h3>
+                            <p class="p-text-bold">To become the Largest and Most Trusted Provider of New Houses in East Africa.</p>
                             <p>Our vision is to become the largest and the most respected and trusted provider of new
                                 houses in East Africa while engaging positively and to the mutual benefit of customers,
                                 staff, contractors, suppliers, and the wider community.</p>

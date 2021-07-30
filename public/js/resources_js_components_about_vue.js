@@ -63,11 +63,7 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-0b0aedd2");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "parallax parallax-home"
-}, null, -1
-/* HOISTED */
-);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"parallax\" style=\"height:100vh;\" data-v-0b0aedd2><ul class=\"slideshow\" data-v-0b0aedd2><li data-v-0b0aedd2><span style=\"background-image:url(&#39;/images/banner/t4.jpg&#39;);\" data-v-0b0aedd2></span></li><li data-v-0b0aedd2><span style=\"background-image:url(&#39;/images/banner/t1.jpg&#39;);\" data-v-0b0aedd2></span></li><li data-v-0b0aedd2><span style=\"background-image:url(&#39;/images/banner/t2.jpg&#39;);\" data-v-0b0aedd2></span></li><li data-v-0b0aedd2><span style=\"background-image:url(&#39;/images/banner/t3.jpg&#39;);\" data-v-0b0aedd2></span></li><li data-v-0b0aedd2><span style=\"background-image:url(&#39;/images/banner/t5.jpg&#39;);\" data-v-0b0aedd2></span></li></ul></div>", 1);
 
 var _hoisted_2 = {
   "class": "container"
@@ -76,7 +72,7 @@ var _hoisted_3 = {
   "class": "about-page"
 };
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mission\" data-v-0b0aedd2><div class=\"p-grid\" data-v-0b0aedd2><div class=\"p-col-12 p-md-6 p-lg-6\" style=\"text-align:justify;\" data-v-0b0aedd2><h3 data-v-0b0aedd2>Our Mission</h3><p data-v-0b0aedd2>To Innovate, Improve &amp; Inspire</p><p data-v-0b0aedd2> Superior Homes Kenya PLC is a family-owned real estate development company that was registered in 2004. The company takes pride in being the pioneers of the open-plan gated community concept in the region, which is now recognized as the future for sustainable living in East Africa. Superior Homes plans to diversify into hospitality and leisure by offering holidays at its three sites while continuing to develop beautiful houses within outstanding environments. </p></div><div class=\"p-col-12 p-md-6 p-lg-6\" data-v-0b0aedd2><h3 data-v-0b0aedd2>Our vision</h3><p data-v-0b0aedd2>To become the Largest and Most Trusted Provider of New Houses in East Africa</p><p data-v-0b0aedd2>Our vision is to become the largest and the most respected and trusted provider of new houses in East Africa while engaging positively and to the mutual benefit of customers, staff, contractors, suppliers, and the wider community.</p></div></div></div><div class=\"team-statement\" data-v-0b0aedd2><h2 data-v-0b0aedd2>The Team</h2><p class=\"quote\" data-v-0b0aedd2><strong data-v-0b0aedd2>“</strong><i data-v-0b0aedd2>Individual commitment to a group effort. That is what makes a team work, a company work, a society work, a civilisation work.</i><strong data-v-0b0aedd2>”</strong></p><span data-v-0b0aedd2>- Vince Lombardi</span></div>", 2);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mission\" data-v-0b0aedd2><div class=\"p-grid\" data-v-0b0aedd2><div class=\"p-col-12 p-md-6 p-lg-6\" style=\"text-align:justify;\" data-v-0b0aedd2><h3 data-v-0b0aedd2>Our Mission</h3><p class=\"p-text-bold\" data-v-0b0aedd2>To Innovate, Improve &amp; Inspire.</p><p data-v-0b0aedd2> Superior Homes Kenya PLC is a family-owned real estate development company that was registered in 2004. The company takes pride in being the pioneers of the open-plan gated community concept in the region, which is now recognized as the future for sustainable living in East Africa. Superior Homes plans to diversify into hospitality and leisure by offering holidays at its three sites while continuing to develop beautiful houses within outstanding environments. </p></div><div class=\"p-col-12 p-md-6 p-lg-6\" data-v-0b0aedd2><h3 data-v-0b0aedd2>Our Vision</h3><p class=\"p-text-bold\" data-v-0b0aedd2>To become the Largest and Most Trusted Provider of New Houses in East Africa.</p><p data-v-0b0aedd2>Our vision is to become the largest and the most respected and trusted provider of new houses in East Africa while engaging positively and to the mutual benefit of customers, staff, contractors, suppliers, and the wider community.</p></div></div></div><div class=\"team-statement\" data-v-0b0aedd2><h2 data-v-0b0aedd2>The Team</h2><p class=\"quote\" data-v-0b0aedd2><strong data-v-0b0aedd2>“</strong><i data-v-0b0aedd2>Individual commitment to a group effort. That is what makes a team work, a company work, a society work, a civilisation work.</i><strong data-v-0b0aedd2>”</strong></p><span data-v-0b0aedd2>- Vince Lombardi</span></div>", 2);
 
 var _hoisted_6 = {
   "class": "team-wrap"
@@ -201,25 +197,25 @@ var board = [{
   position: 'Non - Executive Director',
   desc: 'Eric Latiff is an accomplished broadcaster and communications specialist with over 20 years of experience working in Kenyan media.'
 }, {
-  img: '/images/users/board/shiv.jpeg',
-  name: 'Shiv Arora',
-  position: 'Chief Executive Officer',
-  desc: 'Shiv Arora serves as the Chief Executive Officer.'
+  img: '/images/users/board/enid.jpeg',
+  name: 'Enid Muriuki',
+  position: 'Company Secretary',
+  desc: 'Enid is a certified Corporate Secretary and Certified Governance Auditor.'
+}, {
+  img: '/images/users/board/ian.jpg',
+  name: 'Ian Henderson',
+  position: 'Managing Director',
+  desc: 'Ian founded Superior Homes in 2006 after supervising construction sites in various African countries during the past 20 years.'
 }, {
   img: '/images/users/board/edwin.jpeg',
   name: 'Edwin H. Dande',
   position: 'Board Member',
   desc: 'Edwin H. Dande serves as a board member.'
 }, {
-  img: '/images/users/board/ian.jpeg',
-  name: 'Ian Henderson',
-  position: 'Managing Director',
-  desc: 'Ian founded Superior Homes in 2006 after supervising construction sites in various African countries during the past 20 years.'
-}, {
-  img: '/images/users/board/enid.jpeg',
-  name: 'Enid Muriuki',
-  position: 'Company Secretary',
-  desc: 'Enid is a certified Corporate Secretary and Certified Governance Auditor.'
+  img: '/images/users/board/shiv.jpg',
+  name: 'Shiv Arora',
+  position: 'Chief Executive Officer',
+  desc: 'Shiv Arora serves as the Chief Executive Officer.'
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (board);
 
@@ -247,20 +243,20 @@ var team = [{
   position: 'Project and Site Manager',
   desc: 'Yvonne Ondego holds a Bachelors Degree in Architectural studies from the University of Nairobi. '
 }, {
-  img: '/images/users/team/shiv.jpg',
-  name: 'Shiv Arora',
-  position: 'Chief Executive Officer',
-  desc: 'Shiv Arora holds a BSc. Hons in Economics from the University of Warwick and serves as the Chief Executive Officer'
+  img: '/images/users/team/clive.jpg',
+  name: 'Clive Ndege',
+  position: 'Head of Sales',
+  desc: 'Clive Ndege holds a Masters Degree in Finance & Investments from University of Nairobi.   '
 }, {
   img: '/images/users/team/kungu.jpg',
   name: 'Daniel Kungu',
   position: 'Finance Manager',
   desc: 'Daniel Kungu joined Superior Homes in 2011. Daniel is a Bachelors of Commerce graduate from Kenyatta University and a CPA Finalist.'
 }, {
-  img: '/images/users/team/clive.jpg',
-  name: 'Clive Ndege',
-  position: 'Head of Sales',
-  desc: 'Clive Ndege holds a Masters Degree in Finance & Investments from University of Nairobi.   '
+  img: '/images/users/board/shiv.jpg',
+  name: 'Shiv Arora',
+  position: 'Chief Executive Officer',
+  desc: 'Shiv Arora holds a BSc. Hons in Economics from the University of Warwick and serves as the Chief Executive Officer'
 }, {
   img: '/images/users/team/silvano.jpg',
   name: 'Silvano Inyangala',

@@ -48,7 +48,8 @@ export default {
 
 <style scoped lang="css">
 .parallax-home {
-    background-image: url('/images/shk_general/Greenpark_SHK_Drone_3.jpg');
-    height: 60vh;
+    background-image: url('/images/banner/faq.jpg');
+    height: 70vh;
+    object-fit: contain;
 }
 </style>

@@ -137,7 +137,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.parallax-home[data-v-1e55f3f3] {\n    background-image: url('/images/shk_general/Greenpark_SHK_Drone_3.jpg');\n    height: 60vh;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.parallax-home[data-v-1e55f3f3] {\n    background-image: url('/images/banner/faq.jpg');\n    height: 70vh;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

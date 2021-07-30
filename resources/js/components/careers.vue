@@ -2,15 +2,15 @@
     <div>
         <div class="parallax parallax-home">
             <div class="container">
-                <div class="top-landing-details">
-                    <h2>Welcome to our Careers Page</h2>
+                <div data-aos="fade-up" data-aos-duration="2000" class="top-landing-details">
+                    <h2>Careers</h2>
                 </div>
             </div>
         </div>
         <div class="container">
             <div>
                 <div class="careers-page">
-                    <h2 class="title">Welcome to our Careers Page</h2>
+                    <h2 class="title">Careers</h2>
                     <div class="no-career-wrapper">
                         <div class="no-career">
                             <div>
@@ -18,20 +18,22 @@
                                     <img :src="image_src" alt="logo">
                                 </div>
                                 <div class="text-desc">
-                                    No open vaccancies at the moment.
+                                    No open vacancies at the moment.
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="cont-form-wrapper" style="margin: 30px 0 10px 0; width: 100% !important;">
+                    <div class="wrap">
                     <div class="form-title">
                         <div>
                             <img :src="logo" alt="Superior homes logo">
                         </div>
                         <div>
-                            <h2>Send us an Inquiry</h2>
+                             <h3>TALK TO US</h3>
                         </div>
+                    </div>
                     </div>
                     <div class="form-container">
                         <div class="p-grid properties-cont">
@@ -157,6 +159,9 @@ export default {
         toast: function () {
             this.successToast("Inquiry send successfully.")
             this.$store.commit('TOAST', false)
+            this.form = {}
+            this.firstname = ''
+            this.lastname = ''
         }
     },
     methods:{
@@ -217,8 +222,8 @@ export default {
 
 <style scoped lang="css">
 .parallax-home {
-    background-image: url('/images/shk_general/Greenpark_SHK_Drone_3.jpg');
-    height: 60vh;
+    background-image: url('/images/banner/t5.jpg');
+    height: 70vh;
 }
 
 </style>

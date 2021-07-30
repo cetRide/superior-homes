@@ -1,10 +1,22 @@
 <template>
     <div>
         <div class="parallax parallax-home">
-            <div class="container">
-                <div class="top-landing-details">
-                    <h2>Articles</h2>
-                </div>
+            <div class="the-overlay">
+            </div>
+        </div>
+        <div class="container">
+            <div v-if="articles.length > 1" class="article-details">
+                <div v-for="item in articles.slice(0, 1)">
+                 <h3>{{item.title}}</h3>
+                    <div class="layout-bar">
+                        <div class="button-more" @click="readArticle(item)">
+                            <i class="pi pi-arrow-right"></i>
+                        </div>
+                        <div>
+                            <span>Article by: {{ item.auth }}</span><br>
+                            <span>{{ moment(item.date).format('d MMMM, YYYY') }}</span>
+                        </div>
+                    </div>
             </div>
         </div>
         <div class="container">
@@ -19,7 +31,7 @@
                         </div>
                         <div v-else class="article-list">
                             <div class="p-grid">
-                                <div v-for="article in articles" class="p-col-12 p-md-12 p-lg-6 article-window">
+                                <div v-for="article in articles" class="p-col-12 p-md-6 p-lg-6 article-window">
                                     <div class="article-image-wrap">
                                         <img src="/images/shk_properties/fadhiliHome.jpg" alt="">
                                         <div class="date-desc">
@@ -56,6 +68,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 </template>
@@ -104,9 +117,25 @@ export default {
 }
 </script>
 
-<style scoped lang="css">
-.parallax-home {
-    background-image: url('/images/shk_general/Greenpark_SHK_Drone_3.jpg');
-    height: 70vh;
-}
+<style scoped lang="sass">
+.parallax-home
+    background-image: url('/images/shk_general/Greenpark_SHK_Drone_3.jpg')
+    height: 70vh
+    position: relative
+    .the-overlay
+        position: absolute
+        background: rgba(0,0,0,0.4)
+        height: 100%
+        width: 100%
+        left: 0
+        top: 0
+        right: 0
+        opacity: 1
+        -webkit-transition: all 0.4s ease-in-out 0s
+        -moz-transition: all 0.4s ease-in-out 0s
+        transition: all 0.4s ease-in-out 0s
+        cursor: pointer
+        &:hover
+            background: rgba(0,0,0,0.7)
+
 </style>

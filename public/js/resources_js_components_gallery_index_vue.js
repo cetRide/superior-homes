@@ -14,6 +14,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var primevue_tabview__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! primevue/tabview */ "./node_modules/primevue/tabview/tabview.esm.js");
 /* harmony import */ var primevue_tabpanel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! primevue/tabpanel */ "./node_modules/primevue/tabpanel/tabpanel.esm.js");
 /* harmony import */ var primevue_galleria__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! primevue/galleria */ "./node_modules/primevue/galleria/galleria.esm.js");
+/* harmony import */ var _data_gallery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../data/gallery */ "./resources/js/data/gallery.js");
+
 
 
 
@@ -29,19 +31,8 @@ __webpack_require__.r(__webpack_exports__);
       // images: null,
       activeIndex: 0,
       displayCustom: false,
-      images: [{
-        src: '1.jpg'
-      }, {
-        src: '2.jpg'
-      }, {
-        src: '3.jpg'
-      }, {
-        src: '4.jpg'
-      }, {
-        src: '5.jpg'
-      }, {
-        src: '6.jpg'
-      }],
+      images: [],
+      gallery: _data_gallery__WEBPACK_IMPORTED_MODULE_3__.default,
       path: '/images/shk_properties/greenpark/',
       responsiveOptions: [{
         breakpoint: '1024px',
@@ -58,22 +49,27 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     imageClick: function imageClick(index, type) {
       if (type === 'greenpark') {
+        this.images = _data_gallery__WEBPACK_IMPORTED_MODULE_3__.default.greenpark;
         this.path = '/images/shk_properties/greenpark/';
       }
 
       if (type === 'pazuri') {
+        this.images = _data_gallery__WEBPACK_IMPORTED_MODULE_3__.default.pazuri;
         this.path = '/images/shk_properties/pazuri/';
       }
 
       if (type === 'fadhili') {
+        this.images = _data_gallery__WEBPACK_IMPORTED_MODULE_3__.default.fadhili;
         this.path = '/images/shk_properties/fadhili/';
       }
 
       if (type === 'leml') {
+        this.images = _data_gallery__WEBPACK_IMPORTED_MODULE_3__.default.leml;
         this.path = '/images/shk_properties/leml/';
       }
 
       if (type === 'sundowner') {
+        this.images = _data_gallery__WEBPACK_IMPORTED_MODULE_3__.default.sundowner;
         this.path = '/images/shk_properties/sundowner/';
       }
 
@@ -103,29 +99,19 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-9635edcc");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "parallax parallax-home"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "container"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "data-aos": "fade-up",
-  "data-aos-duration": "2000",
-  "class": "top-landing-details"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", null, "Our Gallery"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, "Because Every Photo Has A Story To Tell")])])], -1
-/* HOISTED */
-);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"parallax\" style=\"height:100vh;\" data-v-9635edcc><ul class=\"slideshow\" data-v-9635edcc><li data-v-9635edcc><span style=\"background-image:url(&#39;/images/shk_properties/lem.jpg&#39;);\" data-v-9635edcc></span></li><li data-v-9635edcc><span style=\"background-image:url(&#39;/images/shk_properties/home_1.jpg&#39;);\" data-v-9635edcc></span></li><li data-v-9635edcc><span style=\"background-image:url(&#39;/images/shk_properties/home_10.jpg&#39;);\" data-v-9635edcc></span></li><li data-v-9635edcc><span style=\"background-image:url(&#39;/images/shk_properties/home_5.jpg&#39;);\" data-v-9635edcc></span></li><li data-v-9635edcc><span style=\"background-image:url(&#39;/images/shk_properties/home_9.jpg&#39;);\" data-v-9635edcc></span></li></ul></div><div class=\"container\" data-v-9635edcc><div data-aos=\"fade-up\" data-aos-duration=\"2000\" class=\"top-landing-details\" data-v-9635edcc><h2 data-v-9635edcc>Gallery</h2></div></div>", 2);
 
-var _hoisted_2 = {
+var _hoisted_3 = {
   "class": "gallery-section"
 };
-var _hoisted_3 = {
+var _hoisted_4 = {
   "class": "container"
 };
-var _hoisted_4 = {
+var _hoisted_5 = {
   "class": "tab-section"
 };
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", {
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", {
   style: {
     "margin": "20px 0",
     "text-align": "center"
@@ -134,10 +120,6 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 /* HOISTED */
 );
 
-var _hoisted_6 = {
-  key: 0,
-  "class": "p-grid"
-};
 var _hoisted_7 = {
   key: 0,
   "class": "p-grid"
@@ -154,6 +136,10 @@ var _hoisted_10 = {
   key: 0,
   "class": "p-grid"
 };
+var _hoisted_11 = {
+  key: 0,
+  "class": "p-grid"
+};
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)();
 
@@ -164,15 +150,15 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
 
   var _component_Galleria = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Galleria");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TabView, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TabView, {
     ref: "tabview1"
   }, {
     "default": _withId(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TabPanel, {
-        header: "GreenPark Estate"
+        header: "Greenpark Estate"
       }, {
         "default": _withId(function () {
-          return [$data.images ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_6, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.images, function (image, index) {
+          return [$data.gallery.greenpark ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_7, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.gallery.greenpark, function (image, index) {
             return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
               "class": "p-col-12 p-md-6 p-lg-4 image-cont",
               key: index
@@ -199,7 +185,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
         header: "Fadhili Care"
       }, {
         "default": _withId(function () {
-          return [$data.images ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_7, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.images, function (image, index) {
+          return [$data.gallery.fadhili ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_8, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.gallery.fadhili, function (image, index) {
             return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
               "class": "p-col-12 p-md-6 p-lg-4 image-cont",
               key: index
@@ -226,7 +212,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
         header: "Pazuri At Vipingo"
       }, {
         "default": _withId(function () {
-          return [$data.images ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_8, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.images, function (image, index) {
+          return [$data.gallery.pazuri ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_9, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.gallery.pazuri, function (image, index) {
             return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
               "class": "p-col-12 p-md-6 p-lg-4 image-cont",
               key: index
@@ -253,7 +239,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
         header: "Greenpark Sundowner"
       }, {
         "default": _withId(function () {
-          return [$data.images ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_9, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.images, function (image, index) {
+          return [$data.gallery.sundowner ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_10, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.gallery.sundowner, function (image, index) {
             return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
               "class": "p-col-12 p-md-6 p-lg-4 image-cont",
               key: index
@@ -280,7 +266,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
         header: "Lake Elementaita Mountain Lodge"
       }, {
         "default": _withId(function () {
-          return [$data.images ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_10, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.images, function (image, index) {
+          return [$data.gallery.leml ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_11, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.gallery.leml, function (image, index) {
             return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
               "class": "p-col-12 p-md-6 p-lg-4 image-cont",
               key: index
@@ -358,6 +344,312 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
   /* PROPS */
   , ["value", "activeIndex", "responsiveOptions", "visible"])])])])]);
 });
+
+/***/ }),
+
+/***/ "./resources/js/data/gallery.js":
+/*!**************************************!*\
+  !*** ./resources/js/data/gallery.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var gallery = {
+  pazuri: [{
+    src: '1.jpg'
+  }, {
+    src: '2.jpg'
+  }, {
+    src: '3.jpg'
+  }, {
+    src: '4.jpg'
+  }, {
+    src: '5.jpg'
+  }, {
+    src: '6.jpg'
+  }, {
+    src: '7.jpg'
+  }, {
+    src: '8.jpg'
+  }, {
+    src: '9.jpg'
+  }, {
+    src: '10.jpg'
+  }, {
+    src: '11.jpg'
+  }, {
+    src: '12.jpg'
+  }, {
+    src: '13.jpg'
+  }, {
+    src: '14.jpg'
+  }, {
+    src: '15.jpg'
+  }, {
+    src: '16.jpg'
+  }, {
+    src: '17.jpg'
+  }, {
+    src: '18.jpg'
+  }, {
+    src: '19.jpg'
+  }, {
+    src: '20.jpg'
+  }, {
+    src: '21.jpg'
+  }, {
+    src: '22.jpg'
+  }, {
+    src: '23.jpg'
+  }, {
+    src: '24.jpg'
+  }, {
+    src: '25.jpg'
+  }, {
+    src: '26.jpg'
+  }, {
+    src: '27.jpg'
+  }, {
+    src: '28.jpg'
+  }, {
+    src: '29.jpg'
+  }, {
+    src: '30.jpg'
+  }, {
+    src: '31.jpg'
+  }, {
+    src: '32.jpg'
+  }, {
+    src: '33.jpg'
+  }, {
+    src: '34.jpg'
+  }],
+  greenpark: [{
+    src: '1.jpg'
+  }, {
+    src: '2.jpg'
+  }, {
+    src: '3.jpg'
+  }, {
+    src: '4.jpg'
+  }, {
+    src: '5.jpg'
+  }, {
+    src: '6.jpg'
+  }, {
+    src: '7.jpg'
+  }, {
+    src: '8.jpg'
+  }, {
+    src: '9.jpg'
+  }, {
+    src: '10.jpg'
+  }, {
+    src: '11.jpg'
+  }, {
+    src: '12.jpg'
+  }, {
+    src: '13.jpg'
+  }, {
+    src: '14.jpg'
+  }, {
+    src: '15.jpg'
+  }, {
+    src: '16.jpg'
+  }, {
+    src: '17.jpg'
+  }, {
+    src: '18.jpg'
+  }, {
+    src: '19.jpg'
+  }, {
+    src: '20.jpg'
+  }, {
+    src: '21.jpg'
+  }, {
+    src: '22.jpg'
+  }, {
+    src: '23.jpg'
+  }, {
+    src: '24.jpg'
+  }, {
+    src: '25.jpg'
+  }, {
+    src: '26.jpg'
+  }, {
+    src: '27.jpg'
+  }, {
+    src: '28.jpg'
+  }, {
+    src: '29.jpg'
+  }, {
+    src: '30.jpg'
+  }, {
+    src: '31.jpg'
+  }, {
+    src: '32.jpg'
+  }, {
+    src: '33.jpg'
+  }, {
+    src: '34.jpg'
+  }, {
+    src: '35.jpg'
+  }, {
+    src: '36.jpg'
+  }, {
+    src: '37.jpg'
+  }, {
+    src: '38.jpg'
+  }],
+  sundowner: [{
+    src: '1.jpg'
+  }, {
+    src: '2.jpg'
+  }, {
+    src: '3.jpg'
+  }, {
+    src: '4.jpg'
+  }, {
+    src: '5.jpg'
+  }, {
+    src: '6.jpg'
+  }, {
+    src: '7.jpg'
+  }, {
+    src: '8.jpg'
+  }, {
+    src: '9.jpg'
+  }, {
+    src: '10.jpg'
+  }, {
+    src: '11.jpg'
+  }, {
+    src: '12.jpg'
+  }, {
+    src: '13.jpg'
+  }, {
+    src: '14.jpg'
+  }, {
+    src: '15.jpg'
+  }, {
+    src: '16.jpg'
+  }, {
+    src: '17.jpg'
+  }, {
+    src: '18.jpg'
+  }, {
+    src: '19.jpg'
+  }, {
+    src: '20.jpg'
+  }],
+  leml: [{
+    src: '1.jpg'
+  }, {
+    src: '2.jpg'
+  }, {
+    src: '3.jpg'
+  }, {
+    src: '4.jpg'
+  }, {
+    src: '5.jpg'
+  }, {
+    src: '6.jpg'
+  }, {
+    src: '7.jpg'
+  }, {
+    src: '8.jpg'
+  }, {
+    src: '9.jpg'
+  }, {
+    src: '10.jpg'
+  }, {
+    src: '11.jpg'
+  }, {
+    src: '12.jpg'
+  }, {
+    src: '13.jpg'
+  }, {
+    src: '14.jpg'
+  }, {
+    src: '15.jpg'
+  }, {
+    src: '16.jpg'
+  }, {
+    src: '17.jpg'
+  }, {
+    src: '18.jpg'
+  }, {
+    src: '19.jpg'
+  }, {
+    src: '20.jpg'
+  }, {
+    src: '21.jpg'
+  }, {
+    src: '22.jpg'
+  }, {
+    src: '23.jpg'
+  }, {
+    src: '24.jpg'
+  }, {
+    src: '25.jpg'
+  }, {
+    src: '26.jpg'
+  }, {
+    src: '27.jpg'
+  }, {
+    src: '28.jpg'
+  }, {
+    src: '29.jpg'
+  }, {
+    src: '30.jpg'
+  }],
+  fadhili: [{
+    src: '1.jpg'
+  }, {
+    src: '2.jpg'
+  }, {
+    src: '3.jpg'
+  }, {
+    src: '4.jpg'
+  }, {
+    src: '5.jpg'
+  }, {
+    src: '6.jpg'
+  }, {
+    src: '7.jpg'
+  }, {
+    src: '8.jpg'
+  }, {
+    src: '9.jpg'
+  }, {
+    src: '10.jpg'
+  }, {
+    src: '11.jpg'
+  }, {
+    src: '12.jpg'
+  }, {
+    src: '13.jpg'
+  }, {
+    src: '14.jpg'
+  }, {
+    src: '15.jpg'
+  }, {
+    src: '16.jpg'
+  }, {
+    src: '17.jpg'
+  }, {
+    src: '18.jpg'
+  }, {
+    src: '19.jpg'
+  }, {
+    src: '20.jpg'
+  }]
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (gallery);
 
 /***/ }),
 

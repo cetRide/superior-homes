@@ -2,7 +2,7 @@
     <div>
         <div class="parallax parallax-home">
             <div class="container">
-                <div class="top-landing-details">
+                <div data-aos="fade-up" data-aos-duration="2000" class="top-landing-details">
                     <h2>Contact Us</h2>
                 </div>
             </div>
@@ -29,12 +29,14 @@
                     </div>
                 </div>
                 <div class="cont-form-wrapper">
-                    <div class="form-title">
-                        <div>
-                            <img :src="logo" alt="Superior homes logo">
-                        </div>
-                        <div>
-                            <h2>Send us an Inquiry</h2>
+                    <div class="wrap">
+                        <div class="form-title">
+                            <div>
+                                <img :src="logo" alt="Superior homes logo">
+                            </div>
+                            <div>
+                                <h3>TALK TO US</h3>
+                            </div>
                         </div>
                     </div>
                     <div class="form-container">
@@ -161,6 +163,9 @@ export default {
         toast: function () {
             this.successToast("Inquiry send successfully.")
             this.$store.commit('TOAST', false)
+            this.form = {}
+            this.firstname = ''
+            this.lastname = ''
         }
     },
     mounted() {

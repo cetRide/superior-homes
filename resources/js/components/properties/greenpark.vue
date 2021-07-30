@@ -1,6 +1,14 @@
 <template>
     <div>
-        <div class="parallax parallax-home">
+        <div class="parallax" style="height: 100vh">
+            <ul class="slideshow">
+                <li><span style="background-image: url('/images/banner/ge.jpg')"></span></li>
+                <li><span style="background-image: url('/images/shk_properties/greenpark/4.jpg')"></span></li>
+                <li><span style="background-image: url('/images/shk_properties/greenpark/6.jpg')"></span></li>
+                <li><span style="background-image: url('/images/shk_properties/greenpark/2.jpg')"></span></li>
+                <li><span style="background-image: url('/images/shk_properties/greenpark/3.jpg')"></span></li>
+            </ul>
+        </div>
             <div class="container">
                 <div data-aos="fade-up" data-aos-duration="2000" class="prop-landing-details">
                     <div class="prop-title">{{ greenParkData.title }}</div>
@@ -12,12 +20,11 @@
                     </a>
                 </div>
             </div>
-        </div>
         <div class="container">
             <div class="p-grid prop-top">
                 <div class="p-col-12 p-md-12 p-lg-6 prop-desc">
                     <h4>{{ greenParkData.title }}</h4>
-                    <h5>{{ greenParkData.sub }}</h5>
+                    <h5><i>{{ greenParkData.sub }}</i></h5>
                     <p>
                         {{ greenParkData.abt }}
                     </p>
@@ -28,7 +35,7 @@
             </div>
 
             <div class="p-grid">
-                <div v-for="data in greenParkData.type" class="p-col-12 p-md-6 p-lg-4">
+                <div v-for="data in greenParkData.type" class="p-col-12 p-md-6 p-lg-6">
                     <div class="shk_property_type">
                         <div class="image-wrap">
                             <div class="content-overlay"></div>
@@ -36,38 +43,12 @@
                         </div>
                         <div class="tag">
                             <p class="title">{{ data.name }}</p>
-                            <p class="price">{{ data.price }}</p>
+                            <p class="price">Ksh. {{ data.price.replace('Ksh','') }}</p>
                         </div>
                         <div class="desc">
 
                             {{ data.abt }}
 
-                        </div>
-                        <div>
-                            <div class="icons">
-                                <div class="item">
-                                    <img src="/images/icons/bed.svg" alt="bed-icon">
-                                </div>
-                                <div class="item">
-                                    {{ data.beds }} Bedrooms
-                                </div>
-                            </div>
-                            <div class="icons">
-                                <div class="item">
-                                    <img src="/images/icons/bath.svg" alt="bathtub-icon">
-                                </div>
-                                <div class="item">
-                                    {{ data.baths }} Bathrooms
-                                </div>
-                            </div>
-                            <div class="icons">
-                                <div class="item">
-                                    <img src="/images/icons/parking.svg" alt="parking-icon">
-                                </div>
-                                <div class="item">
-                                    Private Parking
-                                </div>
-                            </div>
                         </div>
                         <div class="btn-sec">
                             <a href="#reserve">
@@ -81,13 +62,15 @@
             </div>
             <div id="reserve">
                 <div class="cont-form-wrapper" style="margin: 30px 0 10px 0; width: 100% !important;">
+                    <div class="wrap">
                     <div class="form-title">
                         <div>
                             <img :src="logo" alt="Superior homes logo">
                         </div>
                         <div>
-                            <h2>Send us an Inquiry</h2>
+                             <h3>TALK TO US</h3>
                         </div>
+                    </div>
                     </div>
                     <div class="form-container">
                         <div class="p-grid properties-cont">
@@ -218,6 +201,9 @@ export default {
         toast: function () {
             this.successToast("Inquiry send successfully.")
             this.$store.commit('TOAST', false)
+            this.form = {}
+            this.firstname = ''
+            this.lastname = ''
         }
     },
     methods: {

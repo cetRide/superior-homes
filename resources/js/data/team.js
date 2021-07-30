@@ -12,10 +12,10 @@ const team = [
         desc: 'Yvonne Ondego holds a Bachelors Degree in Architectural studies from the University of Nairobi. '
     },
     {
-        img: '/images/users/team/shiv.jpg',
-        name: 'Shiv Arora',
-        position: 'Chief Executive Officer',
-        desc: 'Shiv Arora holds a BSc. Hons in Economics from the University of Warwick and serves as the Chief Executive Officer'
+        img: '/images/users/team/clive.jpg',
+        name: 'Clive Ndege',
+        position: 'Head of Sales',
+        desc: 'Clive Ndege holds a Masters Degree in Finance & Investments from University of Nairobi.   '
     },
     {
         img: '/images/users/team/kungu.jpg',
@@ -24,10 +24,10 @@ const team = [
         desc: 'Daniel Kungu joined Superior Homes in 2011. Daniel is a Bachelors of Commerce graduate from Kenyatta University and a CPA Finalist.'
     },
     {
-        img: '/images/users/team/clive.jpg',
-        name: 'Clive Ndege',
-        position: 'Head of Sales',
-        desc: 'Clive Ndege holds a Masters Degree in Finance & Investments from University of Nairobi.   '
+        img: '/images/users/board/shiv.jpg',
+        name: 'Shiv Arora',
+        position: 'Chief Executive Officer',
+        desc: 'Shiv Arora holds a BSc. Hons in Economics from the University of Warwick and serves as the Chief Executive Officer'
     },
     {
         img: '/images/users/team/silvano.jpg',
