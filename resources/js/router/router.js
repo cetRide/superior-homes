@@ -5,8 +5,8 @@ import "nprogress/nprogress.css";
 
 const routes = [
     {
-     path: '/',
-     redirect: '/home'
+        path: '/',
+        redirect: '/home'
     },
     {
         path: "/",
@@ -99,7 +99,7 @@ const routes = [
                 },
             },
             {
-                path: "/gallery",
+                path: "/view-gallery",
                 name: "gallery",
                 component: () => import("../components/gallery/index"),
                 meta: {
@@ -243,7 +243,93 @@ const routes = [
                 },
             },
         ]
+    },
+    {
+        path: "/admin",
+        redirect: "/admin/dashboard"
+    },
+    {
+        path: "/admin/about/index",
+        redirect: "/team-member"
+    },
+    {
+        path: "/admin/home/index",
+        redirect: "/property-listings"
+    },
+    {
+        path: "/admin",
+        name: "layout",
+        component: () => import("../components/admin/layout"),
+        children: [
+            {
+                path: "/admin/dashboard",
+                name: "dashboard",
+                component: () => import("../components/admin/dashboard"),
+            },
+            {
+                path: "/admin/home/index",
+                name: "Home-Index",
+                component: () => import("../components/admin/home/index"),
+                children: [
+                    {
+                        path: "/property-listings",
+                        name: "Property Listing",
+                        component: () => import("../components/admin/home/properities"),
+                    },
+                    {
+                        path: "/brands",
+                        name: "Brands",
+                        component: () => import("../components/admin/home/brands"),
+                    },
+                    {
+                        path: "/property-listings/:id",
+                        name: "Property Details",
+                        component: () => import("../components/admin/home/property-details"),
+                    },
+                ]
+            },
+            {
+                path: "/admin/about/index",
+                name: "about-index",
+                component: () => import("../components/admin/about-us/index"),
+                children: [
+                    {
+                        path: "/team-member",
+                        name: "Team",
+                        component: () => import("../components/admin/about-us/team"),
+                    },
+                    {
+                        path: "/board-member",
+                        name: "Board",
+                        component: () => import("../components/admin/about-us/board"),
+                    },
+                ]
+            },
+            {
+                path: "/admin/media/index",
+                name: "media-index",
+                component: () => import("../components/admin/media/index"),
+                children: [
+                    {
+                        path: "/manage-videos",
+                        name: "Admin-Videos",
+                        component: () => import("../components/admin/media/videos"),
+                    },
+                    {
+                        path: "/manage-faqs",
+                        name: "Admin-Faqs",
+                        component: () => import("../components/admin/media/faqs"),
+                    },
+                    {
+                        path: "/manage-articles",
+                        name: "Admin-Articles",
+                        component: () => import("../components/admin/media/articles"),
+                    },
+                ]
+            }
+        ]
     }
+
 ];
 
 const router = createRouter({

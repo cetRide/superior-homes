@@ -10,7 +10,7 @@
         <div class="container">
             <div>
                 <div class="careers-page">
-                    <h2 class="title">Careers</h2>
+                    <h2 class="title">Welcome to our careers page</h2>
                     <div class="no-career-wrapper">
                         <div class="no-career">
                             <div>

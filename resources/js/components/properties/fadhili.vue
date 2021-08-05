@@ -9,26 +9,28 @@
                 <li><span style="background-image: url('/images/banner/f5.jpg')"></span></li>
             </ul>
         </div>
-            <div class="container">
-                <div data-aos="fade-up" data-aos-duration="2000" class="prop-landing-details">
-                    <div class="prop-title">{{ fadhiliData.title }}</div>
-                    <div class="prop-sub">{{ fadhiliData.sub }}</div>
-                    <a href="#reserve">
-                        <div class="prop-btn" @click="reserve(fadhiliData.title)">
-                            Reserve Now
-                        </div>
-                    </a>
-                </div>
+        <div class="container">
+            <div data-aos="fade-up" data-aos-duration="2000" class="prop-landing-details">
+                <div class="prop-title">{{ property.title }}</div>
+                <div class="prop-sub">{{ property.subt }}</div>
+                <a href="#reserve">
+                    <div class="prop-btn" @click="reserve(property.title)">
+                        Reserve Now
+                    </div>
+                </a>
             </div>
+        </div>
 
         <div class="container">
             <div class="p-grid prop-top">
                 <div class="p-col-12 p-md-12 p-lg-6 prop-desc">
-                    <h4>{{ fadhiliData.title }}</h4>
-                    <h5>{{ fadhiliData.sub }}</h5>
-                    <p>
-                        {{ fadhiliData.abt }}
-                    </p>
+                    <div class="heading-text">
+                        <h4>{{ property.title }}</h4>
+                        <h5><i>{{ property.subt }}</i></h5>
+                        <p>
+                            {{ property.art }}
+                        </p>
+                    </div>
                 </div>
                 <div class="p-col-12 p-md-12 p-lg-6">
                     <div id="map"></div>
@@ -36,7 +38,7 @@
             </div>
 
             <div class="p-grid">
-                <div v-for="data in fadhiliData.type" class="p-col-12 p-md-6 p-lg-6">
+                <div v-for="data in property.property_types" class="p-col-12 p-md-6 p-lg-6">
                     <div class="shk_property_type">
                         <div class="image-wrap">
                             <div class="content-overlay"></div>
@@ -44,10 +46,10 @@
                         </div>
                         <div class="tag">
                             <p class="title">{{ data.name }}</p>
-                            <p class="price">{{ data.price }}</p>
+                            <p class="price">{{data.price }}</p>
                         </div>
                         <div class="desc">
-                            {{ data.abt }}
+                            {{ data.description }}
                         </div>
                         <div class="btn-sec">
                             <a href="#reserve">
@@ -62,14 +64,14 @@
             <div id="reserve">
                 <div class="cont-form-wrapper" style="margin: 30px 0 10px 0; width: 100% !important;">
                     <div class="wrap">
-                    <div class="form-title">
-                        <div>
-                            <img :src="logo" alt="Superior homes logo">
+                        <div class="form-title">
+                            <div>
+                                <img :src="logo" alt="Superior homes logo">
+                            </div>
+                            <div>
+                                <h3>TALK TO US</h3>
+                            </div>
                         </div>
-                        <div>
-                             <h3>TALK TO US</h3>
-                        </div>
-                    </div>
                     </div>
                     <div class="form-container">
                         <div class="p-grid properties-cont">
@@ -166,7 +168,7 @@ export default {
         return {
             logo: '/images/logos/logo_1.png',
             green_park: '/images/shk_properties/fadhili.jpg',
-            fadhiliData: fadhili,
+            property: {},
             form: {
                 phone: '',
                 message: '',
@@ -179,10 +181,13 @@ export default {
             emailValid: "",
             phoneValid: "",
             messageValid: "",
+
         }
     },
     mounted() {
-        this.initMap()
+        this.showPropertyTypes();
+        // this.initMap()
+
     },
     computed: {
         ...mapGetters([
@@ -206,6 +211,13 @@ export default {
         }
     },
     methods: {
+        showPropertyTypes() {
+            axios.get(`/api/fetch-property/Fadhili Retirement Village`).then(res => {
+                this.property = res.data[0]
+            }, function (error) {
+                console.log(error);
+            });
+        },
         canSendRequest() {
             return (
                 this.firstnameValid === "" &&
@@ -261,7 +273,7 @@ export default {
             console.log(type)
         },
         initMap() {
-            const uluru = { lat: -1.462352, lng: 37.015655 };
+            const uluru = {lat: -1.462352, lng: 37.015655};
             const map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 15,
                 center: uluru,

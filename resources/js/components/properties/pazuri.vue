@@ -2,7 +2,7 @@
     <div>
         <div class="parallax" style="height: 100vh">
             <ul class="slideshow">
-                <li><span style="background-image: url('/images/banner/p1.jpg')"></span></li>
+                <li><span style="background-image: url('/images/shk_properties/pazuri/8.jpg')"></span></li>
                 <li><span style="background-image: url('/images/banner/home_3.jpg')"></span></li>
                 <li><span style="background-image: url('/images/shk_properties/home_5.jpg')"></span></li>
                 <li><span style="background-image: url('/images/shk_properties/pazuri/4.jpg')"></span></li>
@@ -11,10 +11,10 @@
         </div>
             <div class="container">
                 <div data-aos="fade-up" data-aos-duration="2000" class="prop-landing-details">
-                    <div class="prop-title">{{ pazuriData.title }}</div>
-                    <div class="prop-sub">{{ pazuriData.sub }}</div>
+                    <div class="prop-title">{{ property.title }}</div>
+                    <div class="prop-sub">{{ property.sub }}</div>
                     <a href="#reserve">
-                        <div class="prop-btn" @click="reserve(pazuriData.title)">
+                        <div class="prop-btn" @click="reserve(property.title)">
                             Reserve Now
                         </div>
                     </a>
@@ -23,10 +23,10 @@
         <div class="container">
             <div class="p-grid prop-top">
                 <div class="p-col-12 p-md-12 p-lg-6 prop-desc">
-                    <h4>{{ pazuriData.title }}</h4>
-                    <h5>{{ pazuriData.sub }}</h5>
+                    <h4>{{ property.title }}</h4>
+                    <h5><i>{{ property.subt }}</i></h5>
                     <p>
-                        {{ pazuriData.abt }}
+                        {{ property.art }}
                     </p>
                 </div>
                 <div class="p-col-12 p-md-12 p-lg-6">
@@ -35,7 +35,7 @@
             </div>
 
             <div class="p-grid">
-                <div v-for="data in pazuriData.type" class="p-col-12 p-md-6 p-lg-6">
+                <div v-for="data in property.property_types" class="p-col-12 p-md-6 p-lg-6">
                     <div class="shk_property_type">
                         <div class="image-wrap">
                             <div class="content-overlay"></div>
@@ -43,11 +43,11 @@
                         </div>
                         <div class="tag">
                             <p class="title">{{ data.name }}</p>
-                            <p class="price">{{ data.price }}</p>
+                            <p class="price">{{data.price}}</p>
                         </div>
                         <div class="desc">
 
-                            {{ data.abt }}
+                            {{ data.description }}
 
                         </div>
                         <div class="btn-sec">
@@ -129,7 +129,6 @@
 </template>
 
 <script>
-import pazuri from "../../data/pazuri";
 import {mapGetters} from "vuex";
 import Button from "primevue/button";
 import {createToast} from "mosha-vue-toastify";
@@ -168,7 +167,7 @@ export default {
         return {
             logo: '/images/logos/logo_1.png',
             green_park: '/images/shk_properties/fadhili.jpg',
-            pazuriData: pazuri,
+            property: {},
             form: {
                 phone: '',
                 message: '',
@@ -184,6 +183,7 @@ export default {
         }
     },
     mounted() {
+        this.showPropertyTypes();
         this.initMap()
     },
     computed: {
@@ -208,6 +208,13 @@ export default {
         }
     },
     methods: {
+        showPropertyTypes() {
+            axios.get(`/api/fetch-property/Pazuri at Vipingo`).then(res => {
+                this.property = res.data[0]
+            }, function (error) {
+                console.log(error);
+            });
+        },
         canSendRequest() {
             return (
                 this.firstnameValid === "" &&

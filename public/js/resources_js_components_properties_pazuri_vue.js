@@ -11,10 +11,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _data_pazuri__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../data/pazuri */ "./resources/js/data/pazuri.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
-/* harmony import */ var primevue_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! primevue/button */ "./node_modules/primevue/button/button.esm.js");
-/* harmony import */ var mosha_vue_toastify__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mosha-vue-toastify */ "./node_modules/mosha-vue-toastify/dist/mosha-vue-toastify.es.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var primevue_button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! primevue/button */ "./node_modules/primevue/button/button.esm.js");
+/* harmony import */ var mosha_vue_toastify__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mosha-vue-toastify */ "./node_modules/mosha-vue-toastify/dist/mosha-vue-toastify.es.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -24,15 +23,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Pazuri",
   components: {
-    Button: primevue_button__WEBPACK_IMPORTED_MODULE_1__.default
+    Button: primevue_button__WEBPACK_IMPORTED_MODULE_0__.default
   },
   setup: function setup() {
     var successToast = function successToast(message) {
-      (0,mosha_vue_toastify__WEBPACK_IMPORTED_MODULE_2__.createToast)(message, {
+      (0,mosha_vue_toastify__WEBPACK_IMPORTED_MODULE_1__.createToast)(message, {
         hideProgressBar: "true",
         showIcon: "true",
         position: "top-right",
@@ -44,7 +42,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
 
     var errorToast = function errorToast(message) {
-      (0,mosha_vue_toastify__WEBPACK_IMPORTED_MODULE_2__.createToast)(message, {
+      (0,mosha_vue_toastify__WEBPACK_IMPORTED_MODULE_1__.createToast)(message, {
         hideProgressBar: "true",
         showIcon: "true",
         position: "top-right",
@@ -64,7 +62,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       logo: '/images/logos/logo_1.png',
       green_park: '/images/shk_properties/fadhili.jpg',
-      pazuriData: _data_pazuri__WEBPACK_IMPORTED_MODULE_0__.default,
+      property: {},
       form: {
         phone: '',
         message: '',
@@ -80,9 +78,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mounted: function mounted() {
+    this.showPropertyTypes();
     this.initMap();
   },
-  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_3__.mapGetters)(['emailSend', 'toast', 'toast_err'])),
+  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_2__.mapGetters)(['emailSend', 'toast', 'toast_err'])),
   watch: {
     toast_err: function toast_err() {
       if (this.toast_err) {
@@ -99,6 +98,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   methods: {
+    showPropertyTypes: function showPropertyTypes() {
+      var _this = this;
+
+      axios.get("/api/fetch-property/Pazuri at Vipingo").then(function (res) {
+        _this.property = res.data[0];
+      }, function (error) {
+        console.log(error);
+      });
+    },
     canSendRequest: function canSendRequest() {
       return this.firstnameValid === "" && this.lastnameValid === "" && this.emailValid === "" && this.phoneValid === "" && this.messageValid === "";
     },
@@ -193,7 +201,7 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-573cb244");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"parallax\" style=\"height:100vh;\" data-v-573cb244><ul class=\"slideshow\" data-v-573cb244><li data-v-573cb244><span style=\"background-image:url(&#39;/images/banner/p1.jpg&#39;);\" data-v-573cb244></span></li><li data-v-573cb244><span style=\"background-image:url(&#39;/images/banner/home_3.jpg&#39;);\" data-v-573cb244></span></li><li data-v-573cb244><span style=\"background-image:url(&#39;/images/shk_properties/home_5.jpg&#39;);\" data-v-573cb244></span></li><li data-v-573cb244><span style=\"background-image:url(&#39;/images/shk_properties/pazuri/4.jpg&#39;);\" data-v-573cb244></span></li><li data-v-573cb244><span style=\"background-image:url(&#39;/images/shk_properties/pazuri/5.jpg&#39;);\" data-v-573cb244></span></li></ul></div>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"parallax\" style=\"height:100vh;\" data-v-573cb244><ul class=\"slideshow\" data-v-573cb244><li data-v-573cb244><span style=\"background-image:url(&#39;/images/shk_properties/pazuri/8.jpg&#39;);\" data-v-573cb244></span></li><li data-v-573cb244><span style=\"background-image:url(&#39;/images/banner/home_3.jpg&#39;);\" data-v-573cb244></span></li><li data-v-573cb244><span style=\"background-image:url(&#39;/images/shk_properties/home_5.jpg&#39;);\" data-v-573cb244></span></li><li data-v-573cb244><span style=\"background-image:url(&#39;/images/shk_properties/pazuri/4.jpg&#39;);\" data-v-573cb244></span></li><li data-v-573cb244><span style=\"background-image:url(&#39;/images/shk_properties/pazuri/5.jpg&#39;);\" data-v-573cb244></span></li></ul></div>", 1);
 
 var _hoisted_2 = {
   "class": "container"
@@ -332,22 +340,22 @@ var _hoisted_37 = {
 var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.pazuriData.title), 1
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.property.title), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.pazuriData.sub), 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.property.sub), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
     "class": "prop-btn",
     onClick: _cache[1] || (_cache[1] = function ($event) {
-      return $options.reserve($data.pazuriData.title);
+      return $options.reserve($data.property.title);
     })
-  }, " Reserve Now ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.pazuriData.title), 1
+  }, " Reserve Now ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.property.title), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h5", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.pazuriData.sub), 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h5", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.property.subt), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.pazuriData.abt), 1
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.property.art), 1
   /* TEXT */
-  )]), _hoisted_10]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_11, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.pazuriData.type, function (data) {
+  )]), _hoisted_10]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_11, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.property.property_types, function (data) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
       src: data.img,
       alt: data.name
@@ -357,7 +365,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(data.price), 1
     /* TEXT */
-    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(data.abt), 1
+    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(data.description), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
       "class": "properties-btn",
@@ -447,67 +455,6 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
   /* PROPS */
   , ["loading"])])])])])]);
 });
-
-/***/ }),
-
-/***/ "./resources/js/data/pazuri.js":
-/*!*************************************!*\
-  !*** ./resources/js/data/pazuri.js ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-var pazuri = {
-  title: 'Pazuri at Vipingo',
-  sub: 'Luxury Within Reach',
-  abt: 'Pazuri at Vipingo is a master-planned residential and holiday home estate located in Vipingo, adjacent to the luxurious Vipingo Ridge. The estate consists of 372 affordable and luxurious units with a choice of two, three, and four-bedroom maisonettes and villas, each occupying a quarter-acre with scenic and unparalleled views of the Indian Ocean. In addition, a total of 45 quarter acre self-build serviced plots are also available at an elevated prime location within the Pazuri Vipingo site for those who wish to purchase and self-build their homes. All plots have stunning views of the Indian Ocean and are fully serviced with provisions for water and electricity already in place, as well as an easy access road.',
-  type: [{
-    name: '2 Bedroom Bungalow',
-    price: 'Ksh 12.98M',
-    beds: '2',
-    baths: '2',
-    abt: 'A stand-alone 1-level unit built on approximately ¼ acre, with 2 all ensuite bedrooms, an open plan kitchen, dining, lounge area, spacious garden, and  a rooftop terrace.The collective plinth area is 133 SQM.',
-    img: '/images/shk_properties/pazuri/type/1.jpg'
-  }, {
-    name: '3 Bedroom Bungalow',
-    price: 'Ksh 16.98M',
-    beds: '3',
-    baths: '3',
-    abt: 'A stand-alone 1-level unit built on approximately ¼ acre, with 3 all ensuite bedrooms, an open plan kitchen, dining, lounge area, spacious garden, and  a rooftop terrace.The collective plinth area is 192 SQM.',
-    img: '/images/shk_properties/pazuri/type/2.png'
-  }, {
-    name: '4 Bedroom Villa',
-    price: 'Ksh 20.98M',
-    beds: '4',
-    baths: '5',
-    abt: 'A stand-alone 3-level unit built on approximately ¼ acre, with 4 all ensuite bedrooms, an open plan kitchen, dining, lounge area, spacious garden, and  a rooftop terrace.The collective plinth area is 226 SQM.',
-    img: '/images/shk_properties/pazuri/type/3.jpg'
-  }, {
-    name: '3 Bedroom Maisonette (Type 1)',
-    price: 'Ksh 17.98 M',
-    beds: '3',
-    baths: '3',
-    abt: 'A stand-alone 2-level unit built on approximately ¼ acre, with 3 all ensuite bedrooms, an open plan kitchen, dining, lounge area, spacious garden, and  a rooftop terrace.The collective plinth area is 202 SQM.',
-    img: '/images/shk_properties/pazuri/type/4.jpg'
-  }, {
-    name: '3 Bedroom Maisonette (Type 2)',
-    price: 'Ksh 17.98 M',
-    beds: '3',
-    baths: '3',
-    abt: 'A stand-alone 2-level unit built on approximately ¼ acre, with 3 all ensuite bedrooms, an open plan kitchen, dining, lounge area, spacious garden, and  a rooftop terrace.The collective plinth area is 202 SQM.',
-    img: '/images/shk_properties/pazuri/type/5.jpg'
-  }, {
-    name: '1/4-acre Self-build Plots',
-    price: 'Ksh 5 M',
-    abt: 'A total of 45 quarter acre fully serviced self build plots have been selected from an elevated prime location within the Pazuri Vipingo site and and all plots have fabulous unimpeded views of the Indian ocean.',
-    img: '/images/shk_properties/pazuri/type/6.jpg'
-  }]
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pazuri);
 
 /***/ }),
 

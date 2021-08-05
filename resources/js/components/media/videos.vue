@@ -1,9 +1,6 @@
 <template>
     <div>
         <div class="parallax parallax-home">
-            <video class="background-video" autoplay loop muted poster="/images/shk_general/Greenpark_SHK_Drone_3.jpg">
-                <source src="/videos_files/video.mp4" type="video/mp4">
-            </video>
             <div class="container">
                 <div data-aos="fade-up" data-aos-duration="2000" class="top-landing-details">
                     <h2>Videos</h2>
@@ -15,7 +12,11 @@
                 <div class="p-grid">
                     <div v-for="video in videos" class="p-col-12 p-md-6 p-lg-4">
                         <div class="frame-area embed-responsive embed-responsive-16by9">
-                            <div v-html="video.link"></div>
+                            <iframe width="560" height="315" :src="video.link"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+
                         </div>
                         <div style="color: black;">
                             <h4><strong>{{ video.title }}</strong></h4>
@@ -63,6 +64,7 @@ export default {
     top: 0
     z-index: -1
 .parallax-home
+    background-image: url('/images/shk_general/Greenpark_SHK_Drone_3.jpg')
     height: 90vh
 
 .frame-area

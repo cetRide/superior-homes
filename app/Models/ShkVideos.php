@@ -8,5 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ShkVideos extends Model
 {
     use HasFactory;
-    protected $table = 'shk_videos';
+    public $timestamps = false;
+    protected $table = 'shk_video';
+    protected $fillable = ['link', 'title', 'abt'];
 }

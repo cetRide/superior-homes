@@ -9,52 +9,62 @@
                 <li><span style="background-image: url('/images/shk_properties/home_9.jpg')"></span></li>
             </ul>
         </div>
-            <div class="container">
-                <div data-aos="fade-up" data-aos-duration="2000" class="top-landing-details">
-                    <h2>Gallery</h2>
-                </div>
+        <div class="container">
+            <div data-aos="fade-up" data-aos-duration="2000" class="top-landing-details">
+                <h2>Gallery</h2>
             </div>
+        </div>
         <div class="gallery-section">
             <div class="container">
                 <div class="tab-section">
                     <h4 style="margin: 20px 0; text-align: center">Photo Gallery</h4>
                     <TabView ref="tabview1">
                         <TabPanel header="Greenpark Estate">
-                            <div v-if="gallery.greenpark" class="p-grid">
-                                <div v-for="(image, index) of gallery.greenpark" class="p-col-12 p-md-6 p-lg-4 image-cont" :key="index">
-                                    <img :src="'/images/shk_properties/greenpark/' + image.src" alt="Greenpark" style="cursor: pointer"
+                            <div v-if="greenpark" class="p-grid">
+                                <div v-for="(image, index) of greenpark"
+                                     class="p-col-12 p-md-6 p-lg-4 image-cont" :key="index">
+                                    <img :src="image.img" alt="Greenpark"
+                                         style="cursor: pointer"
                                          @click="imageClick(index, 'greenpark')"/>
                                 </div>
                             </div>
                         </TabPanel>
                         <TabPanel header="Fadhili Care">
-                            <div v-if="gallery.fadhili" class="p-grid">
-                                <div v-for="(image, index) of gallery.fadhili" class="p-col-12 p-md-6 p-lg-4 image-cont" :key="index">
-                                    <img :src="'/images/shk_properties/fadhili/' + image.src" alt="Fadhili" style="cursor: pointer"
+                            <div v-if="fadhili" class="p-grid">
+                                <div v-for="(image, index) of fadhili" class="p-col-12 p-md-6 p-lg-4 image-cont"
+                                     :key="index">
+                                    <img :src="image.img" alt="Fadhili"
+                                         style="cursor: pointer"
                                          @click="imageClick(index, 'fadhili')"/>
                                 </div>
                             </div>
                         </TabPanel>
                         <TabPanel header="Pazuri At Vipingo">
-                            <div v-if="gallery.pazuri" class="p-grid">
-                                <div v-for="(image, index) of gallery.pazuri" class="p-col-12 p-md-6 p-lg-4 image-cont" :key="index">
-                                    <img :src="'/images/shk_properties/pazuri/' + image.src" alt="Pazuri at Vipingo" style="cursor: pointer"
+                            <div v-if="pazuri" class="p-grid">
+                                <div v-for="(image, index) of pazuri" class="p-col-12 p-md-6 p-lg-4 image-cont"
+                                     :key="index">
+                                    <img :src="image.img" alt="Pazuri at Vipingo"
+                                         style="cursor: pointer"
                                          @click="imageClick(index, 'pazuri')"/>
                                 </div>
                             </div>
                         </TabPanel>
                         <TabPanel header="Greenpark Sundowner">
-                            <div v-if="gallery.sundowner" class="p-grid">
-                                <div v-for="(image, index) of gallery.sundowner" class="p-col-12 p-md-6 p-lg-4 image-cont" :key="index">
-                                    <img :src="'/images/shk_properties/sundowner/' + image.src" alt="Greenpark Sundowner" style="cursor: pointer"
+                            <div v-if="sundowner" class="p-grid">
+                                <div v-for="(image, index) of sundowner"
+                                     class="p-col-12 p-md-6 p-lg-4 image-cont" :key="index">
+                                    <img :src="image.img"
+                                         alt="Greenpark Sundowner" style="cursor: pointer"
                                          @click="imageClick(index, 'sundowner')"/>
                                 </div>
                             </div>
                         </TabPanel>
                         <TabPanel header="Lake Elementaita Mountain Lodge">
-                            <div v-if="gallery.leml" class="p-grid">
-                                <div v-for="(image, index) of gallery.leml" class="p-col-12 p-md-6 p-lg-4 image-cont" :key="index">
-                                    <img :src="'/images/shk_properties/leml/' + image.src" alt="Lake Elementaita Mountain Lodge" style="cursor: pointer"
+                            <div v-if="leml" class="p-grid">
+                                <div v-for="(image, index) of leml" class="p-col-12 p-md-6 p-lg-4 image-cont"
+                                     :key="index">
+                                    <img :src="image.img"
+                                         alt="Lake Elementaita Mountain Lodge" style="cursor: pointer"
                                          @click="imageClick(index, 'leml')"/>
                                 </div>
                             </div>
@@ -67,11 +77,11 @@
                               :circular="true" :fullScreen="true" :showItemNavigators="true"
                               :showThumbnails="false" v-model:visible="displayCustom">
                         <template #item="slotProps">
-                            <img :src="path + slotProps.item.src" alt="gallery image"
+                            <img :src="slotProps.item.img" alt="gallery image"
                                  style="width: 100%; display: block;"/>
                         </template>
                         <template #thumbnail="slotProps">
-                            <img :src="path + slotProps.item.src" alt="gallery image"
+                            <img :src="slotProps.item.img" alt="gallery image"
                                  style="display: block;"/>
                         </template>
                     </Galleria>
@@ -85,21 +95,17 @@
 import TabView from 'primevue/tabview';
 import TabPanel from 'primevue/tabpanel';
 import Galleria from 'primevue/galleria';
-import gallery from "../../data/gallery";
 
 export default {
     name: "index",
     components: {
-        TabPanel, TabView,Galleria
+        TabPanel, TabView, Galleria
     },
     data() {
         return {
-            // images: null,
             activeIndex: 0,
             displayCustom: false,
             images: [],
-            gallery: gallery,
-            path: '/images/shk_properties/greenpark/',
             responsiveOptions: [
                 {
                     breakpoint: '1024px',
@@ -114,29 +120,50 @@ export default {
                     numVisible: 1
                 }
             ],
+            property: [],
+            greenpark:[],
+            leml:[],
+            sundowner:[],
+            fadhili:[],
+            pazuri:[]
         }
     },
+    created() {
+        console.log(this.property)
+        // this.images = this.property.find(x => x.title === 'Greenpark Estate').gallery;
+    },
+    mounted() {
+        this.showProperty();
+        console.log(this.property)
+    },
     methods: {
+        showProperty() {
+            axios.get("/api/get-all-property").then(res => {
+                this.property = res.data
+                this.greenpark = this.property.find(x => x.title === 'Greenpark Estate').gallery;
+                this.pazuri = this.property.find(x => x.title === 'Pazuri at Vipingo').gallery;
+                this.fadhili = this.property.find(x => x.title === 'Fadhili Retirement Village').gallery;
+                this.leml = this.property.find(x => x.title === 'Lake Elementaita Mountain Lodge').gallery;
+                this.sundowner = this.property.find(x => x.title === 'The Greenpark Sundowner Hotel').gallery;
+            }).catch(err => {
+                this.errorToast("An error occurred!")
+            });
+        },
         imageClick(index, type) {
-            if (type === 'greenpark'){
-                this.images = gallery.greenpark
-                this.path = '/images/shk_properties/greenpark/'
+            if (type === 'greenpark') {
+                this.images = this.greenpark
             }
-            if (type === 'pazuri'){
-                this.images = gallery.pazuri
-                this.path = '/images/shk_properties/pazuri/'
+            if (type === 'pazuri') {
+                this.images = this.pazuri
             }
-            if (type === 'fadhili'){
-                this.images = gallery.fadhili
-                this.path = '/images/shk_properties/fadhili/'
+            if (type === 'fadhili') {
+                this.images = this.fadhili
             }
-            if (type === 'leml'){
-                this.images = gallery.leml
-                this.path = '/images/shk_properties/leml/'
+            if (type === 'leml') {
+                this.images = this.leml
             }
-            if (type === 'sundowner'){
-                this.images = gallery.sundowner
-                this.path = '/images/shk_properties/sundowner/'
+            if (type === 'sundowner') {
+                this.images = this.sundowner
             }
             this.activeIndex = index;
             this.displayCustom = true;

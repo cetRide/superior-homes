@@ -8,5 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ShkFaqs extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table = 'shk_faqs';
+    protected $fillable = ['qtn', 'ans'];
 }

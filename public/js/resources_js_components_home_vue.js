@@ -35,6 +35,7 @@ __webpack_require__.r(__webpack_exports__);
         numVisible: 1,
         numScroll: 1
       }],
+      property: [],
       properties: [{
         title: 'Lake Elementaita Mountain Lodge',
         sub: 'A Glance of Paradise',
@@ -67,6 +68,20 @@ __webpack_require__.r(__webpack_exports__);
         url: ''
       }]
     };
+  },
+  mounted: function mounted() {
+    this.showProperties();
+  },
+  methods: {
+    showProperties: function showProperties() {
+      var _this = this;
+
+      axios.get("/api/get-all-property").then(function (res) {
+        _this.property = res.data;
+      }, function (error) {
+        console.log(error);
+      });
+    }
   }
 });
 
@@ -128,11 +143,11 @@ var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
     "font-size": "30px"
   },
   "class": "text-center my-3"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Our Real Estate "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("OUR REAL ESTATE "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   style: {
     "color": "#F68D2E"
   }
-}, "Listings")], -1
+}, "LISTINGS")], -1
 /* HOISTED */
 );
 
@@ -155,11 +170,15 @@ var _hoisted_15 = {
   key: 0
 };
 
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+  href: "https://leml.co.ke/",
+  target: "_blank",
+  rel: "noopener noreferrer"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "more-btn"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
   "class": "pi pi-arrow-right"
-})], -1
+})])], -1
 /* HOISTED */
 );
 
@@ -167,7 +186,47 @@ var _hoisted_17 = {
   key: 1
 };
 
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+  href: "'https://greenparksundowner.co.ke/'",
+  target: "_blank",
+  rel: "noopener noreferrer"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "more-btn"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
+  "class": "pi pi-arrow-right"
+})])], -1
+/* HOISTED */
+);
+
+var _hoisted_19 = {
+  key: 2
+};
+
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "more-btn"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
+  "class": "pi pi-arrow-right"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_21 = {
+  key: 3
+};
+
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "more-btn"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
+  "class": "pi pi-arrow-right"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_23 = {
+  key: 4
+};
+
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "more-btn"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
   "class": "pi pi-arrow-right"
@@ -192,7 +251,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     /* STABLE */
 
   })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Carousel, {
-    value: $data.properties,
+    value: $data.property,
     numVisible: 3,
     numScroll: 1,
     responsiveOptions: $data.responsiveOptions,
@@ -202,32 +261,40 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
   }, {
     item: _withId(function (slotProps) {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-        src: '/images/shk_properties/' + slotProps.data.img,
+        src: slotProps.data.img,
         alt: slotProps.data.title
       }, null, 8
       /* PROPS */
       , ["src", "alt"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(slotProps.data.title), 1
       /* TEXT */
-      ), slotProps.data.url === '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-        to: {
-          name: slotProps.data.route
-        }
+      ), slotProps.data.title === 'Lake Elementaita Mountain Lodge' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_15, [_hoisted_16])) : slotProps.data.title === 'The Greenpark Sundowner Hotel' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_17, [_hoisted_18])) : slotProps.data.title === 'Fadhili Retirement Village' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+        to: "/fadhili"
       }, {
         "default": _withId(function () {
-          return [_hoisted_16];
+          return [_hoisted_20];
         }),
-        _: 2
-        /* DYNAMIC */
+        _: 1
+        /* STABLE */
 
-      }, 1032
-      /* PROPS, DYNAMIC_SLOTS */
-      , ["to"])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
-        href: slotProps.data.url,
-        target: "_blank",
-        rel: "noopener noreferrer"
-      }, [_hoisted_18], 8
-      /* PROPS */
-      , ["href"])]))])])])])];
+      })])) : slotProps.data.title === 'Pazuri at Vipingo' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+        to: "/pazuri-at-vipingo"
+      }, {
+        "default": _withId(function () {
+          return [_hoisted_22];
+        }),
+        _: 1
+        /* STABLE */
+
+      })])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+        to: "/greenpark-estate"
+      }, {
+        "default": _withId(function () {
+          return [_hoisted_24];
+        }),
+        _: 1
+        /* STABLE */
+
+      })]))])])])])];
     }),
     _: 1
     /* STABLE */

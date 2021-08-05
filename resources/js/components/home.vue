@@ -23,33 +23,56 @@
         </div>
         <div class="">
             <div>
-                <p style="font-size: 30px" class="text-center my-3">Our Real Estate <span style="color: #F68D2E">Listings</span></p>
-                <Carousel :value="properties" :numVisible="3" :numScroll="1" :responsiveOptions="responsiveOptions"
+                <p style="font-size: 30px" class="text-center my-3">OUR REAL ESTATE <span style="color: #F68D2E">LISTINGS</span>
+                </p>
+                <Carousel :value="property" :numVisible="3" :numScroll="1" :responsiveOptions="responsiveOptions"
                           class="custom-carousel" :circular="true" :autoplayInterval="2000">
                     <template #item="slotProps">
                         <div class="item-content">
                             <div class="shk_property">
                                 <div class="image-wrap">
-                                    <img :src="'/images/shk_properties/'+ slotProps.data.img"
+                                    <img :src="slotProps.data.img"
                                          :alt="slotProps.data.title">
                                     <div class="item-desc">
                                         <div class="title">
                                             {{ slotProps.data.title }}
                                         </div>
-                                        <div v-if=" slotProps.data.url === ''">
-                                            <router-link :to="{name:  slotProps.data.route}">
+                                        <div v-if="slotProps.data.title === 'Lake Elementaita Mountain Lodge'">
+                                            <a href="https://leml.co.ke/" target="_blank"
+                                               rel="noopener noreferrer">
+                                                <div class="more-btn">
+                                                    <i class="pi pi-arrow-right"></i>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div v-else-if="slotProps.data.title === 'The Greenpark Sundowner Hotel'">
+                                            <a href="'https://greenparksundowner.co.ke/'" target="_blank"
+                                               rel="noopener noreferrer">
+                                                <div class="more-btn">
+                                                    <i class="pi pi-arrow-right"></i>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div v-else-if="slotProps.data.title === 'Fadhili Retirement Village'">
+                                            <router-link to="/fadhili">
+                                                <div class="more-btn">
+                                                    <i class="pi pi-arrow-right"></i>
+                                                </div>
+                                            </router-link>
+                                        </div>
+                                        <div v-else-if="slotProps.data.title === 'Pazuri at Vipingo'">
+                                            <router-link to="/pazuri-at-vipingo">
                                                 <div class="more-btn">
                                                     <i class="pi pi-arrow-right"></i>
                                                 </div>
                                             </router-link>
                                         </div>
                                         <div v-else>
-                                            <a :href=" slotProps.data.url" target="_blank"
-                                               rel="noopener noreferrer">
+                                            <router-link to="/greenpark-estate">
                                                 <div class="more-btn">
                                                     <i class="pi pi-arrow-right"></i>
                                                 </div>
-                                            </a>
+                                            </router-link>
                                         </div>
                                     </div>
                                 </div>
@@ -90,6 +113,7 @@ export default {
                     numScroll: 1
                 }
             ],
+            property: [],
             properties: [
                 {
                     title: 'Lake Elementaita Mountain Lodge',
@@ -128,7 +152,20 @@ export default {
                 },
             ]
         };
+
     },
+    mounted() {
+        this.showProperties()
+    },
+    methods: {
+        showProperties() {
+            axios.get("/api/get-all-property").then(res => {
+                this.property = res.data
+            }, function (error) {
+                console.log(error);
+            });
+        }
+    }
 }
 </script>
 

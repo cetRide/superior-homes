@@ -14,8 +14,11 @@ import router from "./router/router";
 import store from "./store/index";
 import PrimeVue from "primevue/config";
 import VueGtag from "vue-gtag-next";
+import ConfirmationService from 'primevue/confirmationservice';
+
 const app = createApp(App);
 
+app.use(ConfirmationService);
 app.AOS = new AOS.init({ disable: "phone" });
 app.use(PrimeVue);
 app.use(router);

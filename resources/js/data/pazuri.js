@@ -29,7 +29,7 @@ const pazuri = {
         },
         {
             name: '3 Bedroom Maisonette (Type 1)',
-            price: 'Ksh 17.98 M',
+            price: 'Ksh 17.98M',
             beds: '3',
             baths: '3',
             abt: 'A stand-alone 2-level unit built on approximately ¼ acre, with 3 all ensuite bedrooms, an open plan kitchen, dining, lounge area, spacious garden, and  a rooftop terrace.The collective plinth area is 202 SQM.',
@@ -37,7 +37,7 @@ const pazuri = {
         },
         {
             name: '3 Bedroom Maisonette (Type 2)',
-            price: 'Ksh 17.98 M',
+            price: 'Ksh 17.98M',
             beds: '3',
             baths: '3',
             abt: 'A stand-alone 2-level unit built on approximately ¼ acre, with 3 all ensuite bedrooms, an open plan kitchen, dining, lounge area, spacious garden, and  a rooftop terrace.The collective plinth area is 202 SQM.',
@@ -45,7 +45,7 @@ const pazuri = {
         },
         {
             name: '1/4-acre Self-build Plots',
-            price: 'Ksh 5 M',
+            price: 'Ksh 5M',
             abt: 'A total of 45 quarter acre fully serviced self build plots have been selected from an elevated prime location within the Pazuri Vipingo site and and all plots have fabulous unimpeded views of the Indian ocean.',
             img: '/images/shk_properties/pazuri/type/6.jpg'
         },

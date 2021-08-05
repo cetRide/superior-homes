@@ -2,10 +2,10 @@
     <div>
         <div class="parallax" style="height: 100vh">
             <ul class="slideshow">
-                <li><span style="background-image: url('/images/banner/t4.jpg')"></span></li>
                 <li><span style="background-image: url('/images/banner/t1.jpg')"></span></li>
                 <li><span style="background-image: url('/images/banner/t2.jpg')"></span></li>
                 <li><span style="background-image: url('/images/banner/t3.jpg')"></span></li>
+                <li><span style="background-image: url('/images/banner/t4.jpg')"></span></li>
                 <li><span style="background-image: url('/images/banner/t5.jpg')"></span></li>
             </ul>
         </div>
@@ -56,8 +56,8 @@
                                     </div>
                                     <div class="desc">
                                         <p class="title">{{ slotProps.data.name }}</p>
-                                        <h6>{{ slotProps.data.position }}</h6>
-                                        <p>{{ slotProps.data.desc }}</p>
+                                        <h6>{{ slotProps.data.title }}</h6>
+                                        <p>{{ slotProps.data.abt }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -86,8 +86,8 @@
                                     </div>
                                     <div class="desc">
                                         <p class="title">{{ slotProps.data.name }}</p>
-                                        <h6>{{ slotProps.data.position }}</h6>
-                                        <p>{{ slotProps.data.desc }}</p>
+                                        <h6>{{ slotProps.data.title }}</h6>
+                                        <p>{{ slotProps.data.abt }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +103,6 @@
 <script>
 import Carousel from 'primevue/carousel';
 import team from "../data/team";
-import board from "../data/board";
 export default {
     components: {
         Carousel
@@ -111,8 +110,8 @@ export default {
     name: "about",
     data() {
         return {
-            team: team,
-            board: board,
+            team: [],
+            board: [],
             responsiveOptions: [
                 {
                     breakpoint: '1024px',
@@ -130,6 +129,26 @@ export default {
                     numScroll: 1
                 }
             ]
+        }
+    },
+    mounted() {
+        this.showBoardMembers()
+        this.showBoardTeam()
+    },
+    methods:{
+        showBoardMembers() {
+            axios.get("/api/get-all-board").then(res => {
+                this.board = res.data
+            }, function (error) {
+                console.log(error);
+            });
+        },
+        showBoardTeam() {
+            axios.get("/api/get-all-team").then(res => {
+                this.team = res.data
+            }, function (error) {
+                console.log(error);
+            });
         }
     }
 }
