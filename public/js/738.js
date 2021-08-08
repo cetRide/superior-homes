@@ -1,0 +1,1 @@
+(self.webpackChunk=self.webpackChunk||[]).push([[738],{9738:(e,a,s)=>{"use strict";s.r(a),s.d(a,{default:()=>r});var d=s(5166),n=(0,d.HX)("data-v-2eb06098")((function(e,a,s,n,t,r){return(0,d.wg)(),(0,d.j4)("div",null," This is the dashboard ")}));const t={name:"dashboard"};t.render=n,t.__scopeId="data-v-2eb06098";const r=t}}]);

@@ -11,7 +11,27 @@
             <div>
                 <div class="careers-page">
                     <h2 class="title">Welcome to our careers page</h2>
-                    <div class="no-career-wrapper">
+                    <div v-if="job.length > 0">
+                        <h4 class="text-center" style="margin-bottom: 10px; color: #F68D2E">Available Jobs</h4>
+                        <div v-for="item in job">
+                            <div class="ca-wrap">
+                                <div class="ca-img">
+                                    <img :src="item.img" alt="banner">
+                                </div>
+                                <div class="ca-desc">
+                                    <h2>{{ item.title }}</h2>
+                                    <p>{{ item.loc }} - Closing Date: <strong>{{ item.dat }}</strong></p>
+                                    <p>{{ item.descr }}</p>
+                                    <p style="text-align: left">All interested candidates to send a copy of their CV to
+                                        <span>careers@superiorhomes.co.ke</span></p>
+                                    <p>Download Job Description
+                                        <a :href="'jd/'+item.app">here</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-else class="no-career-wrapper">
                         <div class="no-career">
                             <div>
                                 <div class="logo">
@@ -26,14 +46,14 @@
                 </div>
                 <div class="cont-form-wrapper" style="margin: 30px 0 10px 0; width: 100% !important;">
                     <div class="wrap">
-                    <div class="form-title">
-                        <div>
-                            <img :src="logo" alt="Superior homes logo">
+                        <div class="form-title">
+                            <div>
+                                <img :src="logo" alt="Superior homes logo">
+                            </div>
+                            <div>
+                                <h3>TALK TO US</h3>
+                            </div>
                         </div>
-                        <div>
-                             <h3>TALK TO US</h3>
-                        </div>
-                    </div>
                     </div>
                     <div class="form-container">
                         <div class="p-grid properties-cont">
@@ -141,6 +161,7 @@ export default {
             emailValid: "",
             phoneValid: "",
             messageValid: "",
+            job: []
         };
     },
     computed: {
@@ -164,7 +185,10 @@ export default {
             this.lastname = ''
         }
     },
-    methods:{
+    mounted() {
+        this.showJobs();
+    },
+    methods: {
         canSendRequest() {
             return (
                 this.firstnameValid === "" &&
@@ -215,6 +239,13 @@ export default {
             if (this.canSendRequest()) {
                 this.$store.dispatch('sendEmail', this.form)
             }
+        },
+        showJobs() {
+            axios.get("/api/get-all-job").then(res => {
+                this.job = res.data
+            }).catch(err => {
+                this.errorToast("An error occurred!")
+            });
         },
     }
 }

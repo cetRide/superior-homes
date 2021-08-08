@@ -5,8 +5,8 @@
                 <li><span style="background-image: url('/images/shk_properties/home_1.jpg')"></span></li>
                 <li><span style="background-image: url('/images/banner/home_3.jpg')"></span></li>
                 <li><span style="background-image: url('/images/banner/home_4.jpg')"></span></li>
-                <li><span style="background-image: url('/images/shk_properties/home_5.jpg')"></span></li>
-                <li><span style="background-image: url('/images/banner/home_2.jpg')"></span></li>
+<!--                <li><span style="background-image: url('/images/shk_properties/home_5.jpg')"></span></li>-->
+<!--                <li><span style="background-image: url('/images/banner/home_2.jpg')"></span></li>-->
             </ul>
         </div>
         <div class="container">

@@ -18,9 +18,15 @@
                 <div class="item">
                     <span> Properties <span style="font-size: 8px">&#9660;</span></span>
                     <div class="dropdown-content" style="width: 300px">
-                        <p><router-link to="/greenpark-estate">Greenpark Estate</router-link></p>
-                        <p><router-link to="/fadhili">Fadhili Care</router-link></p>
-                        <p><router-link to="/pazuri-at-vipingo">Pazuri at Vipingo</router-link></p>
+                        <p>
+                            <router-link to="/greenpark-estate">Greenpark Estate</router-link>
+                        </p>
+                        <p>
+                            <router-link to="/fadhili">Fadhili Care</router-link>
+                        </p>
+                        <p>
+                            <router-link to="/pazuri-at-vipingo">Pazuri at Vipingo</router-link>
+                        </p>
                         <p><a href="https://leml.co.ke/" target="_blank"
                               rel="noopener noreferrer">Lake Elementaita Mountain Lodge</a></p>
                         <p><a href="https://greenparksundowner.co.ke/" target="_blank"
@@ -30,9 +36,15 @@
                 <div class="item">
                     <span>Media <span style="font-size: 8px">&#9660;</span></span>
                     <div class="dropdown-content" style="width: 160px">
-                        <p><router-link :to="{ name: 'Articles' }">Articles</router-link></p>
-                        <p><router-link :to="{ name: 'videos' }">Videos</router-link></p>
-                        <p><router-link :to="{ name: 'faqs' }">FAQs</router-link></p>
+                        <p>
+                            <router-link :to="{ name: 'Articles' }">Articles</router-link>
+                        </p>
+                        <p>
+                            <router-link :to="{ name: 'videos' }">Videos</router-link>
+                        </p>
+                        <p>
+                            <router-link :to="{ name: 'faqs' }">FAQs</router-link>
+                        </p>
                         <!--            <p><router-link :to="{ name: 'about' }">News</router-link></p>-->
                     </div>
                 </div>
@@ -51,7 +63,7 @@
                     > Contact
                     </router-link>
                 </div>
-                <div class="toggle-text" @click="visible = true" >
+                <div class="toggle-text" @click="visible = true">
                     <i class="pi pi-bars"></i>
                 </div>
             </div>
@@ -62,7 +74,8 @@
     </div>
     <div class="footer-banner">
         <div class="left">
-            <img v-if="theRoute === 'fadhili'" style="height:  279px; width: 100%; object-fit: cover" :src="fadhili_banner" alt="Greenpark">
+            <img v-if="theRoute === 'fadhili'" style="height:  279px; width: 100%; object-fit: cover"
+                 :src="fadhili_banner" alt="Greenpark">
             <img v-else style="height:  279px; width: 100%; object-fit: cover" :src="footer_banner" alt="Greenpark">
         </div>
         <div class="right">
@@ -98,7 +111,8 @@
                 <div class="product-item">
                     <div class="product-item-content">
                         <div class="p-mb-2">
-                            <img style="object-fit: contain" :src="'/images/shk_brands/' + slotProps.data.path" class="product-image"
+                            <img style="object-fit: contain" :src="'/images/shk_brands/' + slotProps.data.path"
+                                 class="product-image"
                                  :alt="slotProps.data.path"/>
                         </div>
                     </div>
@@ -237,9 +251,15 @@
                         <div>
                             <div class="title">Properties <span style="font-size: 8px">&#9660;</span></div>
                             <div class="dropdown-content">
-                                <p><router-link to="/greenpark-estate">Greenpark Estate</router-link></p>
-                                <p><router-link to="/fadhili">Fadhili Care</router-link></p>
-                                <p><router-link to="/pazuri-at-vipingo">Pazuri at Vipingo</router-link></p>
+                                <p>
+                                    <router-link to="/greenpark-estate">Greenpark Estate</router-link>
+                                </p>
+                                <p>
+                                    <router-link to="/fadhili">Fadhili Care</router-link>
+                                </p>
+                                <p>
+                                    <router-link to="/pazuri-at-vipingo">Pazuri at Vipingo</router-link>
+                                </p>
                                 <p><a href="https://leml.co.ke/" target="_blank"
                                       rel="noopener noreferrer">Lake Elementaita Mountain Lodge</a></p>
                                 <p><a href="https://greenparksundowner.co.ke/" target="_blank"
@@ -253,9 +273,15 @@
                         <div>
                             <div class="title">Media <span style="font-size: 8px">&#9660;</span></div>
                             <div class="dropdown-content">
-                                <p><router-link :to="{ name: 'Articles' }">Articles</router-link></p>
-                                <p><router-link :to="{ name: 'videos' }">Videos</router-link></p>
-                                <p><router-link :to="{ name: 'faqs' }">FAQs</router-link></p>
+                                <p>
+                                    <router-link :to="{ name: 'Articles' }">Articles</router-link>
+                                </p>
+                                <p>
+                                    <router-link :to="{ name: 'videos' }">Videos</router-link>
+                                </p>
+                                <p>
+                                    <router-link :to="{ name: 'faqs' }">FAQs</router-link>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -293,7 +319,7 @@ import Sidebar from 'primevue/sidebar';
 export default {
     name: "app",
     components: {
-        OverlayPanel, Carousel, Button,Sidebar
+        OverlayPanel, Carousel, Button, Sidebar
     },
     setup() {
         const successToast = (message) => {
@@ -328,13 +354,10 @@ export default {
             year: new Date().getFullYear(),
             visible: false,
             brands: [
-                // {path: 'fdh.jpg'},
-                // {path: 'GREENPARK.jpg'},
                 {path: 'GulfAfricanBank.jpg'},
                 {path: 'NCBA-landscape.jpg'},
                 {path: 'Stanbic.jpg'},
                 {path: 'Stanchart.jpg'},
-                // {path: 'uhu.jpg'},
                 {path: 'Victoria-Courts.jpg'},
             ],
             responsiveOptions: [
@@ -371,7 +394,7 @@ export default {
         }
     },
     watch: {
-        '$route' () {
+        '$route'() {
             this.visible = false
         }
     },
@@ -380,6 +403,33 @@ export default {
         let route = this.$route.name;
         if (route === 'Green Park') {
             this.property = 'Green Park Estate'
+        }
+        if (route === 'home') {
+            this.property = 'Any property. Visited page: Home'
+        }
+        if (route === 'contact') {
+            this.property = 'Any property. Visited page: Contact Us'
+        }
+        if (route === 'careers') {
+            this.property = 'Any property. Visited page: Careers'
+        }
+        if (route === 'about') {
+            this.property = 'Any property. Visited page: About Us'
+        }
+        if (route === 'gallery') {
+            this.property = 'Any property. Visited page: Gallery'
+        }
+        if (route === 'videos') {
+            this.property = 'Any property. Visited page: Videos'
+        }
+        if (route === 'faqs') {
+            this.property = 'Any property. Visited page: Faqs'
+        }
+        if (route === 'Read Article') {
+            this.property = 'Any property. Visited page: Read Article'
+        }
+        if (route === 'Articles') {
+            this.property = 'Any property. Visited page: Articles'
         }
         if (route === 'Fadhili') {
             this.property = 'Fadhili Care'

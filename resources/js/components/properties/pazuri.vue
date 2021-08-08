@@ -5,8 +5,8 @@
                 <li><span style="background-image: url('/images/shk_properties/pazuri/8.jpg')"></span></li>
                 <li><span style="background-image: url('/images/banner/home_3.jpg')"></span></li>
                 <li><span style="background-image: url('/images/shk_properties/home_5.jpg')"></span></li>
-                <li><span style="background-image: url('/images/shk_properties/pazuri/4.jpg')"></span></li>
-                <li><span style="background-image: url('/images/shk_properties/pazuri/5.jpg')"></span></li>
+<!--                <li><span style="background-image: url('/images/shk_properties/pazuri/4.jpg')"></span></li>-->
+<!--                <li><span style="background-image: url('/images/shk_properties/pazuri/5.jpg')"></span></li>-->
             </ul>
         </div>
             <div class="container">

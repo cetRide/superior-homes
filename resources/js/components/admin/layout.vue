@@ -72,7 +72,7 @@
             <div>
                 <hr>
             </div>
-            <div class="the-nav-item" v-tooltip="'Careers'">
+            <div class="the-nav-item" v-tooltip="'Careers'" @click="handleMenu('Admin-Careers')">
                 <div class="icon-side">
                     <i class="pi pi-briefcase"></i>
                 </div>
@@ -83,12 +83,12 @@
             <div>
                 <hr>
             </div>
-            <div class="the-nav-item" v-tooltip="'Users'">
+            <div class="the-nav-item" v-tooltip="'System'">
                 <div class="icon-side">
                     <i class="pi pi-users"></i>
                 </div>
                 <div class="nav-desc">
-                    System Users
+                    System
                 </div>
             </div>
         </div>

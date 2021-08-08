@@ -65,6 +65,13 @@ Route::post('edit-faq', [\App\Http\Controllers\ApiController::class, 'editFaq'])
 Route::get('get-all-faq', [\App\Http\Controllers\ApiController::class, 'getAllFaq']);
 Route::delete('delete-faq/{id}', [\App\Http\Controllers\ApiController::class, 'deleteFaq']);
 
+Route::post('create-job', [\App\Http\Controllers\ApiController::class, 'createJob']);
+Route::post('edit-job', [\App\Http\Controllers\ApiController::class, 'editJob']);
+Route::get('get-all-job', [\App\Http\Controllers\ApiController::class, 'getAllJob']);
+Route::delete('delete-job/{id}', [\App\Http\Controllers\ApiController::class, 'deleteJob']);
+
 Route::post('create-image', [\App\Http\Controllers\ApiController::class, 'createImage']);
 Route::get('get-images/{propertyId}', [\App\Http\Controllers\ApiController::class, 'getAllImage']);
 Route::delete('delete-image/{id}', [\App\Http\Controllers\ApiController::class, 'deleteImage']);
+
+Route::post('edit-article', [\App\Http\Controllers\ApiController::class, 'editArticle']);

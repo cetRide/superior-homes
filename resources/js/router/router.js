@@ -289,6 +289,11 @@ const routes = [
                 ]
             },
             {
+                path: "/admin/careers",
+                name: "Admin-Careers",
+                component: () => import("../components/admin/careers/index"),
+            },
+            {
                 path: "/admin/about/index",
                 name: "about-index",
                 component: () => import("../components/admin/about-us/index"),
@@ -322,8 +327,20 @@ const routes = [
                     },
                     {
                         path: "/manage-articles",
-                        name: "Admin-Articles",
-                        component: () => import("../components/admin/media/articles"),
+                        name: "admin-Articles",
+                        component: () => import("../components/admin/media/articles-index"),
+                        children: [
+                            {
+                                path: "/add-article",
+                                name: "Add-article",
+                                component: () => import("../components/admin/media/articles"),
+                            },
+                            {
+                                path: "/view-articles",
+                                name: "Admin-Articles",
+                                component: () => import("../components/admin/media/articles-manage"),
+                            },
+                        ]
                     },
                 ]
             }

@@ -5,8 +5,8 @@
                 <li><span style="background-image: url('/images/banner/t1.jpg')"></span></li>
                 <li><span style="background-image: url('/images/banner/t2.jpg')"></span></li>
                 <li><span style="background-image: url('/images/banner/t3.jpg')"></span></li>
-                <li><span style="background-image: url('/images/banner/t4.jpg')"></span></li>
-                <li><span style="background-image: url('/images/banner/t5.jpg')"></span></li>
+<!--                <li><span style="background-image: url('/images/banner/t4.jpg')"></span></li>-->
+<!--                <li><span style="background-image: url('/images/banner/t5.jpg')"></span></li>-->
             </ul>
         </div>
         <div class="container">

@@ -4,10 +4,12 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\ShkArticles;
 use App\Models\ShkBoard;
 use App\Models\ShkFaqs;
 use App\Models\ShkGallery;
 use App\Models\ShkHProperty;
+use App\Models\ShkJobs;
 use App\Models\ShkPropertyTypes;
 use App\Models\ShkTeam;
 use App\Models\ShkVideos;
@@ -57,6 +59,7 @@ class ApiController extends Controller
         $board->forceDelete();
         return response('Deleted successfully', 200);
     }
+
     public function createTeam(Request $request)
     {
         $team = new ShkTeam();
@@ -98,6 +101,7 @@ class ApiController extends Controller
         $team->forceDelete();
         return response('Deleted successfully', 200);
     }
+
     public function createProperty(Request $request)
     {
         $property = new ShkHProperty();
@@ -139,6 +143,7 @@ class ApiController extends Controller
         $property->forceDelete();
         return response('Deleted successfully', 200);
     }
+
     public function getProperty(Request $request)
     {
         $property = ShkHProperty::where('title', $request->title)
@@ -277,5 +282,82 @@ class ApiController extends Controller
         $image = ShkGallery::find($request->id);
         $image->forceDelete();
         return response('Deleted successfully', 200);
+    }
+
+    public function createJob(Request $request)
+    {
+        $job = new ShkJobs();
+        //Save images
+        $job->title = $request->title;
+        $job->descr = $request->description;
+        $job->loc = $request->loc;
+        $job->dat = $request->dat;
+        $uploadedFile = $request->file('jd');
+        $filename = time() . $uploadedFile->getClientOriginalName();
+        $request->file('jd')->move(public_path('jd'), $filename);
+        $job->app = $filename;
+
+        if (!is_null($request->file('file'))) {
+            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+            $job->img = $image_url;
+        }
+
+
+        $job->save();
+        return response($job, 200);
+    }
+
+    public function getAllJob()
+    {
+        $job = ShkJobs::get()->toJson(JSON_PRETTY_PRINT);
+        return response($job, 200);
+    }
+
+    public function editJob(Request $request)
+    {
+        $job = ShkJobs::find($request->id);
+        $job->title = $request->title;
+        $job->loc = $request->loc;
+        $job->dat = $request->dat;
+        $job->descr = $request->descr;
+        $oldFile = $job->app;
+        if ($request->file('jd')) {
+            $uploadedFile = $request->file('jd');
+            $filename = time() . $uploadedFile->getClientOriginalName();
+            $request->file('jd')->move(public_path('jd'), $filename);
+            $job->app = $filename;
+
+            if (file_exists(public_path('jd/' . $oldFile))) {
+                unlink(public_path('jd/' . $oldFile));
+            }
+            if (!is_null($request->file('file'))) {
+                $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+                $job->img = $image_url;
+            }
+            $job->save();
+            return response($job, 200);
+        }
+    }
+
+    public function deleteJob(Request $request)
+    {
+        $job = ShkJobs::find($request->id);
+        $job->forceDelete();
+        if (file_exists(public_path('jd/' . $job->app))) {
+            unlink(public_path('jd/' . $job->app));
+        }
+        return response('Deleted successfully', 200);
+    }
+
+    public function editArticle(Request $request)
+    {
+        $article = ShkArticles::find($request->id);
+        if (!is_null($request->file('file'))) {
+            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+            $article->img = $image_url;
+        }
+        $article->title = $request->title;
+        $article->save();
+        return response($article, 200);
     }
 }

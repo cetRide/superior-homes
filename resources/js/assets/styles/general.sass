@@ -351,6 +351,27 @@
             cursor: pointer
             &:hover
                 border: 1px solid #626262
+.ca-wrap
+    display: flex
+    align-items: center
+    @include shadow-shk
+    margin-bottom: 10px
+    border-radius: 8px
+    padding: 8px
+    .ca-desc
+        padding: 10px
+        p
+            text-align: justify
+        span
+            color: $primary-color
+    .ca-img
+        height: 200px
+        width: 200px
+        img
+            object-fit: contain
+            height: 200px
+            width: 200px
+
 .careers-page
     padding: 100px 0
     .title
@@ -438,6 +459,9 @@
     position: fixed
     bottom: 0
 @media only screen and (max-width: 768px)
+    .ca-wrap
+        .ca-img
+            display: none
     .gallery-section
         padding: 10px 0
     .faqs
