@@ -1,0 +1,90 @@
+@import "mixins"
+@import "variables"
+.about-page
+    padding-top: 100px
+    padding-bottom: 50px
+
+    .mission
+        margin-bottom: 25px
+
+
+    .team-statement
+        text-align: center
+        p
+            font-size: 22px
+
+        span
+            font-size: 14px
+            font-style: italic
+
+.team-wrap
+    padding: 10px
+
+    .team-card
+        position: relative
+        height: 400px
+        width: 300px
+        margin-top: 20px
+        cursor: pointer
+
+        .pic
+            height: 130px
+            width: 130px
+            border-radius: 50%
+            @include shadow-shk
+            background-color: white
+            @include center-horizontally
+            position: absolute
+            top: 0
+            z-index: 2
+            img
+                opacity: 1
+                display: block
+                width: 100%
+                height: 100%
+                object-fit: cover
+                transition: .5s ease
+                backface-visibility: hidden
+                border-radius: 50%
+
+        .desc
+            position: absolute
+            width: 100%
+            top: 65px
+            padding: 85px 10px 0 10px
+            @include shadow-shk
+            background-color: white
+            border-radius: 8px
+            color: $secondary-color
+            height: 300px
+            text-align: center
+
+
+            .title
+                font-weight: 600
+                font-size: 20px
+                &:hover
+                    color: $primary-color
+.twitter-frame
+    overflow-y: auto
+    max-height: 809px
+.p-carousel .p-carousel-indicators .p-carousel-indicator .p-highlight button
+    background-color: $primary-color !important
+@media only screen and (max-width: 768px)
+    .about-page
+        padding-top: 20px
+        padding-bottom: 10px
+        .mission
+            h3
+                text-align: center
+        .team-statement
+            text-align: center
+    .team-wrap
+        padding: 10px 5px
+        .team-card
+            min-height: 420px
+            width: 100%
+
+            .desc
+                min-height: 320px
+                text-align: center

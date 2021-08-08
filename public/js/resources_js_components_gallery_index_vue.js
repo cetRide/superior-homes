@@ -26,23 +26,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      // images: null,
       activeIndex: 0,
       displayCustom: false,
-      images: [{
-        src: '1.jpg'
-      }, {
-        src: '2.jpg'
-      }, {
-        src: '3.jpg'
-      }, {
-        src: '4.jpg'
-      }, {
-        src: '5.jpg'
-      }, {
-        src: '6.jpg'
-      }],
-      path: '/images/shk_properties/greenpark/',
+      images: [],
       responsiveOptions: [{
         breakpoint: '1024px',
         numVisible: 5
@@ -52,21 +38,66 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         breakpoint: '560px',
         numVisible: 1
-      }]
+      }],
+      property: [],
+      greenpark: [],
+      leml: [],
+      sundowner: [],
+      fadhili: [],
+      pazuri: []
     };
   },
+  created: function created() {
+    console.log(this.property); // this.images = this.property.find(x => x.title === 'Greenpark Estate').gallery;
+  },
+  mounted: function mounted() {
+    this.showProperty();
+    console.log(this.property);
+  },
   methods: {
+    showProperty: function showProperty() {
+      var _this = this;
+
+      axios.get("/api/get-all-property").then(function (res) {
+        _this.property = res.data;
+        _this.greenpark = _this.property.find(function (x) {
+          return x.title === 'Greenpark Estate';
+        }).gallery;
+        _this.pazuri = _this.property.find(function (x) {
+          return x.title === 'Pazuri at Vipingo';
+        }).gallery;
+        _this.fadhili = _this.property.find(function (x) {
+          return x.title === 'Fadhili Retirement Village';
+        }).gallery;
+        _this.leml = _this.property.find(function (x) {
+          return x.title === 'Lake Elementaita Mountain Lodge';
+        }).gallery;
+        _this.sundowner = _this.property.find(function (x) {
+          return x.title === 'The Greenpark Sundowner Hotel';
+        }).gallery;
+      })["catch"](function (err) {
+        _this.errorToast("An error occurred!");
+      });
+    },
     imageClick: function imageClick(index, type) {
       if (type === 'greenpark') {
-        this.path = '/images/shk_properties/greenpark/';
+        this.images = this.greenpark;
       }
 
       if (type === 'pazuri') {
-        this.path = '/images/shk_properties/pazuri/';
+        this.images = this.pazuri;
       }
 
       if (type === 'fadhili') {
-        this.path = '/images/shk_properties/fadhili/';
+        this.images = this.fadhili;
+      }
+
+      if (type === 'leml') {
+        this.images = this.leml;
+      }
+
+      if (type === 'sundowner') {
+        this.images = this.sundowner;
       }
 
       this.activeIndex = index;
@@ -95,29 +126,19 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-9635edcc");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "parallax parallax-home"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "container"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "data-aos": "fade-up",
-  "data-aos-duration": "2000",
-  "class": "top-landing-details"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", null, "Our Gallery"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, "Because Every Photo Has A Story To Tell")])])], -1
-/* HOISTED */
-);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"parallax\" style=\"height:100vh;\" data-v-9635edcc><ul class=\"slideshow\" data-v-9635edcc><li data-v-9635edcc><span style=\"background-image:url(&#39;/images/shk_properties/lem.jpg&#39;);\" data-v-9635edcc></span></li><li data-v-9635edcc><span style=\"background-image:url(&#39;/images/shk_properties/home_1.jpg&#39;);\" data-v-9635edcc></span></li><li data-v-9635edcc><span style=\"background-image:url(&#39;/images/shk_properties/home_10.jpg&#39;);\" data-v-9635edcc></span></li><!--                &lt;li&gt;&lt;span style=&quot;background-image: url(&#39;/images/shk_properties/home_5.jpg&#39;)&quot;&gt;&lt;/span&gt;&lt;/li&gt;--><!--                &lt;li&gt;&lt;span style=&quot;background-image: url(&#39;/images/shk_properties/home_9.jpg&#39;)&quot;&gt;&lt;/span&gt;&lt;/li&gt;--></ul></div><div class=\"container\" data-v-9635edcc><div data-aos=\"fade-up\" data-aos-duration=\"2000\" class=\"top-landing-details\" data-v-9635edcc><h2 data-v-9635edcc>Gallery</h2></div></div>", 2);
 
-var _hoisted_2 = {
+var _hoisted_3 = {
   "class": "gallery-section"
 };
-var _hoisted_3 = {
+var _hoisted_4 = {
   "class": "container"
 };
-var _hoisted_4 = {
+var _hoisted_5 = {
   "class": "tab-section"
 };
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", {
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", {
   style: {
     "margin": "20px 0",
     "text-align": "center"
@@ -126,15 +147,23 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 /* HOISTED */
 );
 
-var _hoisted_6 = {
-  key: 0,
-  "class": "p-grid"
-};
 var _hoisted_7 = {
   key: 0,
   "class": "p-grid"
 };
 var _hoisted_8 = {
+  key: 0,
+  "class": "p-grid"
+};
+var _hoisted_9 = {
+  key: 0,
+  "class": "p-grid"
+};
+var _hoisted_10 = {
+  key: 0,
+  "class": "p-grid"
+};
+var _hoisted_11 = {
   key: 0,
   "class": "p-grid"
 };
@@ -148,20 +177,20 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
 
   var _component_Galleria = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Galleria");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TabView, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TabView, {
     ref: "tabview1"
   }, {
     "default": _withId(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TabPanel, {
-        header: "GreenPark"
+        header: "Greenpark Estate"
       }, {
         "default": _withId(function () {
-          return [$data.images ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_6, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.images, function (image, index) {
+          return [$data.greenpark ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_7, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.greenpark, function (image, index) {
             return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
               "class": "p-col-12 p-md-6 p-lg-4 image-cont",
               key: index
             }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-              src: '/images/shk_properties/greenpark/' + image.src,
+              src: image.img,
               alt: "Greenpark",
               style: {
                 "cursor": "pointer"
@@ -180,15 +209,15 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
         /* STABLE */
 
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TabPanel, {
-        header: "Fadhili"
+        header: "Fadhili Care"
       }, {
         "default": _withId(function () {
-          return [$data.images ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_7, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.images, function (image, index) {
+          return [$data.fadhili ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_8, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.fadhili, function (image, index) {
             return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
               "class": "p-col-12 p-md-6 p-lg-4 image-cont",
               key: index
             }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-              src: '/images/shk_properties/fadhili/' + image.src,
+              src: image.img,
               alt: "Fadhili",
               style: {
                 "cursor": "pointer"
@@ -207,21 +236,75 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
         /* STABLE */
 
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TabPanel, {
-        header: "Pazuri"
+        header: "Pazuri At Vipingo"
       }, {
         "default": _withId(function () {
-          return [$data.images ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_8, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.images, function (image, index) {
+          return [$data.pazuri ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_9, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.pazuri, function (image, index) {
             return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
               "class": "p-col-12 p-md-6 p-lg-4 image-cont",
               key: index
             }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-              src: '/images/shk_properties/pazuri/' + image.src,
+              src: image.img,
               alt: "Pazuri at Vipingo",
               style: {
                 "cursor": "pointer"
               },
               onClick: function onClick($event) {
                 return $options.imageClick(index, 'pazuri');
+              }
+            }, null, 8
+            /* PROPS */
+            , ["src", "onClick"])]);
+          }), 128
+          /* KEYED_FRAGMENT */
+          ))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
+        }),
+        _: 1
+        /* STABLE */
+
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TabPanel, {
+        header: "Greenpark Sundowner"
+      }, {
+        "default": _withId(function () {
+          return [$data.sundowner ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_10, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.sundowner, function (image, index) {
+            return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
+              "class": "p-col-12 p-md-6 p-lg-4 image-cont",
+              key: index
+            }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+              src: image.img,
+              alt: "Greenpark Sundowner",
+              style: {
+                "cursor": "pointer"
+              },
+              onClick: function onClick($event) {
+                return $options.imageClick(index, 'sundowner');
+              }
+            }, null, 8
+            /* PROPS */
+            , ["src", "onClick"])]);
+          }), 128
+          /* KEYED_FRAGMENT */
+          ))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
+        }),
+        _: 1
+        /* STABLE */
+
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TabPanel, {
+        header: "Lake Elementaita Mountain Lodge"
+      }, {
+        "default": _withId(function () {
+          return [$data.leml ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_11, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.leml, function (image, index) {
+            return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
+              "class": "p-col-12 p-md-6 p-lg-4 image-cont",
+              key: index
+            }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+              src: image.img,
+              alt: "Lake Elementaita Mountain Lodge",
+              style: {
+                "cursor": "pointer"
+              },
+              onClick: function onClick($event) {
+                return $options.imageClick(index, 'leml');
               }
             }, null, 8
             /* PROPS */
@@ -260,7 +343,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
   }, {
     item: _withId(function (slotProps) {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-        src: $data.path + slotProps.item.src,
+        src: slotProps.item.img,
         alt: "gallery image",
         style: {
           "width": "100%",
@@ -272,7 +355,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     }),
     thumbnail: _withId(function (slotProps) {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-        src: $data.path + slotProps.item.src,
+        src: slotProps.item.img,
         alt: "gallery image",
         style: {
           "display": "block"

@@ -9,6 +9,8 @@
     border-color: $secondary-color !important
     color: $secondary-color !important
     text-decoration: none !important
+.p-tabview .p-tabview-nav
+    justify-content: space-between !important
 .image-cont
     @include center-hor-ver
     margin-bottom: 5px
@@ -21,8 +23,8 @@
     background: rgba(255, 255, 255, 0.5)
     position: fixed
     width: 100%
-    z-index: 2
-    top: 24px
+    z-index: 4
+    top: 0
 .second-nav
     display: flex
     justify-content: space-between
@@ -46,10 +48,11 @@
             display: none
             font-weight: 500
             color: gray
-            font-size: 17px
+
 
         .item
             cursor: pointer
+            position: relative
 
             a
                 text-decoration: none
@@ -63,24 +66,26 @@
             color: $secondary-color
             font-weight: 600
             @include center-hor-ver
-
+            .dropdown-content
+                display: none
+                position: absolute
+                background-color: white
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+                font-size: 17px
+                top: 35px
+                padding: 5px 10px
+                border-radius: 8px
+                p
+                    padding: 0 !important
+                    margin: 3px 0 !important
+                    font-weight: lighter
+                &:hover
+                    color: $primary-color
             &:hover
                 color: $primary-color
+                .dropdown-content
+                    display: block
 
-.slim-nav
-    display: flex
-    align-items: center
-    justify-content: space-around
-
-    .item
-        display: flex
-        align-items: center
-        font-weight: 600
-
-        desc
-            margin-right: 5px
-//hr .solid
-//    border-top: 3px solid #bbb
 .footer
     background-color: #e6e6e6
     color: black
@@ -124,22 +129,11 @@
         padding: 10px
         &:focus
             border: 1px solid black
-    .btn
-        border-radius: 0 5px 5px 0
-        background-color: $primary-color
-        @include center-hor-ver
-        height: 37px
-        border: none
-        outline: none
-        color: white
-        font-size: 14px
+    //.btn
+    //    display: flex
+    //    align-items: center
+    //    margin-right: 0
 
-.instagram-logo
-    path
-        fill: #000
-    circle: #fff
-    .logo
-        fill: #333
 .social-icons
     display: flex
     align-items: center
@@ -155,9 +149,10 @@
         @include center-hor-ver
         margin-right: 10px
         cursor: pointer
+        img
+            height: 25px
+            width: 25px
 
-        i
-            font-weight: lighter
 .width-input
     width: 450px
 .footer-banner
@@ -172,7 +167,6 @@
         width: 60%
         height: 279px
 .parallax
-    top: 24px
     background-attachment: fixed
     background-position: center
     background-repeat: no-repeat
@@ -192,19 +186,24 @@
 
 .top-landing-details
     padding-top: 130px
+    position: absolute
+    z-index: 3
+    top: 0
     h2
-        font-weight: 800
-        font-size: 30px
+        font-weight: bolder
+        font-size: 32px
+        color: #000000
     h4
         font-weight: 700
-        font-size: 25px
+        font-size: 20px
+        margin-top: 20px
     p
-        font-weight: 600
-        font-size: 18px
+        font-size: 16px
     .landing-btn
         height: 35px
-        width: 100px
+        width: 130px
         border-radius: 25px
+        padding: 0 10px
         background-color: $primary-color
         color: white
         cursor: pointer
@@ -212,12 +211,53 @@
 .properties-cont
     padding: 20px 0
 .shk_property
-    @include shadow-shk
-    border-radius: 10px
     cursor: pointer
+    a
+        text-decoration: none
+        color: black
+        &:hover
+            color: white
     .image-wrap
-        height: 320px
+        height: 420px
         position: relative
+        .item-desc
+            position: absolute
+            top: 360px
+            display: flex
+            justify-content: space-between
+            align-items: center
+            width: 100%
+            z-index: 2
+            padding: 0 6px
+            .title
+                @include center-hor-ver
+                color: white
+                font-size: 20px
+                font-weight: bolder
+            .more-btn
+                height: 20px
+                width: 20px
+                border-radius: 50%
+                background-color: white
+                font-size: 13px
+                @include center-hor-ver
+                &:hover
+                    background-color: $primary-color !important
+                    color: white
+        .content-overlay
+            background: rgba(0,0,0,0.5)
+            position: absolute
+            height: 100%
+            width: 100%
+            left: 0
+            top: 0
+            bottom: 0
+            right: 0
+            opacity: 0
+            -webkit-transition: all 0.4s ease-in-out 0s
+            -moz-transition: all 0.4s ease-in-out 0s
+            transition: all 0.4s ease-in-out 0s
+            cursor: pointer
         img
             opacity: 1
             display: block
@@ -226,16 +266,16 @@
             object-fit: cover
             transition: .5s ease
             backface-visibility: hidden
-            border-radius: 10px
-        &:hover img
-            opacity: 0.3
+        &:hover .content-overlay
+            opacity: 1
     .desc
-        padding: 10px
+        padding: 0 10px
+        color: black
+        text-align: justify
     .btn-sec
         padding: 10px
 .cont-one
     display: flex
-    align-items: center
     padding: 100px 0 100px 0
     .details
         h3
@@ -268,17 +308,22 @@
     border-radius: 8px
     border: 1px solid $hover-color
     padding: 15px
-    .form-title
+    .wrap
         display: flex
         align-items: center
-        margin-bottom: 25px
-        img
-            height: 50px
-            width: 50px
-            margin-right: 15px
-        h2
-            font-weight: 500
-            font-size: 40px
+        justify-content: center
+        .form-title
+            display: flex
+            align-items: center
+            margin-bottom: 25px
+            width: auto
+            img
+                height: 50px
+                width: 50px
+                margin-right: 15px
+            h2
+                font-weight: 500
+                font-size: 40px
     .form-container
         background-color: #f8f9fa
         padding: 10px
@@ -306,6 +351,27 @@
             cursor: pointer
             &:hover
                 border: 1px solid #626262
+.ca-wrap
+    display: flex
+    align-items: center
+    @include shadow-shk
+    margin-bottom: 10px
+    border-radius: 8px
+    padding: 8px
+    .ca-desc
+        padding: 10px
+        p
+            text-align: justify
+        span
+            color: $primary-color
+    .ca-img
+        height: 200px
+        width: 200px
+        img
+            object-fit: contain
+            height: 200px
+            width: 200px
+
 .careers-page
     padding: 100px 0
     .title
@@ -321,6 +387,14 @@
                 font-size: 18px
             .logo
                 @include center-hor-ver
+.faqs
+    padding: 100px 0
+    .title
+        margin-bottom: 30px
+.videos
+    padding: 100px 0
+    .title
+        margin-bottom: 30px
 .gallery-section
     padding: 100px 0
 .tab-section
@@ -328,9 +402,72 @@
     @include shadow-shk
     padding: 5px
     border-radius: 5px
-@media only screen and (max-width: 576px)
+.dropdown-items
+    a
+        text-decoration: none
+        color: $secondary-color
+        padding: 5px
+        border-radius: 5px
+        display: block
+        &:hover
+            background-color: $hover-color
+            color: $primary-color
+.p-accordion .p-accordion-content
+    border: none !important
+    background: $hover-color !important
+    padding: 0 20px !important
+
+.p-accordion .p-accordion-header .p-accordion-header-link
+    //padding: 5px !important
+    margin-left: 0 !important
+    background: $primary-color !important
+    font-weight: 600 !important
+    font-size: 16px
+    color: white !important
+    text-decoration: none !important
+
+
+.p-accordion .p-accordion-header:not(.p-disabled) .p-accordion-header-link:focus
+    box-shadow: none !important
+    outline: none !important
+
+.p-accordion .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon
+    margin-right: 1rem !important
+    float: right !important
+.mobile-nav-side
+    .item
+        width: 100%
+        @include center-hor-ver
+        color: $secondary-color
+        font-size: 19px
+        margin-bottom: 20px
+        a
+            color: $secondary-color
+            &:hover
+                color: $primary-color
+        .drop-down
+            @include center-hor-ver
+            .title
+                @include center-hor-ver
+            .dropdown-content
+                display: none
+                font-size: 14px
+            &:hover
+                .dropdown-content
+                    display: block
+.chat-bubble
+    position: fixed
+    bottom: 0
+@media only screen and (max-width: 768px)
+    .ca-wrap
+        .ca-img
+            display: none
     .gallery-section
         padding: 10px 0
+    .faqs
+        padding: 10px
+        .title
+            margin-bottom: 10px
     .careers-page
         padding: 10px
         .title
@@ -344,7 +481,7 @@
         width: 100%
     .cont-one
         display: block
-        padding: 30px 10px
+        //padding: 30px 10px
         .details
             text-align: center
             width: 100%
@@ -388,8 +525,6 @@
     .bg-shadow
         top: 0 !important
         @include shadow-shk
-    .slim-nav
-        display: none
     .second-nav
         //top: 0
         height: 50px

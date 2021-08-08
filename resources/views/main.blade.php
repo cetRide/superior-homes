@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="preload" as="font" href="{{ asset('fonts/Montserrat/Montserrat-Regular.ttf') }}"
+    <link rel="preload" as="font" href="{{ asset('fonts/Nunito-sans.ttf') }}"
           crossorigin="anonymous">
 </head>
 
@@ -33,7 +33,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: #01426A;
+        color: black;
         font-size: 30px;
         font-weight: lighter;
         display: flex;
@@ -46,7 +46,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: 'Montserrat', sans-serif
+        font-family: 'Nunito Sans', Arial, sans-serif
     }
 
     #spinner {
@@ -74,7 +74,7 @@
         position: absolute;
         padding: 10px;
         font-weight: bold;
-        font-family: 'Montserrat', sans-serif
+        font-family: nunito sans, Arial, sans-serif
     }
 </style>
 
@@ -102,7 +102,10 @@
 
 </div>
 <script src="{{ mix('js/app.js') }}"></script>
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="3c4862df-7375-412b-a63d-c286529e5539";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2yy50Uw-pS7o17DrS7J3txklCtOiL9AI&amp;sensor=false"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 
 </html>
