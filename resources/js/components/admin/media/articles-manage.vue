@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div>
+        <div v-if="!show_edit_modal">
             <DataTable :value="articles" responsiveLayout="scroll">
                 <Column field="title" header="Title"></Column>
                 <Column field="auth" header="Author"></Column>
@@ -16,11 +16,11 @@
             </DataTable>
             <ConfirmPopup></ConfirmPopup>
         </div>
-        <div>
-            <Dialog header="Edit Article" v-model:visible="show_edit_modal"
-                    :maximizable="true" :modal="true"
-                    :breakpoints="{'960px': '75vw', '640px': '100vw'}" :style="{width: '80vw'}"
-            >
+        <div v-if="show_edit_modal">
+<!--            <Dialog header="Edit Article" v-model:visible="show_edit_modal"-->
+<!--                    :maximizable="true" :modal="true"-->
+<!--                    :breakpoints="{'960px': '75vw', '640px': '100vw'}" :style="{width: '80vw'}"-->
+<!--            >-->
                 <div style="padding-top: 10px">
                     <div>
                         <label for="title">Title</label>
@@ -53,7 +53,7 @@
                             id="uuid"
                             v-model="formEdit.abt"
                             :init="{
-                   height: 400,
+                   height: 500,
                    menubar: 'file edit view insert format tools table tc help',
                    autosave_ask_before_unload: true,
                    autosave_interval: '30s',
@@ -79,11 +79,9 @@
                         </editor>
                     </div>
                 </div>
-                <template #footer>
-                    <Button label="Cancel" @click="show_edit_modal = false" class="p-button-text"/>
-                    <Button :loading="loadingEdit" label="Edit" @click="editArticle"/>
-                </template>
-            </Dialog>
+           <div style="margin: 15px 0">
+               <Button :loading="loadingEdit" label="Edit Article" @click="editArticle"/>
+           </div>
         </div>
     </div>
 </template>

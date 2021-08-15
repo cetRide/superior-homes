@@ -695,43 +695,55 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-488c900f");
 
 var _hoisted_1 = {
+  key: 0
+};
+var _hoisted_2 = {
+  key: 1
+};
+var _hoisted_3 = {
   style: {
     "padding-top": "10px"
   }
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   "for": "title"
 }, "Title", -1
 /* HOISTED */
 );
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, "Old Photo", -1
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, "Old Photo", -1
 /* HOISTED */
 );
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Image size exceeds 5MB");
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Image size exceeds 5MB");
 
-var _hoisted_5 = {
+var _hoisted_7 = {
   key: 0
 };
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   "class": "label-upload",
   "for": "fupload"
 }, "Change Image", -1
 /* HOISTED */
 );
 
-var _hoisted_7 = {
+var _hoisted_9 = {
   key: 1
 };
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, "New Photo", -1
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, "New Photo", -1
 /* HOISTED */
 );
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Remove image");
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Remove image");
+
+var _hoisted_12 = {
+  style: {
+    "margin": "15px 0"
+  }
+};
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)();
 
@@ -750,9 +762,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
 
   var _component_editor = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("editor");
 
-  var _component_Dialog = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Dialog");
-
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DataTable, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [!$data.show_edit_modal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DataTable, {
     value: _ctx.articles,
     responsiveLayout: "scroll"
   }, {
@@ -799,129 +809,96 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
 
   }, 8
   /* PROPS */
-  , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ConfirmPopup)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Dialog, {
-    header: "Edit Article",
-    visible: $data.show_edit_modal,
-    "onUpdate:visible": _cache[4] || (_cache[4] = function ($event) {
-      return $data.show_edit_modal = $event;
-    }),
-    maximizable: true,
-    modal: true,
-    breakpoints: {
-      '960px': '75vw',
-      '640px': '100vw'
-    },
-    style: {
-      width: '80vw'
-    }
+  , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ConfirmPopup)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.show_edit_modal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <Dialog header=\"Edit Article\" v-model:visible=\"show_edit_modal\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    :maximizable=\"true\" :modal=\"true\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    :breakpoints=\"{'960px': '75vw', '640px': '100vw'}\" :style=\"{width: '80vw'}\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            >"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_InputText, {
+    id: "title",
+    type: "text",
+    modelValue: $data.formEdit.title,
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return $data.formEdit.title = $event;
+    })
+  }, null, 8
+  /* PROPS */
+  , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+    src: $data.formEdit.img
+  }, null, 8
+  /* PROPS */
+  , ["src"])]), $data.errorSize ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Message, {
+    key: 0,
+    severity: "error"
   }, {
-    footer: _withId(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
-        label: "Cancel",
-        onClick: _cache[3] || (_cache[3] = function ($event) {
-          return $data.show_edit_modal = false;
-        }),
-        "class": "p-button-text"
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
-        loading: $data.loadingEdit,
-        label: "Edit",
-        onClick: $options.editArticle
-      }, null, 8
-      /* PROPS */
-      , ["loading", "onClick"])];
-    }),
     "default": _withId(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_InputText, {
-        id: "title",
-        type: "text",
-        modelValue: $data.formEdit.title,
-        "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-          return $data.formEdit.title = $event;
-        })
-      }, null, 8
-      /* PROPS */
-      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-        src: $data.formEdit.img
-      }, null, 8
-      /* PROPS */
-      , ["src"])]), $data.errorSize ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Message, {
-        key: 0,
-        severity: "error"
-      }, {
-        "default": _withId(function () {
-          return [_hoisted_4];
-        }),
-        _: 1
-        /* STABLE */
-
-      })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.editItems, function (item) {
-        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [!item.image ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
-          type: "file",
-          onChange: function onChange($event) {
-            return $options.onFileChange(item, $event);
-          },
-          accept: "image/*",
-          id: "fupload",
-          hidden: ""
-        }, null, 40
-        /* PROPS, HYDRATE_EVENTS */
-        , ["onChange"]), _hoisted_6])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-          src: item.image
-        }, null, 8
-        /* PROPS */
-        , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
-          onClick: function onClick($event) {
-            return $options.removeImage(item);
-          }
-        }, {
-          "default": _withId(function () {
-            return [_hoisted_9];
-          }),
-          _: 2
-          /* DYNAMIC */
-
-        }, 1032
-        /* PROPS, DYNAMIC_SLOTS */
-        , ["onClick"])]))]);
-      }), 256
-      /* UNKEYED_FRAGMENT */
-      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_editor, {
-        initialValue: "<p>Article contents</p>",
-        "api-key": "dooeanipvyv792bved3c6noxt3vtu9rotq517mdw6lno14ia",
-        disabled: false,
-        id: "uuid",
-        modelValue: $data.formEdit.abt,
-        "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-          return $data.formEdit.abt = $event;
-        }),
-        init: {
-          height: 400,
-          menubar: 'file edit view insert format tools table tc help',
-          autosave_ask_before_unload: true,
-          autosave_interval: '30s',
-          autosave_prefix: '{path}{query}-{id}-',
-          autosave_restore_when_empty: false,
-          autosave_retention: '2m',
-          image_advtab: true,
-          plugins: ['advlist autolink lists link image charmap', 'searchreplace visualblocks code fullscreen', 'print preview anchor insertdatetime media', 'paste code help wordcount table'],
-          toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment',
-          content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-        },
-        "model-events": "",
-        plugins: "",
-        "tag-name": "div",
-        toolbar: "",
-        value: ""
-      }, null, 8
-      /* PROPS */
-      , ["modelValue"])])])];
+      return [_hoisted_6];
     }),
     _: 1
     /* STABLE */
 
-  }, 8
+  })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.editItems, function (item) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [!item.image ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+      type: "file",
+      onChange: function onChange($event) {
+        return $options.onFileChange(item, $event);
+      },
+      accept: "image/*",
+      id: "fupload",
+      hidden: ""
+    }, null, 40
+    /* PROPS, HYDRATE_EVENTS */
+    , ["onChange"]), _hoisted_8])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+      src: item.image
+    }, null, 8
+    /* PROPS */
+    , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
+      onClick: function onClick($event) {
+        return $options.removeImage(item);
+      }
+    }, {
+      "default": _withId(function () {
+        return [_hoisted_11];
+      }),
+      _: 2
+      /* DYNAMIC */
+
+    }, 1032
+    /* PROPS, DYNAMIC_SLOTS */
+    , ["onClick"])]))]);
+  }), 256
+  /* UNKEYED_FRAGMENT */
+  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_editor, {
+    initialValue: "<p>Article contents</p>",
+    "api-key": "dooeanipvyv792bved3c6noxt3vtu9rotq517mdw6lno14ia",
+    disabled: false,
+    id: "uuid",
+    modelValue: $data.formEdit.abt,
+    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+      return $data.formEdit.abt = $event;
+    }),
+    init: {
+      height: 500,
+      menubar: 'file edit view insert format tools table tc help',
+      autosave_ask_before_unload: true,
+      autosave_interval: '30s',
+      autosave_prefix: '{path}{query}-{id}-',
+      autosave_restore_when_empty: false,
+      autosave_retention: '2m',
+      image_advtab: true,
+      plugins: ['advlist autolink lists link image charmap', 'searchreplace visualblocks code fullscreen', 'print preview anchor insertdatetime media', 'paste code help wordcount table'],
+      toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment',
+      content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+    },
+    "model-events": "",
+    plugins: "",
+    "tag-name": "div",
+    toolbar: "",
+    value: ""
+  }, null, 8
   /* PROPS */
-  , ["visible"])])]);
+  , ["modelValue"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
+    loading: $data.loadingEdit,
+    label: "Edit Article",
+    onClick: $options.editArticle
+  }, null, 8
+  /* PROPS */
+  , ["loading", "onClick"])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
 });
 
 /***/ }),
