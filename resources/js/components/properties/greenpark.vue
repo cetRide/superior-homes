@@ -5,21 +5,19 @@
                 <li><span style="background-image: url('/images/banner/ge.jpg')"></span></li>
                 <li><span style="background-image: url('/images/shk_properties/greenpark/4.jpg')"></span></li>
                 <li><span style="background-image: url('/images/shk_properties/greenpark/6.jpg')"></span></li>
-<!--                <li><span style="background-image: url('/images/shk_properties/greenpark/2.jpg')"></span></li>-->
-<!--                <li><span style="background-image: url('/images/shk_properties/greenpark/3.jpg')"></span></li>-->
             </ul>
         </div>
-            <div class="container">
-                <div data-aos="fade-up" data-aos-duration="2000" class="prop-landing-details">
-                    <div class="prop-title">{{ property.title }}</div>
-                    <div class="prop-sub">{{ property.subt }}</div>
-                    <a href="#reserve">
-                        <div class="prop-btn" @click="reserve(property.title)">
-                            Reserve Now
-                        </div>
-                    </a>
-                </div>
+        <div class="container">
+            <div data-aos="fade-up" data-aos-duration="1000" class="prop-landing-details">
+                <div class="prop-title">{{ property.title }}</div>
+                <div class="prop-sub">{{ property.subt }}</div>
+                <a href="#reserve">
+                    <div class="prop-btn" @click="reserve(property.title)">
+                        Reserve Now
+                    </div>
+                </a>
             </div>
+        </div>
         <div class="container">
             <div class="p-grid prop-top">
                 <div class="p-col-12 p-md-12 p-lg-6 prop-desc">
@@ -43,7 +41,7 @@
                         </div>
                         <div class="tag">
                             <p class="title">{{ data.name }}</p>
-                            <p class="price">{{data.price}}</p>
+                            <p class="price">{{ data.price }}</p>
                         </div>
                         <div class="desc">
 
@@ -63,14 +61,14 @@
             <div id="reserve">
                 <div class="cont-form-wrapper" style="margin: 30px 0 10px 0; width: 100% !important;">
                     <div class="wrap">
-                    <div class="form-title">
-                        <div>
-                            <img :src="logo" alt="Superior homes logo">
+                        <div class="form-title">
+                            <div>
+                                <img :src="logo" alt="Superior homes logo">
+                            </div>
+                            <div>
+                                <h3>TALK TO US</h3>
+                            </div>
                         </div>
-                        <div>
-                             <h3>TALK TO US</h3>
-                        </div>
-                    </div>
                     </div>
                     <div class="form-container">
                         <div class="p-grid properties-cont">
@@ -208,6 +206,9 @@ export default {
         }
     },
     methods: {
+        track() {
+            this.$gtag.pageview(this.$route)
+        },
         showPropertyTypes() {
             axios.get(`/api/fetch-property/Greenpark Estate`).then(res => {
                 this.property = res.data[0]

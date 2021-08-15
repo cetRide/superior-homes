@@ -22,7 +22,7 @@
                         </div>
                         <div>
                             <span>Article by: {{ item.auth }}</span><br>
-                            <span>{{ moment(item.date).format('d MMMM, YYYY') }}</span>
+                            <span>{{item.date }}</span>
                         </div>
                     </div>
                 </div>
@@ -44,10 +44,10 @@
                                             <img :src="article.img" alt="">
                                             <div class="date-desc">
                                                 <div class="day">
-                                                    {{ moment(article.date).format('d') }}
+                                                    {{article.day }}
                                                 </div>
                                                 <div class="month">
-                                                    {{ moment(article.date).format('MMM') }}
+                                                    {{article.month }}
                                                 </div>
                                                 <div class="read-more" @click="readArticle(article)">
                                                     Read More
@@ -60,7 +60,7 @@
                                             </div>
                                             <div>
                                                 <p style="margin-top: 10px">Article by: {{ article.auth }}</p>
-                                                <p><strong>{{ moment(article.date).format('d MMMM, YYYY') }}</strong>
+                                                <p><strong>{{article.date }}</strong>
                                                 </p>
                                             </div>
                                         </div>
@@ -86,7 +86,6 @@
 import {mapGetters} from "vuex";
 import Skeleton from 'primevue/skeleton';
 import router from "../../router/router";
-import moment from 'moment';
 
 export default {
     name: "articles",
@@ -96,10 +95,7 @@ export default {
     computed: {
         ...mapGetters([
             'articles'
-        ])
-    },
-    created() {
-        this.moment = moment;
+        ]),
     },
     mounted() {
         if (this.articles.length < 1) {
@@ -113,12 +109,14 @@ export default {
         }
     },
     methods: {
+        track () {
+            this.$gtag.pageview(this.$route)
+        },
         readArticle(article) {
             router.push({
                 name: 'Read Article',
                 params: {
-                    id: article.id,
-                    title: article.title.replace(/\s/g, '')
+                    title: article.title.replace(/\s/g, '-')
                 }
             })
         }

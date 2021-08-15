@@ -5,12 +5,10 @@
                 <li><span style="background-image: url('/images/shk_properties/pazuri/8.jpg')"></span></li>
                 <li><span style="background-image: url('/images/banner/home_3.jpg')"></span></li>
                 <li><span style="background-image: url('/images/shk_properties/home_5.jpg')"></span></li>
-<!--                <li><span style="background-image: url('/images/shk_properties/pazuri/4.jpg')"></span></li>-->
-<!--                <li><span style="background-image: url('/images/shk_properties/pazuri/5.jpg')"></span></li>-->
             </ul>
         </div>
             <div class="container">
-                <div data-aos="fade-up" data-aos-duration="2000" class="prop-landing-details">
+                <div data-aos="fade-up" data-aos-duration="1000" class="prop-landing-details">
                     <div class="prop-title">{{ property.title }}</div>
                     <div class="prop-sub">{{ property.sub }}</div>
                     <a href="#reserve">
@@ -208,6 +206,9 @@ export default {
         }
     },
     methods: {
+        track () {
+            this.$gtag.pageview(this.$route)
+        },
         showPropertyTypes() {
             axios.get(`/api/fetch-property/Pazuri at Vipingo`).then(res => {
                 this.property = res.data[0]

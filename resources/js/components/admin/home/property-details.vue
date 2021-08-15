@@ -142,7 +142,7 @@
                     </div>
                     <div>
                         <label for="fpos">Price</label>
-                        <InputText type="number" id="fpos" v-model="formEdit.price"/>
+                        <InputText type="text" id="fpos" v-model="formEdit.price"/>
                     </div>
                     <div>
                         <label for="fdesc">Description</label>
@@ -350,7 +350,7 @@ export default {
             let files = e.target.files || e.dataTransfer.files;
             if (!files.length)
                 return;
-            if (files[0].size > 5097152) {
+            if (files[0].size > 5242880) {
                 this.errorSize = true;
                 this.removeImage(item);
                 return;

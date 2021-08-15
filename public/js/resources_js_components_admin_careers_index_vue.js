@@ -148,7 +148,7 @@ __webpack_require__.r(__webpack_exports__);
       var files = e.target.files || e.dataTransfer.files;
       if (!files.length) return;
 
-      if (files[0].size > 5097152) {
+      if (files[0].size > 5242880) {
         this.errorSize = true;
         this.removeImage(item);
         return;

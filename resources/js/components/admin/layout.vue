@@ -19,7 +19,7 @@
             </div>
             <div class="contents-wrap">
                 <div class="breadcrumb-admin">
-                    <p>Superior Homes Kenya<span> | {{routeName}}</span></p>
+                    <p>Superior Homes Kenya<span> | {{ routeName }}</span></p>
                 </div>
                 <router-view></router-view>
             </div>
@@ -28,7 +28,7 @@
             <div class="logo-icon">
 
             </div>
-            <div class="the-nav-item" v-tooltip="'Dashboard'">
+            <div class="the-nav-item" v-tooltip="'Dashboard'" @click="handleMenu('dashboard')">
                 <div class="icon-side">
                     <i class="pi pi-compass"></i>
                 </div>
@@ -83,15 +83,27 @@
             <div>
                 <hr>
             </div>
-            <div class="the-nav-item" v-tooltip="'System'">
+            <div class="the-nav-item" v-tooltip="'Documents'" @click="handleMenu('Documents')">
                 <div class="icon-side">
-                    <i class="pi pi-users"></i>
+                    <i class="pi pi-bookmark"></i>
                 </div>
                 <div class="nav-desc">
-                    System
+                    Documents
+                </div>
+            </div>
+            <div>
+                <hr>
+            </div>
+            <div class="the-nav-item" v-tooltip="'Referrals'" @click="handleMenu('Referrals')">
+                <div class="icon-side">
+                    <i class="pi pi-link"></i>
+                </div>
+                <div class="nav-desc">
+                    Referrals
                 </div>
             </div>
         </div>
+
     </div>
 </template>
 
@@ -138,6 +150,23 @@ export default {
             }
             this.open = true
             this.close = false
+        },
+        logout(e) {
+            console.log('ss')
+            e.preventDefault()
+            this.axios.get('/sanctum/csrf-cookie').then(response => {
+                this.axios.post('/api/logout')
+                    .then(response => {
+                        if (response.data.success) {
+                            window.location.href = "/"
+                        } else {
+                            console.log(response)
+                        }
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                    });
+            })
         }
     }
 }

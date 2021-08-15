@@ -5,12 +5,10 @@
                 <li><span style="background-image: url('/images/banner/f1.jpg')"></span></li>
                 <li><span style="background-image: url('/images/banner/f2.jpg')"></span></li>
                 <li><span style="background-image: url('/images/banner/f3.jpg')"></span></li>
-<!--                <li><span style="background-image: url('/images/banner/f4.jpg')"></span></li>-->
-<!--                <li><span style="background-image: url('/images/banner/f5.jpg')"></span></li>-->
             </ul>
         </div>
         <div class="container">
-            <div data-aos="fade-up" data-aos-duration="2000" class="prop-landing-details">
+            <div data-aos="fade-up" data-aos-duration="1000" class="prop-landing-details">
                 <div class="prop-title">{{ property.title }}</div>
                 <div class="prop-sub">{{ property.subt }}</div>
                 <a href="#reserve">
@@ -186,7 +184,8 @@ export default {
     },
     mounted() {
         this.showPropertyTypes();
-        // this.initMap()
+        this.initMap()
+        console.log(this.$route)
 
     },
     computed: {
@@ -211,6 +210,9 @@ export default {
         }
     },
     methods: {
+        track () {
+            this.$gtag.pageview('/fadhili')
+        },
         showPropertyTypes() {
             axios.get(`/api/fetch-property/Fadhili Retirement Village`).then(res => {
                 this.property = res.data[0]

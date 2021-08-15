@@ -9,6 +9,11 @@ const routes = [
         redirect: '/home'
     },
     {
+        path: "/referral/:name/:id",
+        name: "referral",
+        component: () => import("../components/admin/referals"),
+    },
+    {
         path: "/",
         name: "main",
         component: Main,
@@ -17,11 +22,13 @@ const routes = [
             metaTags: [
                 {
                     name: "description",
-                    content: "The Home page of superior homes website.",
+                    content: "East Africa's Leading Master-planned Real Estate Developer\n" +
+                        "Superior Homes Kenya is East Africa’s first master-planned real estate developer.",
                 },
                 {
                     property: "og:description",
-                    content: "The Home page of superior homes website.",
+                    content: "East Africa's Leading Master-planned Real Estate Developer\n" +
+                        "Superior Homes Kenya is East Africa’s first master-planned real estate developer",
                 },
             ],
         },
@@ -35,11 +42,13 @@ const routes = [
                     metaTags: [
                         {
                             name: "description",
-                            content: "The Home page of superior homes website.",
+                            content: "East Africa's Leading Master-planned Real Estate Developer\n" +
+                                "Superior Homes Kenya is East Africa’s first master-planned real estate developer",
                         },
                         {
                             property: "og:description",
-                            content: "The Home page of superior homes website.",
+                            content: "East Africa's Leading Master-planned Real Estate Developer\n" +
+                                "Superior Homes Kenya is East Africa’s first master-planned real estate developer",
                         },
                     ],
                 },
@@ -53,11 +62,11 @@ const routes = [
                     metaTags: [
                         {
                             name: "description",
-                            content: "The Contact us page of superior homes website.",
+                            content: "Talk to us today for all your real estate solutions.",
                         },
                         {
                             property: "og:description",
-                            content: "The Contact us page of superior homes website.",
+                            content: "Talk to us today for all your real estate solutions.",
                         },
                     ],
                 },
@@ -71,11 +80,11 @@ const routes = [
                     metaTags: [
                         {
                             name: "description",
-                            content: "The Careers page of superior homes website.",
+                            content: "Superior Homes Kenya is East Africa’s first master-planned real estate developer.",
                         },
                         {
                             property: "og:description",
-                            content: "The Careers page of superior homes website.",
+                            content: "Superior Homes Kenya is East Africa’s first master-planned real estate developer.",
                         },
                     ],
                 },
@@ -89,11 +98,11 @@ const routes = [
                     metaTags: [
                         {
                             name: "description",
-                            content: "The Home page of superior homes website.",
+                            content: "Superior Homes Kenya PLC is a family-owned real estate development company that was registered in 2004. The company takes pride in being the pioneers of the open-plan gated community concept in the region, which is now recognized as the future for sustainable living in East Africa.\n",
                         },
                         {
                             property: "og:description",
-                            content: "The Home page of superior homes website.",
+                            content: "Superior Homes Kenya PLC is a family-owned real estate development company that was registered in 2004. The company takes pride in being the pioneers of the open-plan gated community concept in the region, which is now recognized as the future for sustainable living in East Africa.\n",
                         },
                     ],
                 },
@@ -107,11 +116,11 @@ const routes = [
                     metaTags: [
                         {
                             name: "description",
-                            content: "The Gallery page of superior homes website.",
+                            content: "Superior Homes develops beautiful houses within outstanding environments. View our gallery.\n",
                         },
                         {
                             property: "og:description",
-                            content: "The Gallery page of superior homes website.",
+                            content: "Superior Homes develops beautiful houses within outstanding environments. View our gallery.\n",
                         },
                     ],
                 },
@@ -125,11 +134,11 @@ const routes = [
                     metaTags: [
                         {
                             name: "description",
-                            content: "The Videos page of superior homes website.",
+                            content: "Watch our videos and get to know our client testimonials.",
                         },
                         {
                             property: "og:description",
-                            content: "The Videos page of superior homes website.",
+                            content: "Watch our videos and get to know our client testimonials.",
                         },
                     ],
                 },
@@ -161,11 +170,11 @@ const routes = [
                     metaTags: [
                         {
                             name: "description",
-                            content: "The GreenPark Estate page of superior homes website.",
+                            content: "We take pride in being the pioneers of the open-plan gated community concept in East Africa. Our vision is to become the largest and the most respected and trusted provider of new houses in East Africa\n",
                         },
                         {
                             property: "og:description",
-                            content: "The GreenPark Estate page of superior homes website.",
+                            content: "We take pride in being the pioneers of the open-plan gated community concept in East Africa. Our vision is to become the largest and the most respected and trusted provider of new houses in East Africa",
                         },
                     ],
                 },
@@ -179,11 +188,11 @@ const routes = [
                     metaTags: [
                         {
                             name: "description",
-                            content: "The Fadhili page of superior homes website.",
+                            content: "We take pride in being the pioneers of the open-plan gated community concept in East Africa. Our vision is to become the largest and the most respected and trusted provider of new houses in East Africa\n",
                         },
                         {
                             property: "og:description",
-                            content: "The Fadhili page of superior homes website.",
+                            content: "We take pride in being the pioneers of the open-plan gated community concept in East Africa. Our vision is to become the largest and the most respected and trusted provider of new houses in East Africa\n",
                         },
                     ],
                 },
@@ -197,11 +206,11 @@ const routes = [
                     metaTags: [
                         {
                             name: "description",
-                            content: "The Pazuri at Vipingo page of superior homes website.",
+                            content: "We take pride in being the pioneers of the open-plan gated community concept in East Africa. Our vision is to become the largest and the most respected and trusted provider of new houses in East Africa\n",
                         },
                         {
                             property: "og:description",
-                            content: "The Pazuri at Vipingo page of superior homes website.",
+                            content: "We take pride in being the pioneers of the open-plan gated community concept in East Africa. Our vision is to become the largest and the most respected and trusted provider of new houses in East Africa\n",
                         },
                     ],
                 },
@@ -215,17 +224,17 @@ const routes = [
                     metaTags: [
                         {
                             name: "description",
-                            content: "The Articles page of superior homes website.",
+                            content: "Read our articles to get an intellectual depth and have an exceptional degree of insight",
                         },
                         {
                             property: "og:description",
-                            content: "The Articles page of superior homes website.",
+                            content: "Read our articles to get an intellectual depth and have an exceptional degree of insight",
                         },
                     ],
                 },
             },
             {
-                path: "/read-article/:id/:title",
+                path: "/blogs/article/:title",
                 name: "Read Article",
                 component: () => import("../components/media/read-article"),
                 meta: {
@@ -233,11 +242,11 @@ const routes = [
                     metaTags: [
                         {
                             name: "description",
-                            content: "The Read article of superior homes website.",
+                            content: "Read our articles to get an intellectual depth and have an exceptional degree of insight",
                         },
                         {
                             property: "og:description",
-                            content: "The Read article of superior homes website.",
+                            content: "Read our articles to get an intellectual depth and have an exceptional degree of insight",
                         },
                     ],
                 },
@@ -292,6 +301,16 @@ const routes = [
                 path: "/admin/careers",
                 name: "Admin-Careers",
                 component: () => import("../components/admin/careers/index"),
+            },
+            {
+                path: "/admin/docs",
+                name: "Documents",
+                component: () => import("../components/admin/docs/index"),
+            },
+            {
+                path: "/admin/referrals",
+                name: "Referrals",
+                component: () => import("../components/admin/redirects/index"),
             },
             {
                 path: "/admin/about/index",

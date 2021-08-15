@@ -2,7 +2,7 @@
     <div>
         <div class="parallax parallax-home">
             <div class="container">
-                <div data-aos="fade-up" data-aos-duration="2000" class="top-landing-details">
+                <div data-aos="fade-up" data-aos-duration="1000" class="top-landing-details">
                     <h2>Frequently Asked Questions</h2>
                 </div>
             </div>
@@ -32,7 +32,11 @@ export default {
     components: {
         Accordion,AccordionTab
     },
-    methods: {},
+    methods: {
+        track () {
+            this.$gtag.pageview(this.$route)
+        },
+    },
     computed: {
         ...mapGetters([
             'faqs'

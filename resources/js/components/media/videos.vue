@@ -2,7 +2,7 @@
     <div>
         <div class="parallax parallax-home">
             <div class="container">
-                <div data-aos="fade-up" data-aos-duration="2000" class="top-landing-details">
+                <div data-aos="fade-up" data-aos-duration="1000" class="top-landing-details">
                     <h2>Videos</h2>
                 </div>
             </div>
@@ -35,7 +35,11 @@ import {mapGetters} from 'vuex'
 
 export default {
     name: "Videos Component",
-    methods: {},
+    methods: {
+        track () {
+            this.$gtag.pageview(this.$route)
+        },
+    },
     computed: {
         ...mapGetters([
             'videos'

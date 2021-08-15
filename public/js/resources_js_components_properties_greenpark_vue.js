@@ -100,6 +100,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   methods: {
+    track: function track() {
+      this.$gtag.pageview(this.$route);
+    },
     showPropertyTypes: function showPropertyTypes() {
       var _this = this;
 
@@ -203,14 +206,14 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-e4be7848");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"parallax\" style=\"height:100vh;\" data-v-e4be7848><ul class=\"slideshow\" data-v-e4be7848><li data-v-e4be7848><span style=\"background-image:url(&#39;/images/banner/ge.jpg&#39;);\" data-v-e4be7848></span></li><li data-v-e4be7848><span style=\"background-image:url(&#39;/images/shk_properties/greenpark/4.jpg&#39;);\" data-v-e4be7848></span></li><li data-v-e4be7848><span style=\"background-image:url(&#39;/images/shk_properties/greenpark/6.jpg&#39;);\" data-v-e4be7848></span></li><!--                &lt;li&gt;&lt;span style=&quot;background-image: url(&#39;/images/shk_properties/greenpark/2.jpg&#39;)&quot;&gt;&lt;/span&gt;&lt;/li&gt;--><!--                &lt;li&gt;&lt;span style=&quot;background-image: url(&#39;/images/shk_properties/greenpark/3.jpg&#39;)&quot;&gt;&lt;/span&gt;&lt;/li&gt;--></ul></div>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"parallax\" style=\"height:100vh;\" data-v-e4be7848><ul class=\"slideshow\" data-v-e4be7848><li data-v-e4be7848><span style=\"background-image:url(&#39;/images/banner/ge.jpg&#39;);\" data-v-e4be7848></span></li><li data-v-e4be7848><span style=\"background-image:url(&#39;/images/shk_properties/greenpark/4.jpg&#39;);\" data-v-e4be7848></span></li><li data-v-e4be7848><span style=\"background-image:url(&#39;/images/shk_properties/greenpark/6.jpg&#39;);\" data-v-e4be7848></span></li></ul></div>", 1);
 
 var _hoisted_2 = {
   "class": "container"
 };
 var _hoisted_3 = {
   "data-aos": "fade-up",
-  "data-aos-duration": "2000",
+  "data-aos-duration": "1000",
   "class": "prop-landing-details"
 };
 var _hoisted_4 = {

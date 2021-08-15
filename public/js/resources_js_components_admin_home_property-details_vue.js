@@ -186,7 +186,7 @@ __webpack_require__.r(__webpack_exports__);
       var files = e.target.files || e.dataTransfer.files;
       if (!files.length) return;
 
-      if (files[0].size > 5097152) {
+      if (files[0].size > 5242880) {
         this.errorSize = true;
         this.removeImage(item);
         return;
@@ -850,7 +850,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
       }, null, 8
       /* PROPS */
       , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_InputText, {
-        type: "number",
+        type: "text",
         id: "fpos",
         modelValue: $data.formEdit.price,
         "onUpdate:modelValue": _cache[16] || (_cache[16] = function ($event) {

@@ -5,12 +5,10 @@
                 <li><span style="background-image: url('/images/shk_properties/lem.jpg')"></span></li>
                 <li><span style="background-image: url('/images/shk_properties/home_1.jpg')"></span></li>
                 <li><span style="background-image: url('/images/shk_properties/home_10.jpg')"></span></li>
-<!--                <li><span style="background-image: url('/images/shk_properties/home_5.jpg')"></span></li>-->
-<!--                <li><span style="background-image: url('/images/shk_properties/home_9.jpg')"></span></li>-->
             </ul>
         </div>
         <div class="container">
-            <div data-aos="fade-up" data-aos-duration="2000" class="top-landing-details">
+            <div data-aos="fade-up" data-aos-duration="1000" class="top-landing-details">
                 <h2>Gallery</h2>
             </div>
         </div>
@@ -121,11 +119,11 @@ export default {
                 }
             ],
             property: [],
-            greenpark:[],
-            leml:[],
-            sundowner:[],
-            fadhili:[],
-            pazuri:[]
+            greenpark: [],
+            leml: [],
+            sundowner: [],
+            fadhili: [],
+            pazuri: []
         }
     },
     created() {
@@ -137,6 +135,9 @@ export default {
         console.log(this.property)
     },
     methods: {
+        track() {
+            this.$gtag.pageview(this.$route)
+        },
         showProperty() {
             axios.get("/api/get-all-property").then(res => {
                 this.property = res.data

@@ -44,6 +44,9 @@ __webpack_require__.r(__webpack_exports__);
     this.showBoardTeam();
   },
   methods: {
+    track: function track() {
+      this.$gtag.pageview(this.$route);
+    },
     showBoardMembers: function showBoardMembers() {
       var _this = this;
 
@@ -85,7 +88,7 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-0b0aedd2");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"parallax\" style=\"height:100vh;\" data-v-0b0aedd2><ul class=\"slideshow\" data-v-0b0aedd2><li data-v-0b0aedd2><span style=\"background-image:url(&#39;/images/banner/t1.jpg&#39;);\" data-v-0b0aedd2></span></li><li data-v-0b0aedd2><span style=\"background-image:url(&#39;/images/banner/t2.jpg&#39;);\" data-v-0b0aedd2></span></li><li data-v-0b0aedd2><span style=\"background-image:url(&#39;/images/banner/t3.jpg&#39;);\" data-v-0b0aedd2></span></li><!--                &lt;li&gt;&lt;span style=&quot;background-image: url(&#39;/images/banner/t4.jpg&#39;)&quot;&gt;&lt;/span&gt;&lt;/li&gt;--><!--                &lt;li&gt;&lt;span style=&quot;background-image: url(&#39;/images/banner/t5.jpg&#39;)&quot;&gt;&lt;/span&gt;&lt;/li&gt;--></ul></div>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"parallax\" style=\"height:100vh;\" data-v-0b0aedd2><ul class=\"slideshow\" data-v-0b0aedd2><li data-v-0b0aedd2><span style=\"background-image:url(&#39;/images/banner/t1.jpg&#39;);\" data-v-0b0aedd2></span></li><li data-v-0b0aedd2><span style=\"background-image:url(&#39;/images/banner/t2.jpg&#39;);\" data-v-0b0aedd2></span></li><li data-v-0b0aedd2><span style=\"background-image:url(&#39;/images/banner/t3.jpg&#39;);\" data-v-0b0aedd2></span></li></ul></div>", 1);
 
 var _hoisted_2 = {
   "class": "container"

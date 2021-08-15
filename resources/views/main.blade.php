@@ -10,6 +10,7 @@
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="preload" as="font" href="{{ asset('fonts/Nunito-sans.ttf') }}"
           crossorigin="anonymous">
+
 </head>
 
 <style>
@@ -79,7 +80,6 @@
 </style>
 
 <body class="antialiased">
-
 <div id="app">
     <div class="initial-render">
         <div class="content-wrap">

@@ -2,7 +2,7 @@
     <div>
         <div class="parallax parallax-home">
             <div class="container">
-                <div data-aos="fade-up" data-aos-duration="2000" class="top-landing-details">
+                <div data-aos="fade-up" data-aos-duration="1000" class="top-landing-details">
                     <h2>Careers</h2>
                 </div>
             </div>
@@ -189,6 +189,9 @@ export default {
         this.showJobs();
     },
     methods: {
+        track () {
+            this.$gtag.pageview(this.$route)
+        },
         canSendRequest() {
             return (
                 this.firstnameValid === "" &&
@@ -253,7 +256,7 @@ export default {
 
 <style scoped lang="css">
 .parallax-home {
-    background-image: url('/images/banner/t5.jpg');
+    background-image: url('/images/banner/cim1.jpg');
     height: 70vh;
 }
 

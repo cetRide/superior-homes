@@ -18,7 +18,8 @@
         </div>
         <div>
             <Dialog header="Edit Article" v-model:visible="show_edit_modal"
-                    :breakpoints="{'960px': '75vw', '640px': '100vw'}" :style="{width: '50vw'}"
+                    :maximizable="true" :modal="true"
+                    :breakpoints="{'960px': '75vw', '640px': '100vw'}" :style="{width: '80vw'}"
             >
                 <div style="padding-top: 10px">
                     <div>
@@ -28,7 +29,7 @@
                     <div>
                         <div>
                             <p>Old Photo</p>
-                            <img :src="imgUrl"/>
+                            <img :src="formEdit.img"/>
                         </div>
                         <Message v-if="errorSize" severity="error">Image size exceeds 5MB</Message>
                         <div v-for="item in editItems">
@@ -43,6 +44,39 @@
                                 <Button @click="removeImage(item)">Remove image</Button>
                             </div>
                         </div>
+                    </div>
+                    <div>
+                        <editor
+                            initialValue="<p>Article contents</p>"
+                            api-key="dooeanipvyv792bved3c6noxt3vtu9rotq517mdw6lno14ia"
+                            :disabled=false
+                            id="uuid"
+                            v-model="formEdit.abt"
+                            :init="{
+                   height: 400,
+                   menubar: 'file edit view insert format tools table tc help',
+                   autosave_ask_before_unload: true,
+                   autosave_interval: '30s',
+                   autosave_prefix: '{path}{query}-{id}-',
+                   autosave_restore_when_empty: false,
+                   autosave_retention: '2m',
+                   image_advtab: true,
+                  plugins: [
+                    'advlist autolink lists link image charmap',
+                    'searchreplace visualblocks code fullscreen',
+                    'print preview anchor insertdatetime media',
+                    'paste code help wordcount table'
+                  ],
+                  toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment',
+                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+                 }"
+                            model-events=""
+                            plugins=""
+                            tag-name="div"
+                            toolbar=""
+                            value=""
+                        >
+                        </editor>
                     </div>
                 </div>
                 <template #footer>
@@ -65,7 +99,7 @@ import Button from "primevue/button";
 import Message from "primevue/message";
 import {createToast} from "mosha-vue-toastify";
 import {mapGetters} from "vuex";
-
+import Editor from '@tinymce/tinymce-vue'
 export default {
     name: "articles-manage",
     setup() {
@@ -101,7 +135,8 @@ export default {
         InputText,
         Dialog,
         Button,
-        Message
+        Message,
+        editor: Editor,
     },
     data() {
         return {
@@ -125,6 +160,11 @@ export default {
             'articles'
         ])
     },
+    created() {
+        if (this.articles.length < 1) {
+            this.$store.dispatch('fetchArticles')
+        }
+    },
     mounted() {
         if (this.articles.length < 1) {
             this.$store.dispatch('fetchArticles')
@@ -136,7 +176,7 @@ export default {
             let files = e.target.files || e.dataTransfer.files;
             if (!files.length)
                 return;
-            if (files[0].size > 5097152) {
+            if (files[0].size > 5242880) {
                 this.errorSize = true;
                 this.removeImage(item);
                 return;
@@ -162,7 +202,13 @@ export default {
                 icon: 'pi pi-info-circle',
                 acceptClass: 'p-button-danger',
                 accept: () => {
-                    this.deleteFAQs(id)
+                    axios.delete(`/api/delete-article/${id}`).then(res => {
+                        this.successToast(res.data)
+                        this.articles.splice(this.articles.findIndex(item => item.id === id), 1)
+                        this.articles.push(res.data)
+                    }).catch(err => {
+                        this.errorToast("An error occurred!")
+                    });
                 },
                 reject: () => {
                     this.successToast("Canceled")
@@ -172,7 +218,8 @@ export default {
         showEdit(item) {
             this.show_edit_modal = true
             this.formEdit.title = item.title;
-            this.formEdit.img = item.img
+            this.formEdit.img = item.img;
+            this.formEdit.abt = item.abt
             this.formEdit.id = item.id;
         },
         editArticle() {
@@ -183,6 +230,7 @@ export default {
             }
             theData.append("img", this.formEdit.img);
             theData.append("title", this.formEdit.title);
+            theData.append("abt", this.formEdit.abt);
             theData.append("id", this.formEdit.id);
             axios.post("/api/edit-article", theData)
                 .then(res => {
@@ -202,11 +250,11 @@ export default {
             });
         },
     },
-    deleteFAQs(id) {
-        axios.delete(`/api/delete-faq/${id}`).then(res => {
+    deleteArticle(id) {
+        axios.delete(`/api/delete-article/${id}`).then(res => {
             this.successToast(res.data)
-            this.faq.splice(this.faq.findIndex(item => item.id === id), 1)
-            this.faq.push(res.data)
+            this.articles.splice(this.articles.findIndex(item => item.id === id), 1)
+            this.articles.push(res.data)
         }).catch(err => {
             this.errorToast("An error occurred!")
         });
@@ -215,5 +263,9 @@ export default {
 </script>
 
 <style scoped>
-
+img {
+    width: 30%;
+    height: 30%;
+    margin-bottom: 10px;
+}
 </style>

@@ -7,7 +7,7 @@
                     <h1>{{article.title}}</h1>
                     <div>
                         <div>
-                            Author: <strong>{{article.auth}}</strong> |  Posted: <strong> {{moment(article.date).format('MMMM d, YYYY') }}</strong>
+                            Author: <strong>{{article.auth}}</strong> |  Posted: <strong> {{article.date }}</strong>
                         </div>
                         <div>
 
@@ -25,7 +25,6 @@
 
 <script>
 import {mapGetters} from "vuex";
-import moment from "moment";
 
 export default {
     name: "read-article",
@@ -37,14 +36,17 @@ export default {
             'article', 'recentArticle'
         ])
     },
-    created() {
-        this.moment = moment;
-    },
     mounted() {
-        this.$store.dispatch('fetchArticle', this.$route.params.id)
+        let title = this.$route.params.title.replace(/-/g, ' ');
+        console.log(title)
+        this.$store.dispatch('fetchArticle', title)
         this.$store.dispatch('fetchRecentArticle')
     },
-    methods: {}
+    methods: {
+        track () {
+            this.$gtag.pageview(this.$route)
+        },
+    }
 }
 </script>
 

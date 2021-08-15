@@ -6,13 +6,17 @@ namespace App\Http\Controllers;
 
 use App\Models\ShkArticles;
 use App\Models\ShkBoard;
+use App\Models\ShkDocs;
 use App\Models\ShkFaqs;
 use App\Models\ShkGallery;
 use App\Models\ShkHProperty;
 use App\Models\ShkJobs;
 use App\Models\ShkPropertyTypes;
+use App\Models\ShkReferral;
+use App\Models\ShkReferralLeads;
 use App\Models\ShkTeam;
 use App\Models\ShkVideos;
+use Carbon\Carbon;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Http\Request;
 
@@ -293,7 +297,7 @@ class ApiController extends Controller
         $job->loc = $request->loc;
         $job->dat = $request->dat;
         $uploadedFile = $request->file('jd');
-        $filename = time() . $uploadedFile->getClientOriginalName();
+        $filename = $uploadedFile->getClientOriginalName();
         $request->file('jd')->move(public_path('jd'), $filename);
         $job->app = $filename;
 
@@ -323,7 +327,7 @@ class ApiController extends Controller
         $oldFile = $job->app;
         if ($request->file('jd')) {
             $uploadedFile = $request->file('jd');
-            $filename = time() . $uploadedFile->getClientOriginalName();
+            $filename = $uploadedFile->getClientOriginalName();
             $request->file('jd')->move(public_path('jd'), $filename);
             $job->app = $filename;
 
@@ -357,7 +361,107 @@ class ApiController extends Controller
             $article->img = $image_url;
         }
         $article->title = $request->title;
+        $article->abt = $request->abt;
         $article->save();
         return response($article, 200);
+    }
+
+    public function createDoc(Request $request)
+    {
+        $doc = new ShkDocs();
+        $uploadedFile = $request->file('file');
+        $filename = str_replace(' ', '-', $uploadedFile->getClientOriginalName());
+        $request->file('file')->move(public_path('docs'), $filename);
+        $doc->path = $filename;
+        $doc->dat = Carbon::now()->toDateTimeString();
+        $doc->name = $request->title;
+
+        $doc->save();
+        return response($doc, 200);
+    }
+
+    public function getAllDocs()
+    {
+        $doc = ShkDocs::get()->toJson(JSON_PRETTY_PRINT);
+        return response($doc, 200);
+    }
+
+    public function deleteDoc(Request $request)
+    {
+        $image = ShkDocs::find($request->id);
+        if (file_exists(public_path('docs/' . $image->path))) {
+            unlink(public_path('docs/' . $image->path));
+        }
+        $image->forceDelete();
+        return response('Deleted successfully', 200);
+    }
+
+    public function deleteReferrals(Request $request)
+    {
+        $link = ShkReferral::find($request->id);
+        $link->forceDelete();
+        return response('Deleted successfully', 200);
+    }
+
+    public function fetchReferral(Request $request)
+    {
+        $link = ShkReferral::find($request->id);
+        return response($link, 200);
+    }
+
+    public function getAllReferrals()
+    {
+        $links = ShkReferral::get()->toJson(JSON_PRETTY_PRINT);
+        return response($links, 200);
+    }
+
+    public function createReferrals(Request $request)
+    {
+        $link = new ShkReferral();
+        $link->name = $request->name;
+        $link->redirect_link = $request->redirect_link;
+        $link->save();
+        $link->link = $request->link . '/' . $link->id;
+        $link->save();
+        return response($link, 200);
+    }
+
+    public function editReferrals(Request $request)
+    {
+        $link = ShkReferral::find($request->id);
+        $link->link = $request->link . '/' . $link->id;
+        $link->name = $request->name;
+        $link->redirect_link = $request->redirect_link;
+        $link->save();
+        return response($link, 200);
+    }
+
+    public function createReferralLeads(Request $request)
+    {
+        $link = new ShkReferralLeads();
+        $link->shk_referral_id = $request->id;
+        $link->save();
+        return response($link, 200);
+    }
+
+    public function fetchDashboardDetails()
+    {
+        $results = [];
+        $today = Carbon::today()->toDateTimeString();
+        $yesterday = Carbon::yesterday();
+        $referrals = ShkReferral::with('leads')->get();
+
+        foreach ($referrals as $referral) {
+            $data = [
+                'name' => $referral->name,
+                'today' => ShkReferralLeads::where('shk_referral_id',$referral->id)->where('created_at', '>', $today)->count(),
+                'yesterday' => ShkReferralLeads::where('shk_referral_id',$referral->id)
+                    ->whereBetween('created_at',[$yesterday, $today])->count(),
+                'lastMonth' => ShkReferralLeads::whereMonth(
+                    'created_at', '=', Carbon::now()->subMonth()->month)->count(),
+            ];
+            array_push($results, $data);
+        }
+        return response($results, 200);
     }
 }

@@ -21,7 +21,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Videos Component",
-  methods: {},
+  methods: {
+    track: function track() {
+      this.$gtag.pageview(this.$route);
+    }
+  },
   computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)(['videos'])),
   created: function created() {
     if (this.videos.length < 1) {
@@ -61,7 +65,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
   "class": "container"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "data-aos": "fade-up",
-  "data-aos-duration": "2000",
+  "data-aos-duration": "1000",
   "class": "top-landing-details"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", null, "Videos")])])], -1
 /* HOISTED */
