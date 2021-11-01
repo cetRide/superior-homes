@@ -2,9 +2,9 @@
     <div>
         <div class="parallax" style="height: 100vh">
             <ul class="slideshow">
-                <li><span style="background-image: url('/images/banner/ge.jpg')"></span></li>
-                <li><span style="background-image: url('/images/shk_properties/greenpark/4.jpg')"></span></li>
-                <li><span style="background-image: url('/images/shk_properties/greenpark/6.jpg')"></span></li>
+                <li><span style="background-image: url('https://d1bqrv1jyf8x1f.cloudfront.net/images/banner/ge.jpg')"></span></li>
+                <li><span style="background-image: url('https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_properties/greenpark/4.jpg')"></span></li>
+                <li><span style="background-image: url('https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_properties/greenpark/6.jpg')"></span></li>
             </ul>
         </div>
         <div class="container">

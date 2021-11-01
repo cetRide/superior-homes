@@ -256,7 +256,7 @@ export default {
 
 <style scoped lang="css">
 .parallax-home {
-    background-image: url('/images/banner/cim1.jpg');
+    background-image: url('https://d1bqrv1jyf8x1f.cloudfront.net/images/banner/t4.jpg');
     height: 70vh;
 }
 

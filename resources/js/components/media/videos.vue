@@ -68,7 +68,7 @@ export default {
     top: 0
     z-index: -1
 .parallax-home
-    background-image: url('/images/shk_general/Greenpark_SHK_Drone_3.jpg')
+    background-image: url('https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_general/Greenpark_SHK_Drone_3.jpg')
     height: 90vh
 
 .frame-area
