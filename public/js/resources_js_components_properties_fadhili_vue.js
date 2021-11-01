@@ -207,7 +207,7 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-31821814");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"parallax\" style=\"height:100vh;\" data-v-31821814><ul class=\"slideshow\" data-v-31821814><li data-v-31821814><span style=\"background-image:url(&#39;/images/banner/f1.jpg&#39;);\" data-v-31821814></span></li><li data-v-31821814><span style=\"background-image:url(&#39;/images/banner/f2.jpg&#39;);\" data-v-31821814></span></li><li data-v-31821814><span style=\"background-image:url(&#39;/images/banner/f3.jpg&#39;);\" data-v-31821814></span></li></ul></div>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"parallax\" style=\"height:100vh;\" data-v-31821814><ul class=\"slideshow\" data-v-31821814><li data-v-31821814><span style=\"background-image:url(&#39;https://d1bqrv1jyf8x1f.cloudfront.net/images/banner/f1.jpg&#39;);\" data-v-31821814></span></li><li data-v-31821814><span style=\"background-image:url(&#39;https://d1bqrv1jyf8x1f.cloudfront.net/images/banner/f2.jpg&#39;);\" data-v-31821814></span></li><li data-v-31821814><span style=\"background-image:url(&#39;https://d1bqrv1jyf8x1f.cloudfront.net/images/banner/f3.jpg&#39;);\" data-v-31821814></span></li></ul></div>", 1);
 
 var _hoisted_2 = {
   "class": "container"

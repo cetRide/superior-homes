@@ -135,7 +135,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".background-video[data-v-0afd8a2e] {\n  width: 100vw;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  left: 0;\n  right: 0;\n  top: 0;\n  z-index: -1;\n}\n.parallax-home[data-v-0afd8a2e] {\n  background-image: url(\"/images/shk_general/Greenpark_SHK_Drone_3.jpg\");\n  height: 90vh;\n}\n.frame-area[data-v-0afd8a2e] {\n  -o-object-fit: cover !important;\n     object-fit: cover !important;\n  position: relative;\n}\n.frame-area iframe[data-v-0afd8a2e] {\n  position: absolute;\n  overflow: auto;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".background-video[data-v-0afd8a2e] {\n  width: 100vw;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  left: 0;\n  right: 0;\n  top: 0;\n  z-index: -1;\n}\n.parallax-home[data-v-0afd8a2e] {\n  background-image: url(\"https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_general/Greenpark_SHK_Drone_3.jpg\");\n  height: 90vh;\n}\n.frame-area[data-v-0afd8a2e] {\n  -o-object-fit: cover !important;\n     object-fit: cover !important;\n  position: relative;\n}\n.frame-area iframe[data-v-0afd8a2e] {\n  position: absolute;\n  overflow: auto;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

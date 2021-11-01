@@ -8,7 +8,7 @@
                 </div>
             </div>
         </div>
-        <div v-else class="parallax parallax-home" style="background-image: url('/images/shk_general/Greenpark_SHK_Drone_3.jpg')">
+        <div v-else class="parallax parallax-home" style="background-image: url('https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_general/Greenpark_SHK_Drone_3.jpg')">
             <div class="the-overlay">
             </div>
         </div>

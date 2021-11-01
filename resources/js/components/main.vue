@@ -111,7 +111,7 @@
                 <div class="product-item">
                     <div class="product-item-content">
                         <div class="p-mb-2">
-                            <img style="object-fit: contain" :src="'/images/shk_brands/' + slotProps.data.path"
+                            <img style="object-fit: contain" :src="'https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_brands/' + slotProps.data.path"
                                  class="product-image"
                                  :alt="slotProps.data.path"/>
                         </div>
@@ -348,9 +348,9 @@ export default {
     },
     data() {
         return {
-            image_src: '/images/logos/logo.png',
-            footer_banner: '/images/shk_general/bk.jpg',
-            fadhili_banner: '/images/shk_general/bkfa.jpg',
+            image_src: 'https://d1bqrv1jyf8x1f.cloudfront.net/images/logos/logo.png',
+            footer_banner: 'https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_general/bk.jpg',
+            fadhili_banner: 'https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_general/bkfa.jpg',
             year: new Date().getFullYear(),
             visible: false,
             brands: [
