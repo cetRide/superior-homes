@@ -1,6 +1,22 @@
 <template>
     <div>
         <div class="parallax" style="height: 100vh">
+            <div class="banner-loader" style="height: inherit;">
+                <div class="lds-spinner">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
             <ul class="slideshow">
                 <li><span style="background-image: url('https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_properties/lem.jpg')"></span></li>
                 <li><span style="background-image: url('https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_properties/home_1.jpg')"></span></li>
@@ -23,6 +39,7 @@
                                      class="p-col-12 p-md-6 p-lg-4 image-cont" :key="index">
                                     <img :src="image.img" alt="Greenpark"
                                          style="cursor: pointer"
+                                         loading="lazy"
                                          @click="imageClick(index, 'greenpark')"/>
                                 </div>
                             </div>
@@ -33,6 +50,7 @@
                                      :key="index">
                                     <img :src="image.img" alt="Fadhili"
                                          style="cursor: pointer"
+                                         loading="lazy"
                                          @click="imageClick(index, 'fadhili')"/>
                                 </div>
                             </div>
@@ -43,6 +61,7 @@
                                      :key="index">
                                     <img :src="image.img" alt="Pazuri at Vipingo"
                                          style="cursor: pointer"
+                                         loading="lazy"
                                          @click="imageClick(index, 'pazuri')"/>
                                 </div>
                             </div>
@@ -52,6 +71,7 @@
                                 <div v-for="(image, index) of sundowner"
                                      class="p-col-12 p-md-6 p-lg-4 image-cont" :key="index">
                                     <img :src="image.img"
+                                         loading="lazy"
                                          alt="Greenpark Sundowner" style="cursor: pointer"
                                          @click="imageClick(index, 'sundowner')"/>
                                 </div>
@@ -62,6 +82,7 @@
                                 <div v-for="(image, index) of leml" class="p-col-12 p-md-6 p-lg-4 image-cont"
                                      :key="index">
                                     <img :src="image.img"
+                                         loading="lazy"
                                          alt="Lake Elementaita Mountain Lodge" style="cursor: pointer"
                                          @click="imageClick(index, 'leml')"/>
                                 </div>

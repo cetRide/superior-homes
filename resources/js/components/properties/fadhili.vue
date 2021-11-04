@@ -1,6 +1,22 @@
 <template>
     <div>
         <div class="parallax" style="height: 100vh">
+            <div class="banner-loader" style="height: inherit;">
+                <div class="lds-spinner">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
             <ul class="slideshow">
                 <li><span style="background-image: url('https://d1bqrv1jyf8x1f.cloudfront.net/images/banner/f1.jpg')"></span></li>
                 <li><span style="background-image: url('https://d1bqrv1jyf8x1f.cloudfront.net/images/banner/f2.jpg')"></span></li>

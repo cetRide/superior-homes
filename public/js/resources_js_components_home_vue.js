@@ -11,14 +11,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _data_homeproperties__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/homeproperties */ "./resources/js/data/homeproperties.js");
-/* harmony import */ var primevue_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! primevue/carousel */ "./node_modules/primevue/carousel/carousel.esm.js");
-
+/* harmony import */ var primevue_carousel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! primevue/carousel */ "./node_modules/primevue/carousel/carousel.esm.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "home",
   components: {
-    Carousel: primevue_carousel__WEBPACK_IMPORTED_MODULE_1__.default
+    Carousel: primevue_carousel__WEBPACK_IMPORTED_MODULE_0__.default
   },
   data: function data() {
     return {
@@ -108,14 +106,14 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-fa6affac");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"parallax\" style=\"height:100vh;\" data-v-fa6affac><ul class=\"slideshow\" data-v-fa6affac><li data-v-fa6affac><span style=\"background-image:url(&#39;https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_properties/home_1.jpg&#39;);\" data-v-fa6affac></span></li><li data-v-fa6affac><span style=\"background-image:url(&#39;https://d1bqrv1jyf8x1f.cloudfront.net/images/banner/home_3.jpg&#39;);\" data-v-fa6affac></span></li><li data-v-fa6affac><span style=\"background-image:url(&#39;https://d1bqrv1jyf8x1f.cloudfront.net/images/banner/home_4.jpg&#39;);\" data-v-fa6affac></span></li></ul></div>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"parallax\" style=\"height:100vh;\" data-v-fa6affac><div class=\"banner-loader\" style=\"height:inherit;\" data-v-fa6affac><div class=\"lds-spinner\" data-v-fa6affac><div data-v-fa6affac></div><div data-v-fa6affac></div><div data-v-fa6affac></div><div data-v-fa6affac></div><div data-v-fa6affac></div><div data-v-fa6affac></div><div data-v-fa6affac></div><div data-v-fa6affac></div><div data-v-fa6affac></div><div data-v-fa6affac></div><div data-v-fa6affac></div><div data-v-fa6affac></div></div></div><div class=\"placeholderimg\" data-v-fa6affac><ul class=\"slideshow\" data-v-fa6affac><li data-v-fa6affac><span style=\"background-image:url(&#39;https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_properties/home_1.jpg&#39;);\" data-v-fa6affac></span></li><li data-v-fa6affac><span style=\"background-image:url(&#39;https://d1bqrv1jyf8x1f.cloudfront.net/images/banner/home_3.jpg&#39;);\" data-v-fa6affac></span></li><li data-v-fa6affac><span style=\"background-image:url(&#39;https://d1bqrv1jyf8x1f.cloudfront.net/images/banner/home_4.jpg&#39;);\" data-v-fa6affac></span></li></ul></div></div>", 1);
 
 var _hoisted_2 = {
   "class": "container"
 };
 var _hoisted_3 = {
   "data-aos": "fade-up",
-  "data-aos-duration": "1000",
+  "data-aos-duration": "500",
   "class": "top-landing-details"
 };
 
@@ -309,52 +307,6 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
 
 /***/ }),
 
-/***/ "./resources/js/data/homeproperties.js":
-/*!*********************************************!*\
-  !*** ./resources/js/data/homeproperties.js ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-var homeproperties = [{
-  title: 'Greenpark Estate',
-  sub: 'Where Dreams Come Home',
-  img: '/images/shk_properties/GPhomepage.jpg',
-  route: 'Green Park',
-  url: ''
-}, {
-  title: 'Pazuri at Vipingo',
-  sub: 'Luxury Within Reach',
-  img: '/images/shk_properties/Pazuri_at_Vipingo.jpg',
-  route: 'Pazuri at Vipingo',
-  url: ''
-}, {
-  title: 'Fadhili Retirement Village',
-  sub: 'A Retirement Oasis in the City',
-  img: '/images/shk_properties/fadhili.jpg',
-  route: 'Fadhili',
-  url: ''
-}, {
-  title: 'Lake Elementaita Mountain Lodge',
-  sub: 'A Glance of Paradise',
-  img: '/images/shk_properties/lem.jpg',
-  route: '',
-  url: 'https://leml.co.ke/'
-}, {
-  title: 'The Greenpark Sundowner Hotel',
-  sub: 'Eat, Drink, Play, Enjoy',
-  img: '/images/shk_properties/sundowner.jpg',
-  route: '',
-  url: 'https://greenparksundowner.co.ke/'
-}];
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (homeproperties);
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/home.vue?vue&type=style&index=0&id=fa6affac&scoped=true&lang=css":
 /*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/home.vue?vue&type=style&index=0&id=fa6affac&scoped=true&lang=css ***!
@@ -372,7 +324,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.parallax-home[data-v-fa6affac] {\n    background-image: url('/images/shk_general/gphomesmall.jpg');\n    height: 100vh;\n}\n.item-content[data-v-fa6affac] {\n    border-radius: 3px;\n    margin: .3rem;\n    text-align: center;\n    padding: 0.5rem 0;\n}\n\n/*<img src=\"/images/shk_properties/Pazuri_at_Vipingo.jpg\" alt=\"Slider\">*/\n/*<img src=\"/images/shk_general/gphomesmall.jpg\" alt=\"Slider\">*/\n/*<img src=\"/images/shk_general/Greenpark_SHK_Drone_3.jpg\" alt=\"Slider\">*/\n/*<img src=\"/images/shk_properties/sundowner.jpg\" alt=\"Slider\">*/\n/*<img src=\"/images/shk_properties/leml.jpg\" alt=\"Slider\">*/\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.item-content[data-v-fa6affac] {\n    border-radius: 3px;\n    margin: .3rem;\n    text-align: center;\n    padding: 0.5rem 0;\n}\n.placeholderimg[data-v-fa6affac] {\n    /*background-color: red;*/\n    height: 100vh;\n    top: 0\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

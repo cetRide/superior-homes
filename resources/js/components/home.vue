@@ -1,16 +1,38 @@
 <template>
     <div>
         <div class="parallax" style="height: 100vh">
-            <ul class="slideshow">
-                <li><span
-                    style="background-image: url('https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_properties/home_1.jpg')"></span>
-                </li>
-                <li><span style="background-image: url('https://d1bqrv1jyf8x1f.cloudfront.net/images/banner/home_3.jpg')"></span></li>
-                <li><span style="background-image: url('https://d1bqrv1jyf8x1f.cloudfront.net/images/banner/home_4.jpg')"></span></li>
-            </ul>
+            <div class="banner-loader" style="height: inherit;">
+                <div class="lds-spinner">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div  class="placeholderimg">
+                <ul class="slideshow">
+                    <li><span
+                        style="background-image: url('https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_properties/home_1.jpg')"></span>
+                    </li>
+                    <li><span
+                        style="background-image: url('https://d1bqrv1jyf8x1f.cloudfront.net/images/banner/home_3.jpg')"></span>
+                    </li>
+                    <li><span
+                        style="background-image: url('https://d1bqrv1jyf8x1f.cloudfront.net/images/banner/home_4.jpg')"></span>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="container">
-            <div data-aos="fade-up" data-aos-duration="1000" class="top-landing-details">
+            <div data-aos="fade-up" data-aos-duration="500" class="top-landing-details">
                 <h2>Superior Homes Kenya</h2>
                 <h4><strong>East Africa's Leading Master-planned Real Estate Developer</strong></h4>
                 <p>Superior Homes Kenya is East Africa’s first master-planned real estate developer</p>
@@ -86,7 +108,6 @@
 </template>
 
 <script>
-import homeproperties from "../data/homeproperties";
 import Carousel from "primevue/carousel";
 
 export default {
@@ -173,10 +194,6 @@ export default {
 </script>
 
 <style scoped lang="css">
-.parallax-home {
-    background-image: url('/images/shk_general/gphomesmall.jpg');
-    height: 100vh;
-}
 
 .item-content {
     border-radius: 3px;
@@ -185,10 +202,10 @@ export default {
     padding: 0.5rem 0;
 }
 
-/*<img src="/images/shk_properties/Pazuri_at_Vipingo.jpg" alt="Slider">*/
-/*<img src="/images/shk_general/gphomesmall.jpg" alt="Slider">*/
-/*<img src="/images/shk_general/Greenpark_SHK_Drone_3.jpg" alt="Slider">*/
-/*<img src="/images/shk_properties/sundowner.jpg" alt="Slider">*/
-/*<img src="/images/shk_properties/leml.jpg" alt="Slider">*/
+.placeholderimg {
+    /*background-color: red;*/
+    height: 100vh;
+    top: 0
+}
 
 </style>

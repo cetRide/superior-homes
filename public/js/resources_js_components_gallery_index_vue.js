@@ -129,7 +129,7 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-9635edcc");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"parallax\" style=\"height:100vh;\" data-v-9635edcc><ul class=\"slideshow\" data-v-9635edcc><li data-v-9635edcc><span style=\"background-image:url(&#39;/images/shk_properties/lem.jpg&#39;);\" data-v-9635edcc></span></li><li data-v-9635edcc><span style=\"background-image:url(&#39;/images/shk_properties/home_1.jpg&#39;);\" data-v-9635edcc></span></li><li data-v-9635edcc><span style=\"background-image:url(&#39;/images/shk_properties/home_10.jpg&#39;);\" data-v-9635edcc></span></li></ul></div><div class=\"container\" data-v-9635edcc><div data-aos=\"fade-up\" data-aos-duration=\"1000\" class=\"top-landing-details\" data-v-9635edcc><h2 data-v-9635edcc>Gallery</h2></div></div>", 2);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"parallax\" style=\"height:100vh;\" data-v-9635edcc><div class=\"banner-loader\" style=\"height:inherit;\" data-v-9635edcc><div class=\"lds-spinner\" data-v-9635edcc><div data-v-9635edcc></div><div data-v-9635edcc></div><div data-v-9635edcc></div><div data-v-9635edcc></div><div data-v-9635edcc></div><div data-v-9635edcc></div><div data-v-9635edcc></div><div data-v-9635edcc></div><div data-v-9635edcc></div><div data-v-9635edcc></div><div data-v-9635edcc></div><div data-v-9635edcc></div></div></div><ul class=\"slideshow\" data-v-9635edcc><li data-v-9635edcc><span style=\"background-image:url(&#39;https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_properties/lem.jpg&#39;);\" data-v-9635edcc></span></li><li data-v-9635edcc><span style=\"background-image:url(&#39;https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_properties/home_1.jpg&#39;);\" data-v-9635edcc></span></li><li data-v-9635edcc><span style=\"background-image:url(&#39;https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_properties/home_10.jpg&#39;);\" data-v-9635edcc></span></li></ul></div><div class=\"container\" data-v-9635edcc><div data-aos=\"fade-up\" data-aos-duration=\"1000\" class=\"top-landing-details\" data-v-9635edcc><h2 data-v-9635edcc>Gallery</h2></div></div>", 2);
 
 var _hoisted_3 = {
   "class": "gallery-section"
@@ -198,6 +198,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
               style: {
                 "cursor": "pointer"
               },
+              loading: "lazy",
               onClick: function onClick($event) {
                 return $options.imageClick(index, 'greenpark');
               }
@@ -225,6 +226,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
               style: {
                 "cursor": "pointer"
               },
+              loading: "lazy",
               onClick: function onClick($event) {
                 return $options.imageClick(index, 'fadhili');
               }
@@ -252,6 +254,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
               style: {
                 "cursor": "pointer"
               },
+              loading: "lazy",
               onClick: function onClick($event) {
                 return $options.imageClick(index, 'pazuri');
               }
@@ -275,6 +278,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
               key: index
             }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
               src: image.img,
+              loading: "lazy",
               alt: "Greenpark Sundowner",
               style: {
                 "cursor": "pointer"
@@ -302,6 +306,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
               key: index
             }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
               src: image.img,
+              loading: "lazy",
               alt: "Lake Elementaita Mountain Lodge",
               style: {
                 "cursor": "pointer"
