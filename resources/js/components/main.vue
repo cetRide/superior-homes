@@ -349,7 +349,7 @@ export default {
     data() {
         return {
             image_src: '/images/logos/logo.png',
-            footer_banner: '/images/shk_general/bk.jpg',
+            footer_banner: 'https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_general/bk.jpg',
             fadhili_banner: 'https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_general/bkfa.jpg',
             year: new Date().getFullYear(),
             visible: false,

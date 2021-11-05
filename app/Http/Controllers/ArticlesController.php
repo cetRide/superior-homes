@@ -47,7 +47,7 @@ class ArticlesController extends Controller
         $article->title = $request->title;
         $article->abt = $request->abt;
         $article->date = Carbon::now()->toDateTimeString();
-        $article->auth = 'Elvis Onjwari';
+        $article->auth = $request->auth;
         if (!is_null($request->file('file'))) {
             $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
             $article->img = $image_url;

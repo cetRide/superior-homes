@@ -21,6 +21,10 @@
                     <label for="desc">Article Title</label>
                     <Textarea id="desc" v-model="form.title" :autoResize="true" rows="4" cols="30"/>
                 </div>
+                <div style="margin-top: 20px">
+                    <label for="auth">Article Author</label>
+                    <InputText id="auth" v-model="form.auth" type="text"/>
+                </div>
             </div>
         </div>
         <div>
@@ -69,11 +73,12 @@ import Textarea from 'primevue/textarea';
 import Message from 'primevue/message';
 import {createToast} from "mosha-vue-toastify";
 import router from "../../../router/router";
+import InputText from "primevue/inputtext";
 
 export default {
     name: 'app',
     components: {
-        editor: Editor, Message, Button, Textarea
+        editor: Editor, Message, Button, Textarea, InputText
     },
     setup() {
         const successToast = (message) => {
@@ -146,6 +151,7 @@ export default {
                 let formData = new FormData();
                 formData.append("title", this.form.title);
                 formData.append("abt", this.form.abt);
+                formData.append("auth", this.form.auth);
                 formData.append("file", this.imagesArray, this.imagesArray.name);
                 axios.post("/api/create-article", formData)
                     .then(res => {

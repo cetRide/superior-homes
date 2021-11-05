@@ -362,6 +362,7 @@ class ApiController extends Controller
         }
         $article->title = $request->title;
         $article->abt = $request->abt;
+        $article->auth = $request->auth;
         $article->save();
         return response($article, 200);
     }

@@ -465,6 +465,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var primevue_message__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! primevue/message */ "./node_modules/primevue/message/message.esm.js");
 /* harmony import */ var mosha_vue_toastify__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mosha-vue-toastify */ "./node_modules/mosha-vue-toastify/dist/mosha-vue-toastify.es.js");
 /* harmony import */ var _router_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../router/router */ "./resources/js/router/router.js");
+/* harmony import */ var primevue_inputtext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! primevue/inputtext */ "./node_modules/primevue/inputtext/inputtext.esm.js");
+
 
 
 
@@ -477,7 +479,8 @@ __webpack_require__.r(__webpack_exports__);
     editor: _tinymce_tinymce_vue__WEBPACK_IMPORTED_MODULE_0__.default,
     Message: primevue_message__WEBPACK_IMPORTED_MODULE_3__.default,
     Button: primevue_button__WEBPACK_IMPORTED_MODULE_1__.default,
-    Textarea: primevue_textarea__WEBPACK_IMPORTED_MODULE_2__.default
+    Textarea: primevue_textarea__WEBPACK_IMPORTED_MODULE_2__.default,
+    InputText: primevue_inputtext__WEBPACK_IMPORTED_MODULE_6__.default
   },
   setup: function setup() {
     var successToast = function successToast(message) {
@@ -567,6 +570,7 @@ __webpack_require__.r(__webpack_exports__);
         var formData = new FormData();
         formData.append("title", this.form.title);
         formData.append("abt", this.form.abt);
+        formData.append("auth", this.form.auth);
         formData.append("file", this.imagesArray, this.imagesArray.name);
         axios.post("/api/create-article", formData).then(function (res) {
           _this.successToast("Article created");
@@ -645,11 +649,23 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 
 var _hoisted_9 = {
   style: {
+    "margin-top": "20px"
+  }
+};
+
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "for": "auth"
+}, "Article Author", -1
+/* HOISTED */
+);
+
+var _hoisted_11 = {
+  style: {
     "margin": "20px 0"
   }
 };
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Create Article");
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Create Article");
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)();
 
@@ -659,6 +675,8 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
   var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
 
   var _component_Textarea = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Textarea");
+
+  var _component_InputText = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("InputText");
 
   var _component_editor = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("editor");
 
@@ -717,13 +735,22 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     cols: "30"
   }, null, 8
   /* PROPS */
+  , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_InputText, {
+    id: "auth",
+    modelValue: $data.form.auth,
+    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+      return $data.form.auth = $event;
+    }),
+    type: "text"
+  }, null, 8
+  /* PROPS */
   , ["modelValue"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_editor, {
     initialValue: "<p>Article contents</p>",
     "api-key": "dooeanipvyv792bved3c6noxt3vtu9rotq517mdw6lno14ia",
     disabled: false,
     id: "uuid",
     modelValue: $data.form.abt,
-    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
       return $data.form.abt = $event;
     }),
     init: {
@@ -746,14 +773,14 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     value: ""
   }, null, 8
   /* PROPS */
-  , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
+  , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
     loading: $data.loadingAdd,
-    onClick: _cache[3] || (_cache[3] = function ($event) {
+    onClick: _cache[4] || (_cache[4] = function ($event) {
       return $options.createArticle();
     })
   }, {
     "default": _withId(function () {
-      return [_hoisted_10];
+      return [_hoisted_12];
     }),
     _: 1
     /* STABLE */
@@ -785,6 +812,53 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, "\nimg[data-v-1bdeb8da] {\n    width: 70%;\n    height: 350px;\n    margin-bottom: 10px;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/primevue/inputtext/inputtext.esm.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/primevue/inputtext/inputtext.esm.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+var script = {
+    name: 'InputText',
+    emits: ['update:modelValue'],
+    props: {
+        modelValue: null
+    },
+    methods: {
+        onInput(event) {
+            this.$emit('update:modelValue', event.target.value);
+        }
+    },
+    computed: {
+        filled() {
+            return (this.modelValue != null && this.modelValue.toString().length > 0)
+        }
+    }
+};
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("input", {
+    class: ['p-inputtext p-component', {'p-filled': $options.filled}],
+    value: $props.modelValue,
+    onInput: _cache[1] || (_cache[1] = (...args) => ($options.onInput && $options.onInput(...args)))
+  }, null, 42, ["value"]))
+}
+
+script.render = render;
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (script);
 
 
 /***/ }),

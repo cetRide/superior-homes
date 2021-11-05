@@ -17,14 +17,14 @@
             <ConfirmPopup></ConfirmPopup>
         </div>
         <div v-if="show_edit_modal">
-<!--            <Dialog header="Edit Article" v-model:visible="show_edit_modal"-->
-<!--                    :maximizable="true" :modal="true"-->
-<!--                    :breakpoints="{'960px': '75vw', '640px': '100vw'}" :style="{width: '80vw'}"-->
-<!--            >-->
                 <div style="padding-top: 10px">
                     <div>
                         <label for="title">Title</label>
                         <InputText id="title" type="text" v-model="formEdit.title"/>
+                    </div>
+                    <div>
+                        <label for="author">Author</label>
+                        <InputText id="auth" type="text" v-model="formEdit.auth"/>
                     </div>
                     <div>
                         <div>
@@ -219,6 +219,7 @@ export default {
             this.formEdit.img = item.img;
             this.formEdit.abt = item.abt
             this.formEdit.id = item.id;
+            this.formEdit.auth = item.auth
         },
         editArticle() {
             this.loadingEdit = true
@@ -230,6 +231,7 @@ export default {
             theData.append("title", this.formEdit.title);
             theData.append("abt", this.formEdit.abt);
             theData.append("id", this.formEdit.id);
+            theData.append("auth", this.formEdit.auth);
             axios.post("/api/edit-article", theData)
                 .then(res => {
                     this.successToast("Article details changed")
