@@ -471,6 +471,7 @@ export default {
                             this.email = ''
                         } else {
                             this.errorToast("An error occurred. Try again!");
+                            this.loadTour = false
                         }
                     }).catch(err => {
                     this.errorToast("An error occurred. Try again!");
