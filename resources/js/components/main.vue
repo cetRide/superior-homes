@@ -470,8 +470,8 @@ export default {
                             this.successToast("Booked successfully")
                             this.email = ''
                         } else {
-                            this.errorToast("An error occurred. Try again!");
                             this.loadTour = false
+                            this.errorToast("An error occurred. Try again!");
                         }
                     }).catch(err => {
                     this.errorToast("An error occurred. Try again!");

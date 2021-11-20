@@ -55,7 +55,7 @@ class SendEmailsController extends Controller
             Mail::to('sales@superiorhomes.co.ke')->send(new BookTour($details));
             return response()->json(['success' => true]);
         } catch (\Exception $e){
-            return response()->json(['success' => false, 'error' => $e]);
+            return response()->json(['success' => false, 'error' => $e->getMessage()]);
         }
 
     }
