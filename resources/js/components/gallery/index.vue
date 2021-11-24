@@ -162,6 +162,7 @@ export default {
         showProperty() {
             axios.get("/api/get-all-property").then(res => {
                 this.property = res.data
+                console.log(this.property)
                 this.greenpark = this.property.find(x => x.title === 'Greenpark Estate').gallery;
                 console.log('greenpark', this.greenpark)
                 this.pazuri = this.property.find(x => x.title === 'Pazuri at Vipingo').gallery;
