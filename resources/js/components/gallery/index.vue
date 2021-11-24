@@ -163,11 +163,13 @@ export default {
             axios.get("/api/get-all-property").then(res => {
                 this.property = res.data
                 this.greenpark = this.property.find(x => x.title === 'Greenpark Estate').gallery;
+                console.log('greenpark', this.greenpark)
                 this.pazuri = this.property.find(x => x.title === 'Pazuri at Vipingo').gallery;
                 this.fadhili = this.property.find(x => x.title === 'Fadhili Retirement Village').gallery;
                 this.leml = this.property.find(x => x.title === 'Lake Elementaita Mountain Lodge').gallery;
                 this.sundowner = this.property.find(x => x.title === 'The Greenpark Sundowner Hotel').gallery;
             }).catch(err => {
+                console.log(err)
                 this.errorToast("An error occurred!")
             });
         },
