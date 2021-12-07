@@ -162,9 +162,7 @@ export default {
         showProperty() {
             axios.get("/api/get-all-property").then(res => {
                 this.property = res.data
-                console.log(res.data[0].gallery)
                 this.greenpark = res.data.find(x => x.id === 1).gallery;
-                console.log('greenpark', this.greenpark)
                 this.pazuri = res.data.find(x => x.id === 3).gallery;
                 this.fadhili = res.data.find(x => x.id === 2).gallery;
                 this.leml = res.data.find(x => x.id === 4).gallery;
