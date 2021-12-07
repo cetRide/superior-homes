@@ -24,7 +24,7 @@ app.use(PrimeVue);
 app.use(router);
 app.use(store);
 app.use(VueGtag, {
-    config: { id: "UA-29065856-12" },
+    config: { id: "UA-206527349-1" },
     appName: 'Superior Homes',
     pageTrackerScreenviewEnabled: true
 }, router);

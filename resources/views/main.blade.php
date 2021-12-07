@@ -103,13 +103,13 @@
 </div>
 <script src="{{ mix('js/app.js') }}"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-29065856-12">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-206527349-1">
 </script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'UA-29065856-12');
+    gtag('config', 'UA-206527349-1');
 </script>
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
 <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="3c4862df-7375-412b-a63d-c286529e5539";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
