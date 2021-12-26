@@ -19,6 +19,7 @@ use App\Models\ShkVideos;
 use Carbon\Carbon;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ApiController extends Controller
 {
@@ -26,11 +27,12 @@ class ApiController extends Controller
     {
         $board = new ShkBoard();
         //Save images
-        $board->title = $request->title;
         $board->abt = $request->abt;
         $board->name = $request->name;
+        $board->title = $request->title;
         if (!is_null($request->file('file'))) {
-            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+            $path = Storage::disk('s3')->put('images/uploads/board', $request->file('file'));
+            $image_url = 'https://superiorhomes.s3.eu-west-2.amazonaws.com/' . $path;
             $board->img = $image_url;
         }
         $board->save();
@@ -46,8 +48,12 @@ class ApiController extends Controller
     public function editBoard(Request $request)
     {
         $board = ShkBoard::find($request->id);
+        Storage::disk('s3')->delete(substr($board->img,49));
+
         if (!is_null($request->file('file'))) {
-            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+//            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+            $path = Storage::disk('s3')->put('images/uploads/board', $request->file('file'));
+            $image_url = 'https://superiorhomes.s3.eu-west-2.amazonaws.com/' . $path;
             $board->img = $image_url;
         }
         $board->title = $request->title;
@@ -72,7 +78,9 @@ class ApiController extends Controller
         $team->abt = $request->abt;
         $team->name = $request->name;
         if (!is_null($request->file('file'))) {
-            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+//            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+            $path = Storage::disk('s3')->put('images/uploads/team', $request->file('file'));
+            $image_url = 'https://superiorhomes.s3.eu-west-2.amazonaws.com/' . $path;
             $team->img = $image_url;
         }
         $team->save();
@@ -89,7 +97,9 @@ class ApiController extends Controller
     {
         $team = ShkTeam::find($request->id);
         if (!is_null($request->file('file'))) {
-            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+//            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+            $path = Storage::disk('s3')->put('images/uploads/team', $request->file('file'));
+            $image_url = 'https://superiorhomes.s3.eu-west-2.amazonaws.com/' . $path;
             $team->img = $image_url;
         }
         $team->title = $request->title;
@@ -114,7 +124,9 @@ class ApiController extends Controller
         $property->art = $request->art;
         $property->subt = $request->subt;
         if (!is_null($request->file('file'))) {
-            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+//            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+            $path = Storage::disk('s3')->put('images/uploads/property', $request->file('file'));
+            $image_url = 'https://superiorhomes.s3.eu-west-2.amazonaws.com/' . $path;
             $property->img = $image_url;
         }
         $property->save();
@@ -131,7 +143,9 @@ class ApiController extends Controller
     {
         $property = ShkHProperty::find($request->id);
         if (!is_null($request->file('file'))) {
-            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+//            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+            $path = Storage::disk('s3')->put('images/uploads/property', $request->file('file'));
+            $image_url = 'https://superiorhomes.s3.eu-west-2.amazonaws.com/' . $path;
             $property->img = $image_url;
         }
         $property->title = $request->title;
@@ -165,7 +179,9 @@ class ApiController extends Controller
         $property->description = $request->description;
         $property->price = $request->price;
         if (!is_null($request->file('file'))) {
-            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+//            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+            $path = Storage::disk('s3')->put('images/uploads/type', $request->file('file'));
+            $image_url = 'https://superiorhomes.s3.eu-west-2.amazonaws.com/' . $path;
             $property->img = $image_url;
         }
         $property->save();
@@ -182,7 +198,9 @@ class ApiController extends Controller
     {
         $property = ShkPropertyTypes::find($request->id);
         if (!is_null($request->file('file'))) {
-            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+//            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+            $path = Storage::disk('s3')->put('images/uploads/type', $request->file('file'));
+            $image_url = 'https://superiorhomes.s3.eu-west-2.amazonaws.com/' . $path;
             $property->img = $image_url;
         }
         $property->name = $request->name;
@@ -268,7 +286,9 @@ class ApiController extends Controller
         $image = new ShkGallery();
         $image->shk_h_property_id = $request->shk_h_property_id;
         if (!is_null($request->file('file'))) {
-            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+//            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+            $path = Storage::disk('s3')->put('images/uploads/gallery', $request->file('file'));
+            $image_url = 'https://superiorhomes.s3.eu-west-2.amazonaws.com/' . $path;
             $image->img = $image_url;
         }
         $image->save();
@@ -302,7 +322,9 @@ class ApiController extends Controller
         $job->app = $filename;
 
         if (!is_null($request->file('file'))) {
-            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+//            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+            $path = Storage::disk('s3')->put('images/uploads/jobs', $request->file('file'));
+            $image_url = 'https://superiorhomes.s3.eu-west-2.amazonaws.com/' . $path;
             $job->img = $image_url;
         }
 
@@ -335,7 +357,9 @@ class ApiController extends Controller
                 unlink(public_path('jd/' . $oldFile));
             }
             if (!is_null($request->file('file'))) {
-                $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+//                $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+                $path = Storage::disk('s3')->put('images/uploads/jobs', $request->file('file'));
+                $image_url = 'https://superiorhomes.s3.eu-west-2.amazonaws.com/' . $path;
                 $job->img = $image_url;
             }
             $job->save();
@@ -357,7 +381,9 @@ class ApiController extends Controller
     {
         $article = ShkArticles::find($request->id);
         if (!is_null($request->file('file'))) {
-            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+//            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+            $path = Storage::disk('s3')->put('images/uploads/articles', $request->file('file'));
+            $image_url = 'https://superiorhomes.s3.eu-west-2.amazonaws.com/' . $path;
             $article->img = $image_url;
         }
         $article->title = $request->title;

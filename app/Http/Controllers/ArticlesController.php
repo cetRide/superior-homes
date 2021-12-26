@@ -7,6 +7,7 @@ use App\Models\ShkJobs;
 use Carbon\Carbon;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ArticlesController extends Controller
 {
@@ -49,7 +50,9 @@ class ArticlesController extends Controller
         $article->date = Carbon::now()->toDateTimeString();
         $article->auth = $request->auth;
         if (!is_null($request->file('file'))) {
-            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+//            $image_url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+            $path = Storage::disk('s3')->put('images/uploads/articles', $request->file('file'));
+            $image_url = 'https://superiorhomes.s3.eu-west-2.amazonaws.com/' . $path;
             $article->img = $image_url;
         }
 
