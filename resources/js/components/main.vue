@@ -53,11 +53,11 @@
                     > Gallery
                     </router-link>
                 </div>
-                <div class="item">
-                    <router-link :to="{ name: 'careers' }"
-                    > Careers
-                    </router-link>
-                </div>
+                <a href="https://shr.co.ke/careers" target="_blank">
+                    <div class="item">
+                        Careers
+                    </div>
+                </a>
                 <div class="item">
                     <router-link :to="{ name: 'contact' }"
                     > Contact
@@ -111,7 +111,8 @@
                 <div class="product-item">
                     <div class="product-item-content">
                         <div class="p-mb-2">
-                            <img style="object-fit: contain" :src="'https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_brands/' + slotProps.data.path"
+                            <img style="object-fit: contain"
+                                 :src="'https://d1bqrv1jyf8x1f.cloudfront.net/images/shk_brands/' + slotProps.data.path"
                                  class="product-image"
                                  :alt="slotProps.data.path"/>
                         </div>

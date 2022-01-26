@@ -63,22 +63,24 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get("/api/get-all-property").then(function (res) {
         _this.property = res.data;
-        _this.greenpark = _this.property.find(function (x) {
-          return x.title === 'Greenpark Estate';
+        _this.greenpark = res.data.find(function (x) {
+          return x.id === 1;
         }).gallery;
-        _this.pazuri = _this.property.find(function (x) {
-          return x.title === 'Pazuri at Vipingo';
+        _this.pazuri = res.data.find(function (x) {
+          return x.id === 3;
         }).gallery;
-        _this.fadhili = _this.property.find(function (x) {
-          return x.title === 'Fadhili Retirement Village';
+        _this.fadhili = res.data.find(function (x) {
+          return x.id === 2;
         }).gallery;
-        _this.leml = _this.property.find(function (x) {
-          return x.title === 'Lake Elementaita Mountain Lodge';
+        _this.leml = res.data.find(function (x) {
+          return x.id === 4;
         }).gallery;
-        _this.sundowner = _this.property.find(function (x) {
-          return x.title === 'The Greenpark Sundowner Hotel';
+        _this.sundowner = res.data.find(function (x) {
+          return x.id === 5;
         }).gallery;
       })["catch"](function (err) {
+        console.log(err);
+
         _this.errorToast("An error occurred!");
       });
     },
