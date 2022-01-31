@@ -71,6 +71,7 @@ const routes = [
                     ],
                 },
             },
+            { path: '/careers', redirect: 'https://shr.co.ke/careers' },
             {
                 path: "/careers",
                 name: "careers",
@@ -89,6 +90,7 @@ const routes = [
                     ],
                 },
             },
+            { path: '/careers', redirect: '/b' },
             {
                 path: "/about-us",
                 name: "about",
