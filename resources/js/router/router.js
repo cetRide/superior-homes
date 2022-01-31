@@ -71,11 +71,13 @@ const routes = [
                     ],
                 },
             },
-            { path: '/careers', redirect: 'https://shr.co.ke/careers' },
             {
                 path: "/careers",
                 name: "careers",
                 component: () => import("../components/careers"),
+                beforeEnter(to, from, next) {
+                    window.location.href = "https://shr.co.ke/careers";
+                },
                 meta: {
                     title: "Superior Homes Kenya | Careers",
                     metaTags: [
