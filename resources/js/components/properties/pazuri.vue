@@ -26,7 +26,7 @@
             <div class="container">
                 <div data-aos="fade-up" data-aos-duration="1000" class="prop-landing-details">
                     <div class="prop-title">{{ property.title }}</div>
-                    <div class="prop-sub">{{ property.sub }}</div>
+                    <div class="prop-sub">{{ property.subt }}</div>
                     <a href="#reserve">
                         <div class="prop-btn" @click="reserve(property.title)">
                             Reserve Now
