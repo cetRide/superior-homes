@@ -112,7 +112,7 @@
     gtag('config', 'UA-206527349-1');
 </script>
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="3c4862df-7375-412b-a63d-c286529e5539";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+{{--<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="3c4862df-7375-412b-a63d-c286529e5539";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>--}}
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2yy50Uw-pS7o17DrS7J3txklCtOiL9AI&amp;sensor=false"></script>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
